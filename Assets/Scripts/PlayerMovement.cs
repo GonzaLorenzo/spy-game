@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private VirtualAnalogStick virtualStick;
     private Vector3 auxInputVector;
     private Rigidbody _myRigidbody;
+    private Animator _myAnimator;
     [SerializeField]
     private float _speed;
     //#endif
@@ -15,9 +16,11 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _myRigidbody = GetComponent<Rigidbody>();
+        _myAnimator = GetComponent<Animator>();
+
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (virtualStick.getInputVector.sqrMagnitude > 0f)
         {
