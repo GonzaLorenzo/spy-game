@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody _myRigidbody;
     private Animator _myAnimator;
     [SerializeField]
-    private float _speed;
+    private float _speed = 3f;
     //#endif
 
     private void Awake()
