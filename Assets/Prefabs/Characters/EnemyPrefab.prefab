@@ -976,6 +976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5828538406719529468}
   - component: {fileID: 5828538406726782906}
+  - component: {fileID: 2524434507777263337}
   m_Layer: 9
   m_Name: EnemyPrefab
   m_TagString: Untagged
@@ -1009,7 +1010,7 @@ Animator:
   m_GameObject: {fileID: 5828538406719372700}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 7b36a186c6950424394704a9292a7114, type: 3}
-  m_Controller: {fileID: 9100000, guid: 94d76f859419a5048a2d6cf80ef45f88, type: 2}
+  m_Controller: {fileID: 9100000, guid: 875428d08c9a36545a260da9d3843849, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1018,6 +1019,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2524434507777263337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5828538406719372700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd1719314e57b3248bb08ca2f5d03750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  speed: 2
 --- !u!1 &5828538406719372702
 GameObject:
   m_ObjectHideFlags: 0
