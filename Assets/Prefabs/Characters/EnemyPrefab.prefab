@@ -976,7 +976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5828538406719529468}
   - component: {fileID: 5828538406726782906}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
