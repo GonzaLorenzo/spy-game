@@ -8,17 +8,20 @@ public abstract class Enemy : MonoBehaviour
     public float speed;
     private int _currentWaypoint = 0;
     private bool canMove = true;
+    private Animator _myAnimator;
 
     public void Patrol()
     {
         if (canMove)
         {
+            //_myAnimator.SetBool("IsMoving", true);
             Vector3 dir = waypoints[_currentWaypoint].position - transform.position;
             transform.forward = dir;
             transform.position += transform.forward * speed * Time.deltaTime;
 
             if (dir.magnitude < 0.1f)
             {
+                //_myAnimator.SetBool("IsMoving", false);
                 AwaitInPlace(2f);
                 _currentWaypoint++;
                 if (_currentWaypoint > waypoints.Count - 1)
@@ -38,8 +41,8 @@ public abstract class Enemy : MonoBehaviour
         //SetSoldadoState();
         yield return new WaitForSeconds(time);
         canMove = true;
+        //_myAnimator.SetBool("IsMoving", true);
         //SoldadoState = 2f;
         //SetSoldadoState();
-
     }
 }
