@@ -22,14 +22,14 @@ public class SniperAgro : MonoBehaviour
         {
             spawnPos = other.transform.position;
             selectedEnemy = other.gameObject;
-            Instantiate(sniperUI, spawnPos + sniperUIOffset, other.transform.rotation);
+            Instantiate(sniperUI);
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
         actualPos = other.transform.position + sniperUIOffset;
-        Debug.Log("me cago" + spawnPos);
+        
         Debug.Log("me muevo" + actualPos);
     }
 
