@@ -12,7 +12,6 @@ public class SniperAgro : MonoBehaviour
     public GameObject selectedEnemy;
     [SerializeField]
     private GameObject sniperUI;
-    Vector3 sniperUIOffset = new Vector3(0.0f, 0.7f, 0.0f);
     public Vector3 spawnPos;
     public Vector3 actualPos;
 
@@ -24,13 +23,6 @@ public class SniperAgro : MonoBehaviour
             selectedEnemy = other.gameObject;
             Instantiate(sniperUI);
         }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        actualPos = other.transform.position + sniperUIOffset;
-        
-        Debug.Log("me muevo" + actualPos);
     }
 
     public void ShootTarget()

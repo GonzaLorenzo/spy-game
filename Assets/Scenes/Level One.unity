@@ -1284,7 +1284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTarget: {fileID: 1081248060}
-  followOffset: {x: 0, y: 20, z: -7}
+  followOffset: {x: 0, y: 10, z: -7}
   lookAtTarget: {fileID: 1081248060}
   lookAtOffset: {x: 0, y: 0, z: 0}
   followSpeed: 3

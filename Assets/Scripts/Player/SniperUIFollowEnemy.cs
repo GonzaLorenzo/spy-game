@@ -6,7 +6,7 @@ public class SniperUIFollowEnemy : MonoBehaviour
 {
     //public SniperAgro sniperAgro;
     public GameObject sniperAgro;
-    Vector3 sniperUIOffset = new Vector3(0.0f, 0.7f, 0.0f);
+    Vector3 sniperUIOffset = new Vector3(0.0f, 0.9f, 0.0f);
 
     private void Awake()
     {
