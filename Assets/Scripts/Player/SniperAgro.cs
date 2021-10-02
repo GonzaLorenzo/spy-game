@@ -10,6 +10,7 @@ public class SniperAgro : MonoBehaviour
     //other.GetComponent<IShootable>().Shoot();
 
     private GameObject selectedEnemy;
+    [SerializeField]
     private GameObject sniperUI;
 
     private void OnTriggerEnter(Collider other)
@@ -17,7 +18,7 @@ public class SniperAgro : MonoBehaviour
         if (other.GetComponent<IShootable>() != null)
         {
             //Vector3 pos = ;
-            Instantiate(sniperUI, other.transform.position);
+            //Instantiate(sniperUI, other.transform.position);
         }
     }
 
