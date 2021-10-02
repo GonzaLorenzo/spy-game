@@ -15,10 +15,11 @@ public class SniperAgro : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Vector3 spawnPos = other.transform.position;
+
         if (other.GetComponent<IShootable>() != null)
         {
-            //Vector3 pos = ;
-            //Instantiate(sniperUI, other.transform.position);
+            //Instantiate(sniperUI, spawnPos);
         }
     }
 
