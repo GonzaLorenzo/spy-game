@@ -9,18 +9,25 @@ public class SniperAgro : MonoBehaviour
 
     //other.GetComponent<IShootable>().Shoot();
 
-    private GameObject selectedEnemy;
+    public GameObject selectedEnemy;
     [SerializeField]
     private GameObject sniperUI;
+    Vector3 sniperUIOffset = new Vector3(0.0f, 0.7f, 0.0f);
+    public Vector3 spawnPos;
 
     private void OnTriggerEnter(Collider other)
     {
-        Vector3 spawnPos = other.transform.position;
-
         if (other.GetComponent<IShootable>() != null)
         {
-            //Instantiate(sniperUI, spawnPos);
+            Debug.Log(spawnPos);
+            selectedEnemy = other.gameObject;
+            Instantiate(sniperUI, spawnPos + sniperUIOffset, other.transform.rotation);
         }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        spawnPos = other.transform.position;
     }
 
     public void ShootTarget()

@@ -1707,6 +1707,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353235354}
   m_CullTransparentMesh: 0
+--- !u!1 &1406333419 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5828538406719372700, guid: b1c8d945e45c62342a66e5ec404b8d18,
+    type: 3}
+  m_PrefabInstance: {fileID: 2524434507777263335}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1406333423
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406333419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1.7
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!1 &1453082889 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: 7955cad133d58f146ab9663dcf2d2832,
@@ -2207,8 +2227,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac6f14497add81418973ee102e090ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedEnemy: {fileID: 0}
   sniperUI: {fileID: 3069110872951964906, guid: 88a8605317fda294d823ad6daf504d93,
     type: 3}
+  spawnPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1899839127
 GameObject:
   m_ObjectHideFlags: 0
