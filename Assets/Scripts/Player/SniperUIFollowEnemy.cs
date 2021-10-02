@@ -6,14 +6,17 @@ public class SniperUIFollowEnemy : MonoBehaviour
 {
     //public SniperAgro sniperAgro;
     public GameObject sniperAgro;
+    
 
     private void Awake()
     {
-        sniperAgro.GetComponent<SniperAgro>();
+        //sniperAgro.GetComponent<SniperAgro>();
+        sniperAgro = GameObject.Find("SniperZone");
+       
     }
 
     private void Update()
     {
-        //transform.position = sniperAgro.spawnPos;
+        transform.position = sniperAgro.GetComponent<SniperAgro>().actualPos;
     }
 }

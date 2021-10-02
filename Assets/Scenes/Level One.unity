@@ -1294,7 +1294,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15368
+  m_Name: pb_Mesh15650
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2231,6 +2231,7 @@ MonoBehaviour:
   sniperUI: {fileID: 3069110872951964906, guid: 88a8605317fda294d823ad6daf504d93,
     type: 3}
   spawnPos: {x: 0, y: 0, z: 0}
+  actualPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1899839127
 GameObject:
   m_ObjectHideFlags: 0

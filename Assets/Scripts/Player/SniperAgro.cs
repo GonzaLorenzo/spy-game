@@ -14,12 +14,13 @@ public class SniperAgro : MonoBehaviour
     private GameObject sniperUI;
     Vector3 sniperUIOffset = new Vector3(0.0f, 0.7f, 0.0f);
     public Vector3 spawnPos;
+    public Vector3 actualPos;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<IShootable>() != null)
         {
-            Debug.Log(spawnPos);
+            spawnPos = other.transform.position;
             selectedEnemy = other.gameObject;
             Instantiate(sniperUI, spawnPos + sniperUIOffset, other.transform.rotation);
         }
@@ -27,7 +28,9 @@ public class SniperAgro : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        spawnPos = other.transform.position;
+        actualPos = other.transform.position + sniperUIOffset;
+        Debug.Log("me cago" + spawnPos);
+        Debug.Log("me muevo" + actualPos);
     }
 
     public void ShootTarget()
