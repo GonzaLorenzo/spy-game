@@ -42,7 +42,7 @@ public class SniperAgro : MonoBehaviour
     private void Update()
     {
         //Debug.Log("Hay" + Enemies.Count);
-
+        Debug.Log("Es el " + currentEnemy);
     }
 
     private void OnTriggerExit(Collider other)
@@ -64,6 +64,13 @@ public class SniperAgro : MonoBehaviour
         if (currentEnemy +1 < Enemies.Count)
         {
             currentEnemy++;
+            selectedEnemy = Enemies[currentEnemy];
+        }
+        else
+        {
+            currentEnemy = 0;
+            selectedEnemy = Enemies[currentEnemy];
+
         }
     }
 
