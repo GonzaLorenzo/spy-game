@@ -7,7 +7,7 @@ public abstract class Enemy : MonoBehaviour
     public List<Transform> waypoints;
     public float speed;
     private int _currentWaypoint = 0;
-    private bool canMove = true;
+    protected bool canMove = true;
     //private Animator _myAnimator;
 
     public void Patrol()

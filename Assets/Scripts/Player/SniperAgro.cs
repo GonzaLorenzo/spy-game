@@ -18,7 +18,7 @@ public class SniperAgro : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<IShootable>() != null)
+        if (other.GetComponent<IShootable>() != null && instantiatedUI == null)
         {
             spawnPos = other.transform.position;
             selectedEnemy = other.gameObject;
@@ -35,6 +35,8 @@ public class SniperAgro : MonoBehaviour
 
     public void ShootTarget()
     {
-        selectedEnemy.GetComponent<IShootable>().Shoot();
+        //selectedEnemy.GetComponent<IShootable>().Shoot(); Probar haciendo el shoot desde el UI
+        //Hacer la referencia al SniperUIFE para que haga la anim y se destruya en un shoot();
+        instantiatedUI.GetComponent<SniperUIFollowEnemy>().HasShot();
     }
 }

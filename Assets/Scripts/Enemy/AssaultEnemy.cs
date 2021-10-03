@@ -5,12 +5,7 @@ using UnityEngine;
 public class AssaultEnemy : Enemy, IShootable
 {
     private Animator _myAnimator;
-
-    public void Shoot()
-    {
-        //Animator de muerte
-        //Dejar de Patrullar y capaz instanciar particulas de sangre
-    }
+    private float timeToDestroy = 3f;
 
     private void Start()
     {
@@ -22,4 +17,13 @@ public class AssaultEnemy : Enemy, IShootable
         Patrol();
     }
 
+    public void Shoot()
+    {
+        _myAnimator.SetTrigger("IsDead");
+        canMove = false;
+        Destroy(this, timeToDestroy);
+        
+        //Animator de muerte
+        //Dejar de Patrullar y capaz instanciar particulas de sangre
+    }
 }
