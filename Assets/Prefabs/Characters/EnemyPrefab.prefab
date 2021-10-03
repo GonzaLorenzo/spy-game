@@ -805,7 +805,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5828538406719372408}
   m_LocalRotation: {x: -0.50000036, y: 0.49999967, z: 0.49999967, w: 0.50000036}
-  m_LocalPosition: {x: -0, y: 0.451089, z: -0.036125183}
+  m_LocalPosition: {x: 0, y: 0.45108902, z: -0.036125187}
   m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
   m_Children:
   - {fileID: 5828538406719530702}
@@ -977,6 +977,7 @@ GameObject:
   - component: {fileID: 5828538406719529468}
   - component: {fileID: 5828538406726782906}
   - component: {fileID: 2524434507777263337}
+  - component: {fileID: 1406333423}
   m_Layer: 9
   m_Name: EnemyPrefab
   m_TagString: Untagged
@@ -1035,6 +1036,20 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   speed: 2
+--- !u!136 &1406333423
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5828538406719372700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1.7
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!1 &5828538406719372702
 GameObject:
   m_ObjectHideFlags: 0

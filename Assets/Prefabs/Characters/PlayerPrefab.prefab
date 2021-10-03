@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1047894328}
   - component: {fileID: 1047894329}
+  - component: {fileID: 1845924551}
   m_Layer: 0
   m_Name: SniperZone
   m_TagString: Untagged
@@ -44,6 +45,23 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 25
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1845924551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047894327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac6f14497add81418973ee102e090ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedEnemy: {fileID: 0}
+  sniperUI: {fileID: 3069110872951964906, guid: 88a8605317fda294d823ad6daf504d93,
+    type: 3}
+  spawnPos: {x: 0, y: 0, z: 0}
+  actualPos: {x: 0, y: 0, z: 0}
 --- !u!1 &8912384379778827041
 GameObject:
   m_ObjectHideFlags: 0
