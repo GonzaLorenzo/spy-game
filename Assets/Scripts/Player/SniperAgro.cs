@@ -15,21 +15,34 @@ public class SniperAgro : MonoBehaviour
     public Vector3 spawnPos;
     public Vector3 actualPos;
     private GameObject instantiatedUI;
+    public List<GameObject> Enemies;
+    private int currentEnemy = 0;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<IShootable>() != null && instantiatedUI == null)
         {
+            if(!Enemies.Contains(other.gameObject))
+            {
+                Enemies.Add(other.gameObject);
+            }
             spawnPos = other.transform.position;
-            selectedEnemy = other.gameObject;
+            //selectedEnemy = other.gameObject;
+            selectedEnemy = Enemies[currentEnemy];
             //GameObject instantiatedUI = Instantiate(sniperUI);
             instantiatedUI = Instantiate(sniperUI);
             //Instantiate(sniperUI);
         }
     }
 
+    private void Update()
+    {
+        Debug.Log(selectedEnemy);
+    }
+
     private void OnTriggerExit(Collider other)
     {
+        Enemies.Remove(selectedEnemy);
         Destroy(instantiatedUI);
     }
 
@@ -38,5 +51,13 @@ public class SniperAgro : MonoBehaviour
         //selectedEnemy.GetComponent<IShootable>().Shoot(); Probar haciendo el shoot desde el UI
         //Hacer la referencia al SniperUIFE para que haga la anim y se destruya en un shoot();
         instantiatedUI.GetComponent<SniperUIFollowEnemy>().HasShot();
+    }
+
+    public void SwitchTarget()
+    {
+        if (currentEnemy +1 < Enemies.Count)
+        {
+            currentEnemy++;
+        }
     }
 }

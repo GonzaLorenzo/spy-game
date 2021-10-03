@@ -30,6 +30,7 @@ public class SniperUIFollowEnemy : MonoBehaviour
     private void ActualShot()
     {
         sniperAgro.GetComponent<SniperAgro>().selectedEnemy.GetComponent<IShootable>().Shoot();
+        sniperAgro.GetComponent<SniperAgro>().Enemies.Remove(sniperAgro.GetComponent<SniperAgro>().selectedEnemy);
         Destroy(this.gameObject);
     }
 }

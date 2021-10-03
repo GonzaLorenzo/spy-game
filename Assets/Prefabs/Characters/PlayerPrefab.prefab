@@ -43,7 +43,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 25
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1845924551
 MonoBehaviour:
@@ -62,6 +62,7 @@ MonoBehaviour:
     type: 3}
   spawnPos: {x: 0, y: 0, z: 0}
   actualPos: {x: 0, y: 0, z: 0}
+  Enemies: []
 --- !u!1 &8912384379778827041
 GameObject:
   m_ObjectHideFlags: 0
