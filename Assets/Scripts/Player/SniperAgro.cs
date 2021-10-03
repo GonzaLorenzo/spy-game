@@ -20,7 +20,8 @@ public class SniperAgro : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<IShootable>() != null && instantiatedUI == null)
+    
+        if (other.GetComponent<IShootable>() != null) //&& instantiatedUI == null)
         {
             if(!Enemies.Contains(other.gameObject))
             {
@@ -30,19 +31,24 @@ public class SniperAgro : MonoBehaviour
             //selectedEnemy = other.gameObject;
             selectedEnemy = Enemies[currentEnemy];
             //GameObject instantiatedUI = Instantiate(sniperUI);
-            instantiatedUI = Instantiate(sniperUI);
+            if (instantiatedUI == null)
+            {
+                instantiatedUI = Instantiate(sniperUI);
+            }
             //Instantiate(sniperUI);
         }
     }
 
     private void Update()
     {
-        Debug.Log(selectedEnemy);
+        //Debug.Log("Hay" + Enemies.Count);
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Enemies.Remove(selectedEnemy);
+        //Enemies.Remove(selectedEnemy);
+        Enemies.Remove(other.gameObject);
         Destroy(instantiatedUI);
     }
 
@@ -58,6 +64,15 @@ public class SniperAgro : MonoBehaviour
         if (currentEnemy +1 < Enemies.Count)
         {
             currentEnemy++;
+        }
+    }
+
+    public void UpdateTarget() //Donde pongo esto?
+    {
+        if(Enemies.Count != 0 && instantiatedUI == null)
+        {
+            instantiatedUI = Instantiate(sniperUI);
+            Debug.Log("?");
         }
     }
 }
