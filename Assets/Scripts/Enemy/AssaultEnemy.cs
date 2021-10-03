@@ -6,10 +6,12 @@ public class AssaultEnemy : Enemy, IShootable
 {
     private Animator _myAnimator;
     private float timeToDestroy = 3f;
+    private CapsuleCollider _myCollider;
 
     private void Start()
     {
         _myAnimator = GetComponent<Animator>();
+        _myCollider = GetComponent<CapsuleCollider>();
     }
 
     private void Update()
@@ -21,7 +23,11 @@ public class AssaultEnemy : Enemy, IShootable
     {
         _myAnimator.SetTrigger("IsDead");
         canMove = false;
-        Destroy(this, timeToDestroy);
+        _myCollider.enabled = !_myCollider.enabled;
+
+        //Destroy(this, timeToDestroy); Mejor que se queden
+
+        //En su momento también deshabilitar el campo de visión.
         
         //Animator de muerte
         //Dejar de Patrullar y capaz instanciar particulas de sangre

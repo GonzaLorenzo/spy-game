@@ -8,7 +8,7 @@ public class SniperUIFollowEnemy : MonoBehaviour
     public GameObject sniperAgro;
     Vector3 sniperUIOffset = new Vector3(0.0f, 0.9f, 0.0f);
     private Animator _myAnimator;
-    private float timeToDestroy = 3f;
+    //private float timeToDestroy = 3f;
 
     private void Awake()
     {
@@ -25,11 +25,11 @@ public class SniperUIFollowEnemy : MonoBehaviour
     public void HasShot()
     {
         _myAnimator.SetTrigger("HasShot");
-        Destroy(this.gameObject, timeToDestroy);
     }
 
     private void ActualShot()
     {
         sniperAgro.GetComponent<SniperAgro>().selectedEnemy.GetComponent<IShootable>().Shoot();
+        Destroy(this.gameObject);
     }
 }
