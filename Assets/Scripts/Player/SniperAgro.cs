@@ -42,7 +42,7 @@ public class SniperAgro : MonoBehaviour
     private void Update()
     {
         //Debug.Log("Hay" + Enemies.Count);
-        Debug.Log("Es el " + currentEnemy);
+        //Debug.Log("Es el " + currentEnemy);
     }
 
     private void OnTriggerExit(Collider other)
@@ -76,10 +76,13 @@ public class SniperAgro : MonoBehaviour
 
     public void UpdateTarget() //Donde pongo esto?
     {
-        if(Enemies.Count != 0 && instantiatedUI == null)
+        if(Enemies.Count > 0) //&& instantiatedUI == null)
         {
+            currentEnemy = 0;
+            selectedEnemy = Enemies[currentEnemy];
+            Debug.Log("Parte2");
             instantiatedUI = Instantiate(sniperUI);
-            Debug.Log("?");
+            Debug.Log("Parte3");
         }
     }
 }

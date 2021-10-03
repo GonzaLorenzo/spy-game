@@ -33,6 +33,14 @@ public class SniperUIFollowEnemy : MonoBehaviour
         sniperAgro.GetComponent<SniperAgro>().Enemies.Remove(sniperAgro.GetComponent<SniperAgro>().selectedEnemy);
         //sniperAgro.GetComponent<SniperAgro>().UpdateTarget(); Complicado de hacer aca viste porque se destruye.
         Destroy(this.gameObject);
+        ReferenceUpdate();
         
+    }
+    
+    private void ReferenceUpdate()
+    {
+        
+        sniperAgro.GetComponent<SniperAgro>().UpdateTarget();
+        Debug.Log("Parte1");
     }
 }
