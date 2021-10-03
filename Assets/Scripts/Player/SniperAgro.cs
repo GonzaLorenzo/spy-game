@@ -14,6 +14,7 @@ public class SniperAgro : MonoBehaviour
     private GameObject sniperUI;
     public Vector3 spawnPos;
     public Vector3 actualPos;
+    private GameObject instantiatedUI;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,8 +22,15 @@ public class SniperAgro : MonoBehaviour
         {
             spawnPos = other.transform.position;
             selectedEnemy = other.gameObject;
-            Instantiate(sniperUI);
+            //GameObject instantiatedUI = Instantiate(sniperUI);
+            instantiatedUI = Instantiate(sniperUI);
+            //Instantiate(sniperUI);
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Destroy(instantiatedUI);
     }
 
     public void ShootTarget()

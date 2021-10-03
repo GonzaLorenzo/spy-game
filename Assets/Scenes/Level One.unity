@@ -349,7 +349,7 @@ MeshCollider:
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
-  m_Mesh: {fileID: 1048654493}
+  m_Mesh: {fileID: 1117098061}
 --- !u!114 &420677791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,7 +618,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420677789}
-  m_Mesh: {fileID: 1048654493}
+  m_Mesh: {fileID: 1117098061}
 --- !u!4 &420677794
 Transform:
   m_ObjectHideFlags: 0
@@ -1288,13 +1288,19 @@ MonoBehaviour:
   lookAtTarget: {fileID: 1081248060}
   lookAtOffset: {x: 0, y: 0, z: 0}
   followSpeed: 3
---- !u!43 &1048654493
+--- !u!4 &1081248060 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8912384379778666559, guid: f0df36a3b29ab96429b3a9b655c2e21f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2439212090671753196}
+  m_PrefabAsset: {fileID: 0}
+--- !u!43 &1117098061
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15650
+  m_Name: pb_Mesh15638
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1451,12 +1457,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!4 &1081248060 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8912384379778666559, guid: f0df36a3b29ab96429b3a9b655c2e21f,
-    type: 3}
-  m_PrefabInstance: {fileID: 2439212090671753196}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1210301671 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8126161640241807146, guid: b715f8b72096fd44bbfa52c8685a75d8,
