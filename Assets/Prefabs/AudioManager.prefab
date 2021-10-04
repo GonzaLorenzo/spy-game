@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 
+  - name: TargetShot
     clip: {fileID: 0}
     volume: 0
     pitch: 0
