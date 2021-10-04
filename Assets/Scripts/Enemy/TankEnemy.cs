@@ -6,19 +6,19 @@ public class TankEnemy : Enemy
 {
     private Animator _myAnimator;
 
+    private void Start()
+    {
+        _myAnimator = GetComponent<Animator>();
+    }
+
     public override void AnimMove()
     {
-        throw new System.NotImplementedException();
+        _myAnimator.SetBool("IsMoving", true);
     }
 
     public override void AnimStay()
     {
-        throw new System.NotImplementedException();
-    }
-
-    private void Start()
-    {
-        _myAnimator = GetComponent<Animator>();
+        _myAnimator.SetBool("IsMoving", false);
     }
 
     private void Update()
