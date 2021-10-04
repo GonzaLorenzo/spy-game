@@ -9,7 +9,7 @@ public abstract class Enemy : MonoBehaviour
     private int _currentWaypoint = 0;
     protected bool canMove = true;
     private bool canResume = true;
-    private Animator _myAnimator;
+    //private Animator _myAnimator;
 
     public void Patrol()
     {
