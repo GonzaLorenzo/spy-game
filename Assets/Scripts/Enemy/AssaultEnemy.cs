@@ -25,11 +25,21 @@ public class AssaultEnemy : Enemy, IShootable
         canMove = false;
         _myCollider.enabled = !_myCollider.enabled;
 
-        //Destroy(this, timeToDestroy); Mejor que se queden
+        //Destroy(this, timeToDestroy); || Mejor que se queden
 
         //En su momento también deshabilitar el campo de visión.
         
         //Animator de muerte
         //Dejar de Patrullar y capaz instanciar particulas de sangre
+    }
+
+    public override void AnimMove()
+    {
+        _myAnimator.SetBool("IsMoving", true);
+    }
+
+    public override void AnimStay()
+    {
+        _myAnimator.SetBool("IsMoving", false);
     }
 }

@@ -9,7 +9,7 @@ public abstract class Enemy : MonoBehaviour
     private int _currentWaypoint = 0;
     protected bool canMove = true;
     private bool canResume = true;
-    //private Animator _myAnimator;
+    private Animator _myAnimator;
 
     public void Patrol()
     {
@@ -17,6 +17,7 @@ public abstract class Enemy : MonoBehaviour
         {
             if (canResume)
             {
+                AnimMove();
                 //_myAnimator.SetBool("IsMoving", true);
                 Vector3 dir = waypoints[_currentWaypoint].position - transform.position;
                 transform.forward = dir;
@@ -24,6 +25,7 @@ public abstract class Enemy : MonoBehaviour
 
                 if (dir.magnitude < 0.1f)
                 {
+                    AnimStay();
                     //_myAnimator.SetBool("IsMoving", false);
                     AwaitInPlace(2f);
                     _currentWaypoint++;
@@ -45,8 +47,12 @@ public abstract class Enemy : MonoBehaviour
         //SetSoldadoState();
         yield return new WaitForSeconds(time);
         canResume = true;
+        AnimMove();
         //_myAnimator.SetBool("IsMoving", true);
         //SoldadoState = 2f;
         //SetSoldadoState();
     }
+
+    public abstract void AnimMove();
+    public abstract void AnimStay();
 }
