@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SniperUIFollowEnemy : MonoBehaviour
 {
+    [SerializeField]
+    AudioManager audioManager;
     //public SniperAgro sniperAgro;
     public GameObject sniperAgro;
     Vector3 sniperUIOffset = new Vector3(0.0f, 0.9f, 0.0f);
@@ -30,6 +32,7 @@ public class SniperUIFollowEnemy : MonoBehaviour
     private void ActualShot()
     {
         sniperAgro.GetComponent<SniperAgro>().selectedEnemy.GetComponent<IShootable>().Shoot();
+        audioManager.Play("TargetShot");
         sniperAgro.GetComponent<SniperAgro>().Enemies.Remove(sniperAgro.GetComponent<SniperAgro>().selectedEnemy);
         //sniperAgro.GetComponent<SniperAgro>().UpdateTarget(); Complicado de hacer aca viste porque se destruye.
         Destroy(this.gameObject);
@@ -38,8 +41,7 @@ public class SniperUIFollowEnemy : MonoBehaviour
     }
     
     private void ReferenceUpdate()
-    {
-        
+    {        
         sniperAgro.GetComponent<SniperAgro>().UpdateTarget();
         Debug.Log("Parte1");
     }

@@ -9,6 +9,7 @@ public class SniperAgro : MonoBehaviour
 
     //other.GetComponent<IShootable>().Shoot();
 
+    
     public GameObject selectedEnemy;
     [SerializeField]
     private GameObject sniperUI;
