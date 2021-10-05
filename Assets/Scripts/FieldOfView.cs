@@ -8,12 +8,14 @@ public class FieldOfView : MonoBehaviour
     {
         Mesh mesh = new Mesh();
 
+        LayerMask carlos;
+
         float fov = 60f;
         Vector3 origin = Vector3.zero;
         int rayCount = 50;
         float angle = 0f;
         float angleIncrease = fov / rayCount;
-        float viewDistance = 50f;
+        float viewDistance = 5f;
 
         Vector3[] vertices = new Vector3[rayCount + 2];
         Vector2[] uv = new Vector2[vertices.Length];
@@ -26,7 +28,34 @@ public class FieldOfView : MonoBehaviour
 
         for(int i = 0; i <= rayCount; i++)
         {
+            
+
             Vector3 vertex = origin + GetVectorFromAngle(angle) * viewDistance;
+
+            Ray enemyRay = new Ray(origin, GetVectorFromAngle(angle));
+            RaycastHit hit;
+            Physics.Raycast(enemyRay, out hit, viewDistance);
+            
+            if(hit.collider == null)
+            {
+                vertex = origin + GetVectorFromAngle(angle) * viewDistance;
+            }
+            else
+            {
+                vertex = hit.point;
+            }
+
+            
+            
+            //if(raycastHit.)
+            //{
+                //vertex = origin + GetVectorFromAngle(angle) * viewDistance;
+            //}
+            //else
+            //{
+                //vertex = raycast.point;
+            //}
+
             vertices[vertexIndex] = vertex;
 
             if (i > 0)
