@@ -10,7 +10,7 @@ public class FieldOfView : MonoBehaviour
 
         float fov = 60f;
         Vector3 origin = Vector3.zero;
-        int rayCount = 2;
+        int rayCount = 50;
         float angle = 0f;
         float angleIncrease = fov / rayCount;
         float viewDistance = 50f;
@@ -55,6 +55,6 @@ public class FieldOfView : MonoBehaviour
     public static Vector3 GetVectorFromAngle(float angle)
     {
         float angleRad = angle * (Mathf.PI / 180f);
-        return new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad));
+        return new Vector3(Mathf.Cos(angleRad),0, Mathf.Sin(angleRad));
     }
 }
