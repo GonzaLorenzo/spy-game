@@ -1,9 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-    /// <summary>
-    /// Generates and updates the vision cone displayed
-    /// </summary>
 
     public class FieldOfView : MonoBehaviour
     {
@@ -12,10 +9,7 @@ using UnityEngine;
         public float vision_range = 5f;
         public float vision_near_range = 3f;
         public LayerMask obstacle_mask = ~(0);
-        public bool show_two_levels = false;
-
         public int precision = 60;
-
         private float timer = 0f;
         private float refresh_rate = 0f;
 
@@ -23,7 +17,7 @@ using UnityEngine;
         {
             mesh = new Mesh();
             GetComponent<MeshFilter>().mesh = mesh;
-            //InitMesh(mesh);
+            InitMesh();
         }
 
         private void InitMesh()//MeshFilter. mesh)
@@ -49,12 +43,9 @@ using UnityEngine;
 
                 if (tri_index > 0)
                 {
-
                     triangles.Add(0);
                     triangles.Add(tri_index + 1);
                     triangles.Add(tri_index);
-
-
                 }
             }
 
@@ -64,8 +55,6 @@ using UnityEngine;
             mesh.uv = uv.ToArray();
         }
 
-    //private void Update()
-    //{
     //timer += Time.deltaTime;
 
     //transform.position = target.eye.transform.position;
@@ -76,8 +65,6 @@ using UnityEngine;
     //    timer = 0f;
 
     //    float range = vision_range;
-    //    if (show_two_levels)
-    //        range = vision_near_range;
     //
     //    UpdateMainLevel(mesh, range);
     //}
@@ -85,13 +72,8 @@ using UnityEngine;
 
         private void Update()
         {
-
             //private void UpdateMainLevel(MeshFilter mesh, float range)
             //{
-
-
-
-
             List<Vector3> vertices = new List<Vector3>();
             vertices.Add(new Vector3(0f, 0f, 0f));
 
