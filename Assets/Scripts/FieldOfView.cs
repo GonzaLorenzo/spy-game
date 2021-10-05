@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class FieldOfView : MonoBehaviour
 {
+    private Mesh mesh;
+
     private void Start()
     {
-        Mesh mesh = new Mesh();
+        mesh = new Mesh();
+        GetComponent<MeshFilter>().mesh = mesh;
+    }
 
-        LayerMask carlos;
-
+    private void Update()
+    {
         float fov = 60f;
         Vector3 origin = Vector3.zero;
         int rayCount = 50;
@@ -17,7 +21,7 @@ public class FieldOfView : MonoBehaviour
         float angleIncrease = fov / rayCount;
         float viewDistance = 5f;
 
-        Vector3[] vertices = new Vector3[rayCount + 2];
+        Vector3[] vertices = new Vector3[rayCount + 1 + 1];
         Vector2[] uv = new Vector2[vertices.Length];
         int[] triangles = new int[rayCount * 3];
 
@@ -26,35 +30,23 @@ public class FieldOfView : MonoBehaviour
         int vertexIndex = 1;
         int triangleIndex = 0;
 
-        for(int i = 0; i <= rayCount; i++)
+        for (int i = 0; i <= rayCount; i++)
         {
-            
-
-            Vector3 vertex = origin + GetVectorFromAngle(angle) * viewDistance;
+            Vector3 vertex; //= origin + GetVectorFromAngle(angle) * viewDistance;
 
             Ray enemyRay = new Ray(origin, GetVectorFromAngle(angle));
             RaycastHit hit;
             Physics.Raycast(enemyRay, out hit, viewDistance);
-            
-            if(hit.collider == null)
+
+            if (hit.collider == null)
             {
                 vertex = origin + GetVectorFromAngle(angle) * viewDistance;
             }
             else
             {
-                vertex = hit.point;
+                Debug.Log("Hitting: " + hit.point);
+                vertex = GetVectorFromAngle(angle).normalized * hit.distance;
             }
-
-            
-            
-            //if(raycastHit.)
-            //{
-                //vertex = origin + GetVectorFromAngle(angle) * viewDistance;
-            //}
-            //else
-            //{
-                //vertex = raycast.point;
-            //}
 
             vertices[vertexIndex] = vertex;
 
@@ -75,10 +67,6 @@ public class FieldOfView : MonoBehaviour
         mesh.vertices = vertices;
         mesh.uv = uv;
         mesh.triangles = triangles;
-
-        GetComponent<MeshFilter>().mesh = mesh;
-
-        
     }
 
     public static Vector3 GetVectorFromAngle(float angle)

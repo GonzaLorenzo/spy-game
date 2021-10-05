@@ -2187,10 +2187,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1516519978}
-  - component: {fileID: 1516519977}
   - component: {fileID: 1516519976}
   - component: {fileID: 1516519975}
   - component: {fileID: 1516519974}
+  - component: {fileID: 1516519977}
   m_Layer: 0
   m_Name: FieldOfView
   m_TagString: Untagged
@@ -2267,9 +2267,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1516519973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e7dde479b8f8d64bb17409e6d433d50, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a53a3b2b47457c40932203628285301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vision_angle: 30
+  vision_range: 5
+  vision_near_range: 3
+  obstacle_mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  show_two_levels: 1
+  precision: 60
 --- !u!4 &1516519978
 Transform:
   m_ObjectHideFlags: 0
@@ -2278,7 +2286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516519973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.55, y: 1.0055795, z: 5.027973}
+  m_LocalPosition: {x: -2.55, y: 1.29, z: 5.027973}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
