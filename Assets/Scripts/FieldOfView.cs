@@ -7,7 +7,6 @@ using UnityEngine;
         private Mesh mesh;
         public float vision_angle = 30f;
         public float vision_range = 5f;
-        public float vision_near_range = 3f;
         public LayerMask obstacle_mask = ~(0);
         public int precision = 60;
         private float timer = 0f;
@@ -24,7 +23,7 @@ using UnityEngine;
         {
             List<Vector3> vertices = new List<Vector3>();
             List<int> triangles = new List<int>();
-            List<Vector3> normals = new List<Vector3>();
+            //List<Vector3> normals = new List<Vector3>();
             List<Vector2> uv = new List<Vector2>();
 
             int minmax = Mathf.RoundToInt(vision_angle / 2f);
@@ -34,11 +33,11 @@ using UnityEngine;
 
             for (float i = -minmax; i <= minmax; i += step_jump)
             {
-                float angle = (float)(i + 90f) * Mathf.Deg2Rad;
+                float angle = (float)(i + 180f) * Mathf.Deg2Rad;
                 Vector3 dir = new Vector3(Mathf.Cos(angle) * vision_range, 0f, Mathf.Sin(angle) * vision_range);
 
                 vertices.Add(dir);
-                normals.Add(Vector2.up);
+                //normals.Add(Vector2.up);
                 uv.Add(Vector2.zero);
 
                 if (tri_index > 0)
@@ -51,7 +50,7 @@ using UnityEngine;
 
             mesh.vertices = vertices.ToArray();
             mesh.triangles = triangles.ToArray();
-            mesh.normals = normals.ToArray();
+            //mesh.normals = normals.ToArray();
             mesh.uv = uv.ToArray();
         }
 
