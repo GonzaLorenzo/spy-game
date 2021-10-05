@@ -26,12 +26,12 @@ using UnityEngine;
             //List<Vector3> normals = new List<Vector3>();
             List<Vector2> uv = new List<Vector2>();
 
-            int minmax = Mathf.RoundToInt(vision_angle / 2f);
+            //int minmax = Mathf.RoundToInt(vision_angle / 2f);
 
             int tri_index = 0;
-            float step_jump = Mathf.Clamp(vision_angle / precision, 0.01f, minmax);
+            //float step_jump = Mathf.Clamp(vision_angle / precision, 0.01f, minmax);
 
-            for (float i = -minmax; i <= minmax; i += step_jump)
+            for (float i = 0; i <= precision; i ++)
             {
                 float angle = (float)(i + 180f) * Mathf.Deg2Rad;
                 Vector3 dir = new Vector3(Mathf.Cos(angle) * vision_range, 0f, Mathf.Sin(angle) * vision_range);
@@ -52,6 +52,7 @@ using UnityEngine;
             mesh.triangles = triangles.ToArray();
             //mesh.normals = normals.ToArray();
             mesh.uv = uv.ToArray();
+
         }
 
     //timer += Time.deltaTime;
