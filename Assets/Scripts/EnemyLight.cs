@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class EnemyLight : MonoBehaviour
 {
-    public GameObject thisEnemy;
+    Enemy thisEnemy;
 
     public void Awake()
     {
-        thisEnemy = transform.parent.gameObject;
+        
     }
 
     private void Update()
     {
-        Debug.Log(thisEnemy);
+
     }
 
     private void OnTriggerEnter(Collider other)
