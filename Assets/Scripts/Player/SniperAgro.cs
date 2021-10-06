@@ -40,11 +40,11 @@ public class SniperAgro : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
+    //private void Update()
+    //{
         //Debug.Log("Hay" + Enemies.Count);
         //Debug.Log("Es el " + currentEnemy);
-    }
+    //}
 
     private void OnTriggerExit(Collider other)
     {
