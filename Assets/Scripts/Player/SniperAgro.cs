@@ -49,8 +49,12 @@ public class SniperAgro : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         //Enemies.Remove(selectedEnemy);
-        Enemies.Remove(other.gameObject);
-        Destroy(instantiatedUI);
+        if (other.GetComponent<IShootable>() != null)
+        {
+            Enemies.Remove(other.gameObject);
+            Destroy(instantiatedUI);
+            //Debug.Log("Lo hizo el Agro");
+        }
     }
 
     public void ShootTarget()
