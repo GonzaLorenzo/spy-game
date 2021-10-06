@@ -15,7 +15,7 @@ public abstract class Enemy : MonoBehaviour
     {
         if (canMove)
         {
-            if (canResume)
+            if (canResume && waypoints.Count > 0)
             {
                 AnimMove();
                 //_myAnimator.SetBool("IsMoving", true);
@@ -32,6 +32,10 @@ public abstract class Enemy : MonoBehaviour
                     if (_currentWaypoint > waypoints.Count - 1)
                         _currentWaypoint = 0;
                 }
+            }
+            else
+            {
+                AnimStay();
             }
         }
     }
