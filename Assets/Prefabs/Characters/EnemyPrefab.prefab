@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2132257176}
   - component: {fileID: 2132257177}
-  - component: {fileID: 2132257178}
-  - component: {fileID: 2132257179}
   m_Layer: 10
   m_Name: EnemyLight
   m_TagString: Untagged
@@ -43,9 +41,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 0
-  m_Color: {r: 1, g: 0.04995054, b: 0, a: 1}
-  m_Intensity: 20.2
-  m_Range: 1059
+  m_Color: {r: 0.2784314, g: 0.007843138, b: 0, a: 1}
+  m_Intensity: 155.1
+  m_Range: 100
   m_SpotAngle: 57
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -93,32 +91,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!65 &2132257178
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2132257175}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 2}
-  m_Center: {x: 0, y: 0, z: 1.3}
---- !u!114 &2132257179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2132257175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed90030025f30e742953eab8dfa9b6f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisEnemy: {fileID: 0}
 --- !u!1 &3909884177439400967
 GameObject:
   m_ObjectHideFlags: 0
