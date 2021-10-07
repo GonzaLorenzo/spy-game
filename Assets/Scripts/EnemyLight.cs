@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyLight : MonoBehaviour
 {
     Enemy thisEnemy;
+    public Slider staminaBar;
 
     public void Awake()
     {
