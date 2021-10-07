@@ -38,6 +38,10 @@ public abstract class Enemy : MonoBehaviour
                 AnimStay();
             }
         }
+        else
+        {
+            AnimStay();
+        }
     }
 
     private void AwaitInPlace(float time)

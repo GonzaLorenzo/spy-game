@@ -45,6 +45,7 @@ public class AssaultEnemy : Enemy, IShootable
 
     public override void DetectPlayer()
     {
-        
+        canMove = false;
+        Debug.Log("Llegué a Assault");
     }
 }
