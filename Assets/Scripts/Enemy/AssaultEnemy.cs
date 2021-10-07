@@ -7,6 +7,8 @@ public class AssaultEnemy : Enemy, IShootable
     private Animator _myAnimator;
     private float timeToDestroy = 3f;
     private CapsuleCollider _myCollider;
+    [SerializeField]
+    private GameObject _enemyLight;
 
     private void Start()
     {
@@ -34,7 +36,7 @@ public class AssaultEnemy : Enemy, IShootable
         _myAnimator.SetTrigger("IsDead");
         canMove = false;
         _myCollider.enabled = !_myCollider.enabled;
-
+        Destroy(_enemyLight);
         //Destroy(this, timeToDestroy); || Mejor que se queden
 
         //En su momento también deshabilitar el campo de visión.
