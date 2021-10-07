@@ -61,6 +61,11 @@ public abstract class Enemy : MonoBehaviour
         //SetSoldadoState();
     }
 
+    public void GetDistracted()
+    {
+
+    }
+
     public abstract void AnimMove();
     public abstract void AnimStay();
     public abstract void DetectPlayer();
