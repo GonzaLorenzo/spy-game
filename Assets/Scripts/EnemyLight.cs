@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemyLight : MonoBehaviour
 {
     Enemy thisEnemy;
-    public Slider staminaBar;
+    public Slider detectionBar;
 
     public void Awake()
     {
@@ -28,7 +28,7 @@ public class EnemyLight : MonoBehaviour
         
     }
 
-    public void DetectPlayer()
+    public void SendDetectPlayer()
     {
 
     }

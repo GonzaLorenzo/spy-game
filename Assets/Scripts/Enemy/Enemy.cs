@@ -59,4 +59,5 @@ public abstract class Enemy : MonoBehaviour
 
     public abstract void AnimMove();
     public abstract void AnimStay();
+    public abstract void DetectPlayer();
 }

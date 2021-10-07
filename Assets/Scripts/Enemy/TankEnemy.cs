@@ -25,4 +25,9 @@ public class TankEnemy : Enemy
     {
         Patrol();
     }
+
+    public override void DetectPlayer()
+    {
+        
+    }
 }

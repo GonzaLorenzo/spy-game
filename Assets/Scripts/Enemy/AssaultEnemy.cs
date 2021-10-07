@@ -42,4 +42,9 @@ public class AssaultEnemy : Enemy, IShootable
         //Animator de muerte
         //Dejar de Patrullar y capaz instanciar particulas de sangre
     }
+
+    public override void DetectPlayer()
+    {
+        
+    }
 }

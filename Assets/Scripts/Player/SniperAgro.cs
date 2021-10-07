@@ -21,7 +21,6 @@ public class SniperAgro : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-    
         if (other.GetComponent<IShootable>() != null) //&& instantiatedUI == null)
         {
             if(!Enemies.Contains(other.gameObject))
@@ -52,8 +51,11 @@ public class SniperAgro : MonoBehaviour
         if (other.GetComponent<IShootable>() != null)
         {
             Enemies.Remove(other.gameObject);
-            Destroy(instantiatedUI);
-            //Debug.Log("Lo hizo el Agro");
+            if(Enemies.Count <= 0)
+            {
+                Destroy(instantiatedUI);
+                //Debug.Log("Lo hizo el Agro");
+            }
         }
     }
 
@@ -79,7 +81,7 @@ public class SniperAgro : MonoBehaviour
         }
     }
 
-    public void UpdateTarget() //Donde pongo esto?
+    public void UpdateTarget() //Donde pongo esto? - Ya encontré donde :)
     {
         if(Enemies.Count > 0) //&& instantiatedUI == null)
         {
