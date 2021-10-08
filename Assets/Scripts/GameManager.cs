@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private GameObject WinUI;
+    [SerializeField]
+    private GameObject LoseUI;
+
+    private void Start()
     {
-        
+        Instantiate(LoseUI);
+        //EventManager.SubscribeToEvent(EventManager.EventsType.Event_PlayerLost, PlayerLost);
     }
 
-    // Update is called once per frame
-    void Update()
+    void PlayerLost(params object[] parameterContainer)
     {
-        
+        Debug.Log("Perdiste :(");
     }
 }

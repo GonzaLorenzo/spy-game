@@ -49,5 +49,6 @@ public class AssaultEnemy : Enemy, IShootable
     {
         canMove = false;
         Debug.Log("Llegué a Assault");
+        EventManager.ExecuteEvent(EventManager.EventsType.Event_PlayerLost);
     }
 }
