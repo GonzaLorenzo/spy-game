@@ -6,7 +6,7 @@ public class Distraction : MonoBehaviour, IShootable
 {
     public GameObject selectedEnemy;
     [SerializeField]
-    public List<GameObject> Enemies;
+    public List<GameObject> Distractables;
     private int currentEnemy = 0;
     private Transform myTransform;
 
@@ -17,14 +17,15 @@ public class Distraction : MonoBehaviour, IShootable
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Entró este conchesumadre" + other);
         if (other.GetComponent<IShootable>() != null)
         {
-            if (!Enemies.Contains(other.gameObject))
+            if (!Distractables.Contains(other.gameObject))
             {
-                Enemies.Add(other.gameObject);
+                Distractables.Add(other.gameObject);
             }
 
-            selectedEnemy = Enemies[currentEnemy];
+            selectedEnemy = Distractables[currentEnemy];
         }
     }
 
@@ -32,13 +33,13 @@ public class Distraction : MonoBehaviour, IShootable
     {
         if (other.GetComponent<IShootable>() != null)
         {
-            Enemies.Remove(other.gameObject);
+            Distractables.Remove(other.gameObject);
         }
     }
 
     public void Shoot()
     {
-        if(selectedEnemy != null)
+        //if(selectedEnemy != null)
         selectedEnemy.GetComponent<Enemy>().GetDistracted(myTransform);
     }
 
