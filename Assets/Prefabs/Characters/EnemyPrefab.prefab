@@ -1561,6 +1561,7 @@ MonoBehaviour:
   - {fileID: 0}
   speed: 2
   _enemyLight: {fileID: 2132257175}
+  _playerDetector: {fileID: 1504681669}
   canvasManager: {fileID: 0}
 --- !u!136 &1406333423
 CapsuleCollider:

@@ -52,4 +52,11 @@ public class EnemyLight : MonoBehaviour
         thisEnemy.DetectPlayer();
         Debug.Log("Solo una vez");
     }
+
+    public void EnemyIsDead()
+    {
+        _myCollider.enabled = !_myCollider.enabled;
+        currentDetection = 0f;
+        detectionBar.value = currentDetection;
+    }
 }

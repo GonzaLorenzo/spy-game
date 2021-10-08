@@ -8,9 +8,9 @@ public class AssaultEnemy : Enemy, IShootable, IObservable
     private float timeToDestroy = 3f;
     private CapsuleCollider _myCollider;
     [SerializeField]
-    private GameObject _questionMark;
-    [SerializeField]
     private GameObject _enemyLight;
+    [SerializeField]
+    private GameObject _playerDetector;
     [SerializeField]
     private CanvasManager canvasManager;
 
@@ -45,6 +45,7 @@ public class AssaultEnemy : Enemy, IShootable, IObservable
         canMove = false;
         _myCollider.enabled = !_myCollider.enabled;
         Destroy(_enemyLight);
+        _playerDetector.GetComponent<EnemyLight>().EnemyIsDead();
         //Destroy(this, timeToDestroy); || Mejor que se queden
 
         //Animator de muerte
