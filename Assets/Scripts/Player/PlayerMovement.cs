@@ -22,21 +22,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (virtualStick.getInputVector.sqrMagnitude > 0f)
-        {
-            _myAnimator.SetBool("IsMoving", true);
+            if (virtualStick.getInputVector.sqrMagnitude > 0f)
+            {
+                _myAnimator.SetBool("IsMoving", true);
 
-            auxInputVector.x = virtualStick.getInputVector.x;
-            auxInputVector.z = virtualStick.getInputVector.y;
+                auxInputVector.x = virtualStick.getInputVector.x;
+                auxInputVector.z = virtualStick.getInputVector.y;
 
-            transform.LookAt(transform.position + auxInputVector);
-            _myRigidbody.MovePosition(_myRigidbody.position + auxInputVector * _speed * Time.deltaTime);
-            
-        }
-        else
-        {
-            _myAnimator.SetBool("IsMoving", false);
-        }
+                transform.LookAt(transform.position + auxInputVector);
+                _myRigidbody.MovePosition(_myRigidbody.position + auxInputVector * _speed * Time.deltaTime);
+
+            }
+            else
+            {
+                _myAnimator.SetBool("IsMoving", false);
+            }
     }
 
 

@@ -2,41 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankEnemy : Enemy, IObservable
+public class FinishLine : MonoBehaviour, IObservable
 {
-    private Animator _myAnimator;
     [SerializeField]
     private CanvasManager canvasManager;
 
     IObserver _myObserver;
 
-    private void Start()
+    private void Awake()
     {
-        _myAnimator = GetComponent<Animator>();
         Subscribe(canvasManager);
     }
 
-    public override void AnimMove()
+    private void OnTriggerEnter(Collider other)
     {
-        _myAnimator.SetBool("IsMoving", true);
-    }
-
-    public override void AnimStay()
-    {
-        _myAnimator.SetBool("IsMoving", false);
-    }
-
-    private void Update()
-    {
-        Patrol();
-    }
-
-    public override void DetectPlayer()
-    {
-        canMove = false;
-        Debug.Log("Llegué a Tank");
-
-        NotifyToObservers("PlayerLost");
+        NotifyToObservers("PlayerWon");
     }
 
     public void NotifyToObservers(string action)

@@ -2,18 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AssaultEnemy : Enemy, IShootable
+public class AssaultEnemy : Enemy, IShootable, IObservable
 {
     private Animator _myAnimator;
     private float timeToDestroy = 3f;
     private CapsuleCollider _myCollider;
     [SerializeField]
+    private GameObject _questionMark;
+    [SerializeField]
     private GameObject _enemyLight;
+    [SerializeField]
+    private CanvasManager canvasManager;
+
+
+    IObserver _myObserver;
 
     private void Start()
     {
         _myAnimator = GetComponent<Animator>();
-        _myCollider = GetComponent<CapsuleCollider>();       
+        _myCollider = GetComponent<CapsuleCollider>();
+        Subscribe(canvasManager);
     }
 
     private void Update()
@@ -39,8 +47,6 @@ public class AssaultEnemy : Enemy, IShootable
         Destroy(_enemyLight);
         //Destroy(this, timeToDestroy); || Mejor que se queden
 
-        //En su momento también deshabilitar el campo de visión.
-
         //Animator de muerte
         //Dejar de Patrullar y capaz instanciar particulas de sangre
     }
@@ -49,6 +55,28 @@ public class AssaultEnemy : Enemy, IShootable
     {
         canMove = false;
         Debug.Log("Llegué a Assault");
-        EventManager.ExecuteEvent(EventManager.EventsType.Event_PlayerLost);
+
+        NotifyToObservers("PlayerLost");
+    }
+
+    public void NotifyToObservers(string action)
+    {
+            _myObserver.Notify(action);
+    }
+
+    public void Subscribe(IObserver obs)
+    {
+        if (_myObserver == null)
+        {
+            _myObserver = obs;
+        }
+    }
+
+    public void Unsubscribe(IObserver obs)
+    {
+        if (_myObserver !=  null)
+        {
+            _myObserver = null;
+        }
     }
 }
