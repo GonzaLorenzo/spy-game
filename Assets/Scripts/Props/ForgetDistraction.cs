@@ -10,11 +10,11 @@ public class ForgetDistraction : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         enemy = other;
-        StartCoroutine(LockMovementFor(2));
+        StartCoroutine(DistractFor(2));
     }
 
 
-    private IEnumerator LockMovementFor(float time)
+    private IEnumerator DistractFor(float time)
     {
         yield return new WaitForSeconds(time);
         enemy.GetComponent<Enemy>().waypoints.RemoveAt(enemy.GetComponent<Enemy>().waypoints.Count - 1);
