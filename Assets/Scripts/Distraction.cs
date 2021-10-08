@@ -4,21 +4,42 @@ using UnityEngine;
 
 public class Distraction : MonoBehaviour, IShootable
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject selectedEnemy;
+    [SerializeField]
+    public List<GameObject> Enemies;
+    private int currentEnemy = 0;
+    private Transform myTransform;
+
+    private void Awake()
     {
-        
+        myTransform = transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.GetComponent<IShootable>() != null)
+        {
+            if (!Enemies.Contains(other.gameObject))
+            {
+                Enemies.Add(other.gameObject);
+            }
+
+            selectedEnemy = Enemies[currentEnemy];
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<IShootable>() != null)
+        {
+            Enemies.Remove(other.gameObject);
+        }
     }
 
     public void Shoot()
     {
-
+        if(selectedEnemy != null)
+        selectedEnemy.GetComponent<Enemy>().GetDistracted(myTransform);
     }
 
 }

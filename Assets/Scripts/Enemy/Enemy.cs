@@ -61,9 +61,10 @@ public abstract class Enemy : MonoBehaviour
         //SetSoldadoState();
     }
 
-    public void GetDistracted()
+    public void GetDistracted(Transform dis)
     {
-
+        waypoints.Add(dis);
+        _currentWaypoint++;
     }
 
     public abstract void AnimMove();
