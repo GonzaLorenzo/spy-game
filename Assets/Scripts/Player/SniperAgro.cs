@@ -30,6 +30,12 @@ public class SniperAgro : MonoBehaviour
             spawnPos = other.transform.position;
             //selectedEnemy = other.gameObject;
             selectedEnemy = Enemies[currentEnemy];
+
+            if(selectedEnemy.GetComponent<Distraction>() != null)
+            {
+                //MostrarArgo(); VER COMO HACER EN TRIGGEREXIT PARA SACAR EL AGRO; O NO SACARLO NO SE
+            }
+
             //GameObject instantiatedUI = Instantiate(sniperUI);
             if (instantiatedUI == null)
             {

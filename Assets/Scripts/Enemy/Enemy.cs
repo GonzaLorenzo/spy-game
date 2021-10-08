@@ -51,20 +51,16 @@ public abstract class Enemy : MonoBehaviour
     private IEnumerator LockMovementFor(float time)
     {
         canResume = false;
-        //SoldadoState = 1f;
-        //SetSoldadoState();
         yield return new WaitForSeconds(time);
         canResume = true;
         AnimMove();
         //_myAnimator.SetBool("IsMoving", true);
-        //SoldadoState = 2f;
-        //SetSoldadoState();
     }
 
     public void GetDistracted(Transform dis)
     {
         waypoints.Add(dis);
-        _currentWaypoint++;
+        _currentWaypoint = waypoints.Count -1;
     }
 
     public abstract void AnimMove();
