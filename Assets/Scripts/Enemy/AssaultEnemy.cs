@@ -13,7 +13,7 @@ public class AssaultEnemy : Enemy, IShootable
     private void Start()
     {
         _myAnimator = GetComponent<Animator>();
-        _myCollider = GetComponent<CapsuleCollider>();
+        _myCollider = GetComponent<CapsuleCollider>();       
     }
 
     private void Update()
