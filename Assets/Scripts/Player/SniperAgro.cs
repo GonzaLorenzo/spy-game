@@ -33,7 +33,7 @@ public class SniperAgro : MonoBehaviour
 
             if(selectedEnemy.GetComponent<Distraction>() != null)
             {
-                //MostrarArgo(); VER COMO HACER EN TRIGGEREXIT PARA SACAR EL AGRO; O NO SACARLO NO SE
+                //MostrarAgro(); 
             }
 
             //GameObject instantiatedUI = Instantiate(sniperUI);
