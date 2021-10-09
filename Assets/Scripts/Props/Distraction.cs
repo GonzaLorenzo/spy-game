@@ -17,7 +17,7 @@ public class Distraction : MonoBehaviour, IShootable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<IShootable>() != null)
+        if (other.GetComponent<Enemy>() != null)
         {
             if (!Enemies.Contains(other.gameObject))
             {
@@ -29,7 +29,7 @@ public class Distraction : MonoBehaviour, IShootable
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<IShootable>() != null)
+        if (other.GetComponent<Enemy>() != null)
         {
             Enemies.Remove(other.gameObject);
             selectedEnemy = null;
