@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CanvasManager : MonoBehaviour, IObserver
 {
+    public GameObject audioManager;
     [SerializeField]
     private GameObject WinUI;
     [SerializeField]
@@ -13,7 +14,7 @@ public class CanvasManager : MonoBehaviour, IObserver
 
     private void Start()
     {
-        //EventManager.SubscribeToEvent(EventManager.EventsType.Event_PlayerLost, PlayerLost);
+        audioManager.GetComponent<AudioManager>().Play("GoodLuck");
     }
 
     void PlayerLost()
@@ -27,6 +28,7 @@ public class CanvasManager : MonoBehaviour, IObserver
     void PlayerWon()
     {
         Debug.Log("Ganaste :D");
+        audioManager.GetComponent<AudioManager>().Play("GoodJob");
         WinUI.SetActive(true);
         //Voz GoodJob
         //Anim UI

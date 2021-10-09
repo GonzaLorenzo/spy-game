@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Distraction : MonoBehaviour, IShootable
+public class Distraction : MonoBehaviour
 {
     public GameObject selectedEnemy;
     [SerializeField]
