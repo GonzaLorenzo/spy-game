@@ -1413,6 +1413,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 2132257177, guid: b1c8d945e45c62342a66e5ec404b8d18, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2524434507777263337, guid: b1c8d945e45c62342a66e5ec404b8d18,
         type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -2323,6 +2327,10 @@ PrefabInstance:
     - target: {fileID: 363898971, guid: 2d17583595fbdde44851141c52121975, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420807695, guid: 2d17583595fbdde44851141c52121975, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 666542351, guid: 2d17583595fbdde44851141c52121975, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3959,6 +3967,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 2132257177, guid: b1c8d945e45c62342a66e5ec404b8d18, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2524434507777263337, guid: b1c8d945e45c62342a66e5ec404b8d18,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -4124,7 +4136,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34498
+  m_Name: pb_Mesh20740
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5699,6 +5711,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2141467009, guid: a45f6ea86db21ea45918916a640149f3, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141467009, guid: a45f6ea86db21ea45918916a640149f3, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8707189443373609935, guid: a45f6ea86db21ea45918916a640149f3,
         type: 3}
       propertyPath: m_Name
@@ -7122,6 +7142,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5089152388077072095, guid: e6c466d7e29742a4fa6aedd0ad6314e1,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089152388077072095, guid: e6c466d7e29742a4fa6aedd0ad6314e1,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c466d7e29742a4fa6aedd0ad6314e1, type: 3}
 --- !u!1 &1899839127
@@ -7449,10 +7479,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 720, y: 1280}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -8388,6 +8418,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048016604418448060, guid: f5a02bcaf9c986447b431cf0d7c0c906,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048016604418448060, guid: f5a02bcaf9c986447b431cf0d7c0c906,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a02bcaf9c986447b431cf0d7c0c906, type: 3}
