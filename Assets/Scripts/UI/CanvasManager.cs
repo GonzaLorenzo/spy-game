@@ -28,9 +28,8 @@ public class CanvasManager : MonoBehaviour, IObserver
     void PlayerWon()
     {
         Debug.Log("Ganaste :D");
-        audioManager.GetComponent<AudioManager>().Play("GoodJob");
         WinUI.SetActive(true);
-        //Voz GoodJob
+        audioManager.GetComponent<AudioManager>().Play("GoodJob");
         //Anim UI
     }
 
