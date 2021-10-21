@@ -5,11 +5,11 @@ using UnityEngine;
 public class ForgetDistraction : MonoBehaviour
 {
     //Una script solo para esto :(
-    private Collider enemy;
+    private GameObject enemy;
 
     private void OnTriggerEnter(Collider other)
     {
-        enemy = other;
+        enemy = other.gameObject;
         StartCoroutine(DistractFor(2));
     }
 
@@ -17,7 +17,8 @@ public class ForgetDistraction : MonoBehaviour
     private IEnumerator DistractFor(float time)
     {
         yield return new WaitForSeconds(time);
-        enemy.GetComponent<Enemy>().waypoints.RemoveAt(enemy.GetComponent<Enemy>().waypoints.Count - 1);
+        //enemy.GetComponent<Enemy>().waypoints.RemoveAt(enemy.GetComponent<Enemy>().waypoints.Count - 1); Usar referencia a Void del Enemy.
+        enemy.GetComponent<Enemy>().ForgetDistraction();
     }
     
 }

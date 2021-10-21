@@ -64,6 +64,11 @@ public abstract class Enemy : MonoBehaviour
         _currentWaypoint = waypoints.Count -1;
     }
 
+    public void ForgetDistraction()
+    {
+        waypoints.RemoveAt(waypoints.Count - 1);
+    }
+
     public abstract void AnimMove();
     public abstract void AnimStay();
     public abstract void DetectPlayer();
