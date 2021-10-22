@@ -37,7 +37,9 @@ public class SniperUIFollowEnemy : MonoBehaviour
         //audioManager.GetComponent<AudioManager>().Play("TargetShot");     
         sniperAgro.GetComponent<SniperAgro>().Enemies.Remove(sniperAgro.GetComponent<SniperAgro>().selectedEnemy);
         //sniperAgro.GetComponent<SniperAgro>().UpdateTarget(); Complicado de hacer aca viste porque se destruye.
-        Destroy(this.gameObject);
+
+        //Destroy(this.gameObject);
+        
         //Debug.Log("Lo hizo el gameobe");
         ReferenceUpdate();
         
