@@ -31,11 +31,6 @@ public class SniperAgro : MonoBehaviour
             //selectedEnemy = other.gameObject;
             selectedEnemy = Enemies[currentEnemy];
 
-            if(selectedEnemy.GetComponent<Distraction>() != null)
-            {
-                //MostrarAgro(); 
-            }
-
             //GameObject instantiatedUI = Instantiate(sniperUI);
             if (instantiatedUI == null)
             {
@@ -88,7 +83,6 @@ public class SniperAgro : MonoBehaviour
         {
             currentEnemy = 0;
             selectedEnemy = Enemies[currentEnemy];
-
         }
     }
 

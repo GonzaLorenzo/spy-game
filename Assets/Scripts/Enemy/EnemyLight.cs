@@ -27,7 +27,7 @@ public class EnemyLight : MonoBehaviour
        
         if (currentDetection < 100)
         {
-            currentDetection += 2f;
+            currentDetection += 2.4f;
             detectionBar.value = currentDetection;
             //Debug.Log("Te veo" + currentDetection);
         }

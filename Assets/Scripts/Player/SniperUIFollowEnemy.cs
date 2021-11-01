@@ -33,21 +33,24 @@ public class SniperUIFollowEnemy : MonoBehaviour
     private void ActualShot()
     {
         AudioManager.instance.Play("TargetShot");
+        
         sniperAgro.GetComponent<SniperAgro>().selectedEnemy.GetComponent<IShootable>().Shoot();
-        //audioManager.GetComponent<AudioManager>().Play("TargetShot");     
-        sniperAgro.GetComponent<SniperAgro>().Enemies.Remove(sniperAgro.GetComponent<SniperAgro>().selectedEnemy);
-        //sniperAgro.GetComponent<SniperAgro>().UpdateTarget(); Complicado de hacer aca viste porque se destruye.
 
-        //Destroy(this.gameObject);
-        
-        //Debug.Log("Lo hizo el gameobe");
-        ReferenceUpdate();
-        
+        sniperAgro.GetComponent<SniperAgro>().Enemies.Remove(sniperAgro.GetComponent<SniperAgro>().selectedEnemy);
+
+        Destroy(this.gameObject);
+
+        ReferenceUpdate();       
     }
     
     private void ReferenceUpdate()
     {        
         sniperAgro.GetComponent<SniperAgro>().UpdateTarget();
         Debug.Log("Parte1");
+    }
+
+    private void ReferenceSwitchTarget()
+    {        
+        sniperAgro.GetComponent<SniperAgro>().SwitchTarget();
     }
 }
