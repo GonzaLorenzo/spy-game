@@ -4,15 +4,47 @@ using UnityEngine;
 
 public class ScreenManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Stack<IScreen> _stack;
+
+    public string lastResult;
+
+    static public ScreenManager Instance;
+
+    void Awake()
     {
-        
+        Instance = this;
+
+        _stack = new Stack<IScreen>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public  void Pop()
     {
+        if(_stack.Count <= 1) return;
+
+        lastResult = _stack.Pop().Free();
+
+        if (_stack.Count > 0)
+        {
+            _stack.Peek().Activate();
+        }
+    }
+
+    public void Push(IScreen screen)
+    {
+        if (_stack.Count > 0)
+        {
+            _stack.Peek().Deactivate();
+        }
+
+        _stack.Push(screen);
         
+        screen.Activate();
+    }
+
+    public void Push(string resource)
+    {
+        var go = Instantiate(Resources.Load<GameObject>(resource));
+
+        Push(go.GetComponent<IScreen>());
     }
 }

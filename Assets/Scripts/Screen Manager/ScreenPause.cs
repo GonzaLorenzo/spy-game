@@ -22,11 +22,11 @@ public class ScreenPause : MonoBehaviour, IScreen
 
     public void BTN_Message()
     {
-        _result = "Message";
+        ScreenManager.Instance.Push("CanvasMessage");
     }
     public void BTN_Back()
     {
-        _result = "Back";
+        ScreenManager.Instance.Pop();
     }
     public void Activate()
     {

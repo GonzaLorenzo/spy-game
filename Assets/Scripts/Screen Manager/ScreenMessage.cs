@@ -20,7 +20,7 @@ public class ScreenMessage : MonoBehaviour, IScreen
 
     public void BTN_Back()
     {
-
+        ScreenManager.Instance.Pop();
     }
 
     public void Activate()
