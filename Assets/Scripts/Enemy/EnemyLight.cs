@@ -18,7 +18,7 @@ public class EnemyLight : MonoBehaviour
         detectionBar.value = currentDetection;
         detectionBar.maxValue = maxDetection;
         _myCollider = GetComponent<CapsuleCollider>();
-        thisEnemy = transform.root.GetComponent<Enemy>();
+        thisEnemy = transform.parent.GetComponent<Enemy>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -35,6 +35,7 @@ public class EnemyLight : MonoBehaviour
         {
             _myCollider.enabled = !_myCollider.enabled;
             SendDetectPlayer();
+            //_myCollider.enabled = !_myCollider.enabled;
         }
     }
 
@@ -50,7 +51,6 @@ public class EnemyLight : MonoBehaviour
     public void SendDetectPlayer()
     {
         thisEnemy.DetectPlayer();
-        Debug.Log("Solo una vez");
     }
 
     public void EnemyIsDead()

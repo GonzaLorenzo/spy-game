@@ -5,17 +5,20 @@ using UnityEngine;
 public class Config : MonoBehaviour
 {
     public Transform mainGame;
-    public Transform overlayGame;
 
     void Start()
     {
         ScreenManager.Instance.Push(new ScreenGO(mainGame));
     }
 
-    void Update()
-    {
-        
-    }
+    //void Update()
+    //{      
+        //if(Input.GetKeyDown(KeyCode.Space))
+        //{
+            //var screenWin = Instantiate(Resources.Load<ScreenWin>("WinCanvas"));
+            //ScreenManager.Instance.Push(screenWin);
+        //}
+    //}
 }
 
 

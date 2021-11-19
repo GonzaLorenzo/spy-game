@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-public class ScreenPause : MonoBehaviour, IScreen
+public class ScreenWin : MonoBehaviour, IScreen
 {
     Button[] _buttons;
-
-    string _result;
 
     private void Awake()
     {
@@ -19,10 +16,12 @@ public class ScreenPause : MonoBehaviour, IScreen
             button.interactable = false;
         }
     }
+
     public void BTN_Back()
     {
         ScreenManager.Instance.Pop();
     }
+
     public void Activate()
     {
         foreach(var button in _buttons)
@@ -42,6 +41,6 @@ public class ScreenPause : MonoBehaviour, IScreen
     public string Free()
     {
         Destroy(gameObject);
-        return _result;
+        return "WinScreen ded :c";
     }
 }

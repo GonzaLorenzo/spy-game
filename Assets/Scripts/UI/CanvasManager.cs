@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CanvasManager : MonoBehaviour, IObserver
 {
-    [SerializeField]
-    private GameObject WinUI;
-    [SerializeField]
-    private GameObject LoseUI;
+    //[SerializeField]
+    //private GameObject WinUI;
+    //[SerializeField]
+    //private GameObject LoseUI;
 
     List<IObserver> _allObservers = new List<IObserver>();
 
@@ -20,7 +20,11 @@ public class CanvasManager : MonoBehaviour, IObserver
     void PlayerLost()
     {
         Debug.Log("Perdiste :(");
-        LoseUI.SetActive(true);
+
+        var screenLose = Instantiate(Resources.Load<ScreenLose>("LoseCanvas"));
+        ScreenManager.Instance.Push(screenLose);
+
+        //LoseUI.SetActive(true);
         //Sonido alarma
         //Anim UI
     }
@@ -29,7 +33,11 @@ public class CanvasManager : MonoBehaviour, IObserver
     {
         AudioManager.instance.Play("GoodJob");
         Debug.Log("Ganaste :D");
-        WinUI.SetActive(true);
+
+        var screenWin = Instantiate(Resources.Load<ScreenWin>("WinCanvas"));
+        ScreenManager.Instance.Push(screenWin);
+
+        //WinUI.SetActive(true);
         //audioManager.GetComponent<AudioManager>().Play("GoodJob");       
         //Anim UI
     }

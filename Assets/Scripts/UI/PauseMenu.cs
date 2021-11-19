@@ -31,4 +31,10 @@ public class PauseMenu : MonoBehaviour
         }
         pausePanel.SetActive(isPaused);
     }
+
+    public void PauseGame()
+    {
+        var screenPause = Instantiate(Resources.Load<ScreenPause>("PauseCanvas"));
+        ScreenManager.Instance.Push(screenPause);
+    }
 }
