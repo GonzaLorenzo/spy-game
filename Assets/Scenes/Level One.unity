@@ -1091,6 +1091,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 2132257175, guid: b1c8d945e45c62342a66e5ec404b8d18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2132257177, guid: b1c8d945e45c62342a66e5ec404b8d18, type: 3}
       propertyPath: m_RenderMode
       value: 1
@@ -1110,6 +1114,11 @@ PrefabInstance:
       propertyPath: canvasManager
       value: 
       objectReference: {fileID: 1610086831}
+    - target: {fileID: 2524434507777263337, guid: b1c8d945e45c62342a66e5ec404b8d18,
+        type: 3}
+      propertyPath: _enemyLight
+      value: 
+      objectReference: {fileID: 1671462167}
     - target: {fileID: 5828538406719372700, guid: b1c8d945e45c62342a66e5ec404b8d18,
         type: 3}
       propertyPath: m_Name
@@ -2155,6 +2164,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 488996824}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &595813482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2019420257209943634, guid: b1c8d945e45c62342a66e5ec404b8d18,
+    type: 3}
+  m_PrefabInstance: {fileID: 1012111807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &617423526 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8126161640241807146, guid: b715f8b72096fd44bbfa52c8685a75d8,
@@ -3163,6 +3178,15 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2132257177, guid: b1c8d945e45c62342a66e5ec404b8d18, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019420257209943634, guid: b1c8d945e45c62342a66e5ec404b8d18,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2524434507777263337, guid: b1c8d945e45c62342a66e5ec404b8d18,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -3173,6 +3197,11 @@ PrefabInstance:
       propertyPath: canvasManager
       value: 
       objectReference: {fileID: 1610086831}
+    - target: {fileID: 2524434507777263337, guid: b1c8d945e45c62342a66e5ec404b8d18,
+        type: 3}
+      propertyPath: _enemyLight
+      value: 
+      objectReference: {fileID: 595813482}
     - target: {fileID: 5828538406719372700, guid: b1c8d945e45c62342a66e5ec404b8d18,
         type: 3}
       propertyPath: m_Name
@@ -3392,7 +3421,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16670
+  m_Name: pb_Mesh39158
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4935,6 +4964,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1650648173}
   m_CullTransparentMesh: 0
+--- !u!1 &1671462167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2019420257209943634, guid: b1c8d945e45c62342a66e5ec404b8d18,
+    type: 3}
+  m_PrefabInstance: {fileID: 369828842}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1679274298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5474,8 +5509,8 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 720, y: 1280}
-  m_ScreenMatchMode: 1
-  m_MatchWidthOrHeight: 0
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -5533,6 +5568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a33090d3a5e9591418137f0ba4c7784b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
 --- !u!114 &1926473198
 MonoBehaviour:
   m_ObjectHideFlags: 0
