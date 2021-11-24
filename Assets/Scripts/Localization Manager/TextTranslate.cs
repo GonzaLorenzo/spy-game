@@ -12,9 +12,14 @@ public class TextTranslate : MonoBehaviour
 
     public TextMeshProUGUI myView;
 
-    void Awake()
+    private void Awake()
     {
         manager.onUpdate += ChangeLang;
+    }
+
+    private void OnEnable() 
+    {
+      ChangeLang();
     }
 
     void ChangeLang()
