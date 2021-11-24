@@ -11,6 +11,9 @@ public class CanvasManager : MonoBehaviour, IObserver
     [SerializeField]
     private Ads ads;
 
+    [SerializeField]
+    private PlayerMovement playerSpeed;
+
     List<IObserver> _allObservers = new List<IObserver>();
 
     private void Start()
@@ -22,13 +25,14 @@ public class CanvasManager : MonoBehaviour, IObserver
     void PlayerLost()
     {
         Debug.Log("Perdiste :(");
-
+        playerSpeed.ResetSpeed();
         var screenLose = Instantiate(Resources.Load<ScreenLose>("LoseCanvas"));
         ScreenManager.Instance.Push(screenLose);
 
         //LoseUI.SetActive(true);
         //Sonido alarma
         //Anim UI
+
     }
 
     void PlayerWon()

@@ -4754,6 +4754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ads: {fileID: 1017657893}
+  playerSpeed: {fileID: 481253570}
 --- !u!1001 &1615238951
 PrefabInstance:
   m_ObjectHideFlags: 0

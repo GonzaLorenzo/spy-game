@@ -43,7 +43,15 @@ public class PlayerMovement : MonoBehaviour
 
     public void ChangeSpeed(float speedMultiplier)
     {
-        _speed *= speedMultiplier;
+        if(_speed * speedMultiplier > 4.5f)
+        {
+            _speed = 4.5f;
+        }
+        else
+        {
+            _speed *= speedMultiplier;
+        }
+        
         dataManager.Save();
     }
 
@@ -55,6 +63,12 @@ public class PlayerMovement : MonoBehaviour
     public float GetSpeed()
     {
         return _speed;
+    }
+
+    public void ResetSpeed()
+    {
+        _speed = 3f;
+        dataManager.Save();
     }
 
 
