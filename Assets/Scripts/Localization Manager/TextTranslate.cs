@@ -19,7 +19,7 @@ public class TextTranslate : MonoBehaviour
 
     private void OnEnable() 
     {
-      ChangeLang();
+      //ChangeLang(); Después crear IScene de menú o darle un tiempo para ponerse en enable con anim
     }
 
     void ChangeLang()
