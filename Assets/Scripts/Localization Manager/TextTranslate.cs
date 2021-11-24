@@ -7,7 +7,6 @@ using TMPro;
 public class TextTranslate : MonoBehaviour
 {
     public string ID;
-
     public LanguageManager manager;
 
     public TextMeshProUGUI myView;

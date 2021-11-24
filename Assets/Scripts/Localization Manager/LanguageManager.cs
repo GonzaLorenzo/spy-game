@@ -11,32 +11,34 @@ public enum Language
 }
 public class LanguageManager : MonoBehaviour
 {
+    [SerializeField]
+    private DataManager dataManager;
     public Language selectedLanguage;
-
     public Dictionary<Language, Dictionary<string,string>> languageManager;
-
     public string externalURL ="https://docs.google.com/spreadsheets/d/e/2PACX-1vTFaQCJSbAfB0Rlmnrqz_QTLnT0zaJXx5At5Lst01DqN9wb6dCWxsrasmRi8ED1zYdDelGJ4nrovMi8/pub?output=csv";
-
     public event Action onUpdate = delegate { };
-
     private void Start()
-    {
+    {  
         StartCoroutine(DownloadCSV(externalURL));
     }
 
 
     public void ChangeLanguageReference()
     {
-            if((selectedLanguage == Language.eng))
-            {
-                selectedLanguage = Language.spa;
-            }
-            else
-            {           
-                selectedLanguage = Language.eng;
-            }
+        if((selectedLanguage == Language.eng))
+        {
+        selectedLanguage = Language.spa;
+        //levelData.language = 1;
+        dataManager.Save();
+        }
+        else
+        {           
+        selectedLanguage = Language.eng;
+        //levelData.language = 0;
+        dataManager.Save();
+        }
 
-            onUpdate();
+        onUpdate();
     }
 
     public string GetTranslate(string id)
