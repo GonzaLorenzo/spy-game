@@ -8,6 +8,8 @@ public class CanvasManager : MonoBehaviour, IObserver
     //private GameObject WinUI;
     //[SerializeField]
     //private GameObject LoseUI;
+    [SerializeField]
+    private Ads ads;
 
     List<IObserver> _allObservers = new List<IObserver>();
 
@@ -36,7 +38,8 @@ public class CanvasManager : MonoBehaviour, IObserver
 
         var screenWin = Instantiate(Resources.Load<ScreenWin>("WinCanvas"));
         ScreenManager.Instance.Push(screenWin);
-
+        
+        ads.ShowAd();
         //WinUI.SetActive(true);
         //audioManager.GetComponent<AudioManager>().Play("GoodJob");       
         //Anim UI

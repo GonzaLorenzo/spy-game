@@ -6,7 +6,11 @@ using UnityEngine.Advertisements;
 public class Ads : MonoBehaviour
 {
     [SerializeField]
-    private AdTypes adTypes;
+    private AdTypes adType;
+
+    [SerializeField]
+    private PlayerMovement playerMovement;
+
     private string adTypeName;
     void Start()
     {
@@ -15,7 +19,12 @@ public class Ads : MonoBehaviour
         #else
         Advertisement.Initialize("4470972", false);
         #endif
-        adTypeName = adTypes.ToString();
+
+        adTypeName = adType.ToString();
+    }
+
+    public void ShowAd()
+    {
         StartCoroutine(WaitForAd());
     }
 
@@ -34,10 +43,16 @@ public class Ads : MonoBehaviour
     void AdFinished(ShowResult result)
     {
         Debug.Log(result.ToString());
-
         if (result == ShowResult.Finished)
         {
-            //Rewards
+            Debug.Log("Income: $5000");
+            playerMovement.ChangeSpeed(1.5f);
+        }
+        if (result == ShowResult.Skipped)
+        {
+            Debug.Log("Income: $0.05");
+            playerMovement.ChangeSpeed(1.15f);
+
         }
     }
 }

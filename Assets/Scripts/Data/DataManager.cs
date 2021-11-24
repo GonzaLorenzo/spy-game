@@ -9,6 +9,8 @@ public class DataManager : MonoBehaviour
     public LanguageManager manager;
     private string saveFileName = "LevelData.sav";
     private string fullSavePath;
+    [SerializeField]
+    private PlayerMovement playerSpeed;
 
     private void Awake() 
     {
@@ -20,6 +22,7 @@ public class DataManager : MonoBehaviour
     public void Save()
     {
         levelData.language = (int)manager.selectedLanguage;
+        levelData.playerSpeed = playerSpeed.GetSpeed();
         
         StreamWriter streamWriter = null;
         try
@@ -69,7 +72,14 @@ public class DataManager : MonoBehaviour
                 levelData = new LevelData();
             }
             
+            if(playerSpeed != null && levelData.playerSpeed > 0)
+            {   
+                playerSpeed.SetSpeed(levelData.playerSpeed);
+            }
+            if(manager != null)
+            {
             manager.selectedLanguage = (Language)levelData.language;
+            }
 
             if(streamReader != null)
             {

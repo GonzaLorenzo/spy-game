@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-//#if UNITY_ANDROID
+    //#if UNITY_ANDROID
+    [SerializeField]
+    private DataManager dataManager;
     [SerializeField] private VirtualAnalogStick virtualStick;
     private Vector3 auxInputVector;
     private Rigidbody _myRigidbody;
     private Animator _myAnimator;
     [SerializeField]
-    private float _speed = 3f;
+    private float _speed = 3;
     //#endif
 
     private void Awake()
@@ -37,6 +39,22 @@ public class PlayerMovement : MonoBehaviour
             {
                 _myAnimator.SetBool("IsMoving", false);
             }
+    }
+
+    public void ChangeSpeed(float speedMultiplier)
+    {
+        _speed *= speedMultiplier;
+        dataManager.Save();
+    }
+
+    public void SetSpeed(float speed)
+    {
+        _speed = speed;
+    }
+
+    public float GetSpeed()
+    {
+        return _speed;
     }
 
 
