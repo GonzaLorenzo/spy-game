@@ -1107,6 +1107,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 871416570}
     m_Modifications:
+    - target: {fileID: 2141467009, guid: a45f6ea86db21ea45918916a640149f3, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141467009, guid: a45f6ea86db21ea45918916a640149f3, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8707189443373609935, guid: a45f6ea86db21ea45918916a640149f3,
         type: 3}
       propertyPath: m_Name
@@ -3684,6 +3692,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 871416570}
     m_Modifications:
+    - target: {fileID: 2141467009, guid: a45f6ea86db21ea45918916a640149f3, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141467009, guid: a45f6ea86db21ea45918916a640149f3, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8707189443373609935, guid: a45f6ea86db21ea45918916a640149f3,
         type: 3}
       propertyPath: m_Name
@@ -7689,6 +7705,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 871416570}
     m_Modifications:
+    - target: {fileID: 2141467009, guid: a45f6ea86db21ea45918916a640149f3, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141467009, guid: a45f6ea86db21ea45918916a640149f3, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8707189443373609935, guid: a45f6ea86db21ea45918916a640149f3,
         type: 3}
       propertyPath: m_Name
