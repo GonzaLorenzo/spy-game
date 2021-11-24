@@ -21,7 +21,9 @@ public class DataManager : MonoBehaviour
     }
     public void Save()
     {
+        if(manager != null)
         levelData.language = (int)manager.selectedLanguage;
+        if(playerSpeed != null)
         levelData.playerSpeed = playerSpeed.GetSpeed();
         
         StreamWriter streamWriter = null;
