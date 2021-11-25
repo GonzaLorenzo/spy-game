@@ -18,7 +18,6 @@ public class CanvasManager : MonoBehaviour, IObserver
 
     private void Start()
     {
-        //audioManager.GetComponent<AudioManager>().Play("GoodLuck");
         AudioManager.instance.Play("GoodLuck");
     }
 

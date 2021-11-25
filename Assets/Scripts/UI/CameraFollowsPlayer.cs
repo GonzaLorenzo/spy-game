@@ -15,12 +15,12 @@ public class CameraFollowsPlayer : MonoBehaviour
     [SerializeField]
     float followSpeed;
 
-    void FixedUpdate()
+    void LateUpdate()
     {      
-            var desiredPosition = followTarget.position + followOffset;
-            var smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, followSpeed * Time.fixedDeltaTime);
-            transform.position = smoothedPosition;
+        var desiredPosition = followTarget.position + followOffset;
+        var smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, followSpeed * Time.fixedDeltaTime);
+        transform.position = smoothedPosition;
                
-            transform.LookAt(lookAtTarget.position + lookAtOffset);
+        transform.LookAt(lookAtTarget.position + lookAtOffset);
     }
 }

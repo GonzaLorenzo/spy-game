@@ -4127,6 +4127,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6560066850367641532, guid: a675a0d7649fb184ebc4a1050954682c,
+        type: 3}
+      propertyPath: sounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560066850367641532, guid: a675a0d7649fb184ebc4a1050954682c,
+        type: 3}
+      propertyPath: sounds.Array.data[2].name
+      value: GoodLuck
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560066850367641532, guid: a675a0d7649fb184ebc4a1050954682c,
+        type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 57792017074e4304e86ebba760c6cee0, type: 3}
+    - target: {fileID: 6560066850367641532, guid: a675a0d7649fb184ebc4a1050954682c,
+        type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560066850367641532, guid: a675a0d7649fb184ebc4a1050954682c,
+        type: 3}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560066850367641532, guid: a675a0d7649fb184ebc4a1050954682c,
+        type: 3}
+      propertyPath: sounds.Array.data[3].name
+      value: GoodJob
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560066850367641532, guid: a675a0d7649fb184ebc4a1050954682c,
+        type: 3}
+      propertyPath: sounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: de1753ca37b481043875e210bdc74e62, type: 3}
+    - target: {fileID: 6560066850367641532, guid: a675a0d7649fb184ebc4a1050954682c,
+        type: 3}
+      propertyPath: sounds.Array.data[3].volume
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560066850367641532, guid: a675a0d7649fb184ebc4a1050954682c,
+        type: 3}
+      propertyPath: sounds.Array.data[3].pitch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9195681646854749125, guid: a675a0d7649fb184ebc4a1050954682c,
         type: 3}
       propertyPath: m_Name

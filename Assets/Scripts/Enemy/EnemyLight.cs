@@ -9,7 +9,8 @@ public class EnemyLight : MonoBehaviour
     public Slider detectionBar;
     private CapsuleCollider _myCollider;
 
-    private int maxDetection = 100;
+    [SerializeField]
+    private float maxDetection = 100;
     private float currentDetection = 0;
     private bool isSeen = false;
 
@@ -25,9 +26,9 @@ public class EnemyLight : MonoBehaviour
     {
         isSeen = true;
        
-        if (currentDetection < 100)
+        if (currentDetection < maxDetection)
         {
-            currentDetection += 2.4f;
+            currentDetection += 2.4f; // + Time.deltaTime * detec
             detectionBar.value = currentDetection;
             //Debug.Log("Te veo" + currentDetection);
         }
@@ -45,7 +46,6 @@ public class EnemyLight : MonoBehaviour
         
         currentDetection = 0f;
         detectionBar.value = currentDetection;
-        Debug.Log("No");
     }
 
     public void SendDetectPlayer()
