@@ -22,7 +22,7 @@ public class VirtualAnalogStick : MonoBehaviour, IBeginDragHandler, IDragHandler
     protected float maxStickDistance;
     protected float sqrStickDistance;
 
-    private void Awake()
+    private void Start()
     {
         stickStartPosition = stick.transform.position;
         sqrStickDistance = maxStickDistance * maxStickDistance;
