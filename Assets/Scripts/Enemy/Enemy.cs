@@ -72,4 +72,23 @@ public abstract class Enemy : MonoBehaviour
     public abstract void AnimMove();
     public abstract void AnimStay();
     public abstract void DetectPlayer();
+
+    public Enemy SetPos (Vector3 newPos)
+    {
+        transform.position = newPos;
+        return this;
+    }
+
+    public Enemy SetWaypoints (List<Transform> newWaypoints)
+    {
+        waypoints = newWaypoints;
+        return this;
+    }
+
+    public Enemy SetRotation(Vector3 newRotation)
+    {
+        transform.rotation *= Quaternion.Euler(newRotation);
+        return this;
+    }
+
 }

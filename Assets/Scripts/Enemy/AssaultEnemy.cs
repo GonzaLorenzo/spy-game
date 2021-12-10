@@ -6,13 +6,14 @@ public class AssaultEnemy : Enemy, IShootable, IObservable
 {
     private Animator _myAnimator;
     private float timeToDestroy = 3f;
+    private GameObject canvasManager;
     private CapsuleCollider _myCollider;
     [SerializeField]
     private GameObject _enemyLight;
     [SerializeField]
     private GameObject _playerDetector;
     [SerializeField]
-    private CanvasManager canvasManager;
+    //private CanvasManager canvasManager;
 
 
     IObserver _myObserver;
@@ -21,7 +22,8 @@ public class AssaultEnemy : Enemy, IShootable, IObservable
     {
         _myAnimator = GetComponent<Animator>();
         _myCollider = GetComponent<CapsuleCollider>();
-        Subscribe(canvasManager);
+        canvasManager = GameObject.Find("CanvasManager");
+        Subscribe(canvasManager.GetComponent<CanvasManager>());
     }
 
     private void Update()
@@ -44,12 +46,19 @@ public class AssaultEnemy : Enemy, IShootable, IObservable
         _myAnimator.SetTrigger("IsDead");
         canMove = false;
         _myCollider.enabled = !_myCollider.enabled;
+
         Destroy(_enemyLight);
+        
         _playerDetector.GetComponent<EnemyLight>().EnemyIsDead();
         //Destroy(this, timeToDestroy); || Mejor que se queden
 
         //Animator de muerte
         //Dejar de Patrullar y capaz instanciar particulas de sangre
+    }
+
+    public void DestroyThis()
+    {
+        Destroy(this.gameObject);
     }
 
     public override void DetectPlayer()
