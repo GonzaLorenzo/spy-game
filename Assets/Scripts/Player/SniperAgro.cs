@@ -40,11 +40,13 @@ public class SniperAgro : MonoBehaviour
         }
     }
 
-    //private void Update()
-    //{
-        //Debug.Log("Hay" + Enemies.Count);
-        //Debug.Log("Es el " + currentEnemy);
-    //}
+    private void Update()
+    {
+        if(Enemies.Count == 0 )
+        {
+            UpdateTarget();
+        }
+    }
 
     private void OnTriggerExit(Collider other)
     {
@@ -52,9 +54,11 @@ public class SniperAgro : MonoBehaviour
         if (other.GetComponent<IShootable>() != null)
         {
             Enemies.Remove(other.gameObject);
+            Debug.Log("aña");
             if(Enemies.Count <= 0)
             {
-                Destroy(instantiatedUI);
+                //Destroy(instantiatedUI);
+                UpdateTarget();
                 //Debug.Log("Lo hizo el Agro");
             }
         }
@@ -95,6 +99,9 @@ public class SniperAgro : MonoBehaviour
             Debug.Log("Parte2");
             instantiatedUI = Instantiate(sniperUI);
             Debug.Log("Parte3");
+        }
+        else{
+            Destroy(instantiatedUI);
         }
     }
 }
