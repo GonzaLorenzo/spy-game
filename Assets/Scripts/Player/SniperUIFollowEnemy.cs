@@ -27,7 +27,7 @@ public class SniperUIFollowEnemy : MonoBehaviour
 
     public void HasShot()
     {
-        _myAnimator.SetTrigger("HasShot");
+        _myAnimator.SetBool("HasShoot", true);
     }
 
     private void ActualShot()
@@ -35,16 +35,20 @@ public class SniperUIFollowEnemy : MonoBehaviour
         AudioManager.instance.Play("TargetShot");
         
         sniperAgro.GetComponent<SniperAgro>().selectedEnemy.GetComponent<IShootable>().Shoot();
+        
+        if(sniperAgro.GetComponent<SniperAgro>().selectedEnemy.GetComponent<Trashcan>() != true)
+        {
+            sniperAgro.GetComponent<SniperAgro>().Enemies.Remove(sniperAgro.GetComponent<SniperAgro>().selectedEnemy);
+        }
 
-        sniperAgro.GetComponent<SniperAgro>().Enemies.Remove(sniperAgro.GetComponent<SniperAgro>().selectedEnemy);
-
-        Destroy(this.gameObject);
+        Destroy(this.gameObject); //Destruir pero mantener el tacho en la lista.
 
         ReferenceUpdate();       
     }
     
     private void ReferenceUpdate()
-    {        
+    {   
+        _myAnimator.SetBool("HasShoot", false);
         sniperAgro.GetComponent<SniperAgro>().UpdateTarget();
         Debug.Log("Parte1");
     }
@@ -54,3 +58,4 @@ public class SniperUIFollowEnemy : MonoBehaviour
         sniperAgro.GetComponent<SniperAgro>().SwitchTarget();
     }
 }
+
