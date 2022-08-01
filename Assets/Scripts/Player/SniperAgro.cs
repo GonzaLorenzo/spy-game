@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SniperAgro : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class SniperAgro : MonoBehaviour
     public Vector3 actualPos;
     private GameObject instantiatedUI;
     public List<GameObject> Enemies;
+    [SerializeField] private Image _switchButton;
     private int currentEnemy = 0;
 
     private void OnTriggerEnter(Collider other)
@@ -42,10 +44,20 @@ public class SniperAgro : MonoBehaviour
 
     private void Update()
     {
-        if(Enemies.Count == 0 )
+        if(Enemies.Count == 0)
         {
             UpdateTarget();
         }
+        
+        if(Enemies.Count >= 2)
+        {
+            _switchButton.color = Color.white;
+        }
+        else
+        {
+            _switchButton.color = Color.gray;
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
