@@ -21,6 +21,11 @@ public class SniperAgro : MonoBehaviour
     [SerializeField] private Image _switchButton;
     private int currentEnemy = 0;
 
+    void Start()
+    {
+        _switchButton = GameObject.Find("SwitchButton").GetComponent<Image>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<IShootable>() != null) //&& instantiatedUI == null)

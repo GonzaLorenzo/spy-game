@@ -6331,7 +6331,7 @@ PrefabInstance:
     - target: {fileID: 1845924551, guid: f0df36a3b29ab96429b3a9b655c2e21f, type: 3}
       propertyPath: _switchButton
       value: 
-      objectReference: {fileID: 1271805959}
+      objectReference: {fileID: 0}
     - target: {fileID: 1555494292605846584, guid: f0df36a3b29ab96429b3a9b655c2e21f,
         type: 3}
       propertyPath: virtualStick
