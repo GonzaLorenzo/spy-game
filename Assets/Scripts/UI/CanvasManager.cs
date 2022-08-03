@@ -42,7 +42,8 @@ public class CanvasManager : MonoBehaviour, IObserver
         var screenWin = Instantiate(Resources.Load<ScreenWin>("WinCanvas"));
         ScreenManager.Instance.Push(screenWin);
         
-        ads.ShowAd();
+        //ads.ShowAd(); No more ads. Hasta que presente el final de MotoresII
+
         //WinUI.SetActive(true);
         //audioManager.GetComponent<AudioManager>().Play("GoodJob");       
         //Anim UI
