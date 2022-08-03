@@ -3440,7 +3440,8 @@ MonoBehaviour:
   - {fileID: 1166831208}
   _securityCamera: {fileID: 1746411841}
   detectionBar: {fileID: 1087842260}
-  speed: 2
+  _detectionRate: 4
+  speed: 1.3
 --- !u!1001 &541606125
 PrefabInstance:
   m_ObjectHideFlags: 0

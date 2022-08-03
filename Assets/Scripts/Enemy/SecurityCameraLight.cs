@@ -15,7 +15,8 @@ public class SecurityCameraLight : MonoBehaviour
     private int maxDetection = 100;
     private float currentDetection = 0;
     private bool isSeen = false;
-
+    [SerializeField]
+    private float _detectionRate;
     [SerializeField]
     private float speed;
     private bool canResume = true;
@@ -40,7 +41,7 @@ public class SecurityCameraLight : MonoBehaviour
        
         if (currentDetection < 100)
         {
-            currentDetection += 2f;
+            currentDetection += _detectionRate;
             detectionBar.value = currentDetection;
         }
         else
