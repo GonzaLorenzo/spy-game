@@ -63,6 +63,7 @@ MonoBehaviour:
   spawnPos: {x: 0, y: 0, z: 0}
   actualPos: {x: 0, y: 0, z: 0}
   Enemies: []
+  _switchButton: {fileID: 0}
 --- !u!1 &8912384379778827041
 GameObject:
   m_ObjectHideFlags: 0

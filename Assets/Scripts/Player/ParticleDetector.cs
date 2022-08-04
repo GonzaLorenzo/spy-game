@@ -2,28 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SecurityCamera : MonoBehaviour,IObservable
+public class ParticleDetector : MonoBehaviour, IObservable
 {
     [SerializeField]
     private CanvasManager canvasManager;
-
-    [SerializeField]
-    private GameObject _securityCameraLight;
     IObserver _myObserver;
+    private bool _playerLost;
 
     void Start()
     {
         Subscribe(canvasManager);
     }
-    private void Update()
-    {
-        Vector3 dir = _securityCameraLight.transform.position - transform.position;
-        transform.forward = -dir;
-    }
 
-    public void DetectPlayer()
+    void OnParticleCollision(GameObject other)
     {
-        NotifyToObservers("PlayerLost");
+        if(!_playerLost)
+        {
+            NotifyToObservers("PlayerLost");
+            _playerLost = true;
+        }
     }
 
     public void NotifyToObservers(string action)
