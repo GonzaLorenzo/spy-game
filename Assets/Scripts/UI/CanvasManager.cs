@@ -24,7 +24,7 @@ public class CanvasManager : MonoBehaviour, IObserver
     void PlayerLost()
     {
         Debug.Log("Perdiste :(");
-        playerSpeed.ResetSpeed();
+        //playerSpeed.ResetSpeed(); No more Ads. Hasta dar el otro final.
         var screenLose = Instantiate(Resources.Load<ScreenLose>("LoseCanvas"));
         ScreenManager.Instance.Push(screenLose);
 

@@ -8,6 +8,7 @@ public class ParticleDetector : MonoBehaviour, IObservable
     IObserver _myObserver;
     private bool _playerLost;
     private float _myParticleDuration;
+    private float _myParticleLifeTime;
     private ParticleSystem _myParticleSystem;
 
     void Start()
@@ -20,6 +21,7 @@ public class ParticleDetector : MonoBehaviour, IObservable
 
         var main = _myParticleSystem.main;
         main.duration = _myParticleDuration;
+        main.startLifetime = _myParticleLifeTime;
 
         _myParticleSystem.Play();
 
@@ -28,6 +30,7 @@ public class ParticleDetector : MonoBehaviour, IObservable
             transform.GetChild(i).GetComponent<ParticleSystem>().Stop();
             var psmain = transform.GetChild(i).GetComponent<ParticleSystem>().main;
             psmain.duration = _myParticleDuration;
+            psmain.startLifetime = _myParticleLifeTime;
             transform.GetChild(i).GetComponent<ParticleSystem>().Play();
         }
     }
@@ -65,6 +68,12 @@ public class ParticleDetector : MonoBehaviour, IObservable
     public ParticleDetector SetDuration(float seconds)
     {
         _myParticleDuration = seconds;
+        return this;
+    }
+
+    public ParticleDetector SetLifeTime(float seconds)
+    {
+        _myParticleLifeTime = seconds;
         return this;
     }
 
