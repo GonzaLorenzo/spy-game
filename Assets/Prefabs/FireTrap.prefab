@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 3769529887625920970}
   - component: {fileID: 3769529887625920981}
   - component: {fileID: 3769529887625920980}
+  - component: {fileID: 1671126347889517432}
   m_Layer: 0
   m_Name: FireTrap
   m_TagString: Untagged
@@ -279,6 +280,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1671126347889517432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769529887625920983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c1bfe3cc940324cbc42522df295adf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fireParticles: {fileID: 2117532353, guid: 0f4bb84c0a3951f42a9831f27abf384e, type: 3}
+  _shotPoint: {fileID: 3340974957261306187}
+  _particleDuration: 0
+  _shootTime: 0
 --- !u!1 &8684110813819399685
 GameObject:
   m_ObjectHideFlags: 0
