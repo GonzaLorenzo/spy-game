@@ -12,7 +12,7 @@ public class Ads : MonoBehaviour
     private PlayerMovement playerMovement;
 
     private string adTypeName;
-    void Start()
+    /* void Start()
     {
         #if UNITY_EDITOR
         Advertisement.Initialize("4470972", true);
@@ -54,5 +54,5 @@ public class Ads : MonoBehaviour
             playerMovement.ChangeSpeed(1.15f);
 
         }
-    }
+    } */
 }
