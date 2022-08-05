@@ -10,7 +10,6 @@ public class FireTrap : MonoBehaviour
     [SerializeField] private float _shootTime;
     [SerializeField] private float _particleDuration;
     [SerializeField] private float _particleLifeTime;
-
     
     void Update()
     {

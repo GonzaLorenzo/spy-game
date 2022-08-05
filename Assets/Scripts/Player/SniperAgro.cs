@@ -71,7 +71,6 @@ public class SniperAgro : MonoBehaviour
         if (other.GetComponent<IShootable>() != null)
         {
             Enemies.Remove(other.gameObject);
-            Debug.Log("aña");
             if(Enemies.Count <= 0)
             {
                 //Destroy(instantiatedUI);
