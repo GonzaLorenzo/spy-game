@@ -13,6 +13,7 @@ public class EnemyLight : MonoBehaviour
     private float maxDetection = 100;
     private float currentDetection = 0;
     private bool isSeen = false;
+    [SerializeField] private float _detectionRate = 2.4f;
 
     public void Awake()
     {
@@ -28,7 +29,7 @@ public class EnemyLight : MonoBehaviour
        
         if (currentDetection < maxDetection)
         {
-            currentDetection += 2.4f; // + Time.deltaTime * detec
+            currentDetection += _detectionRate; // + Time.deltaTime * detec
             detectionBar.value = currentDetection;
             //Debug.Log("Te veo" + currentDetection);
         }
