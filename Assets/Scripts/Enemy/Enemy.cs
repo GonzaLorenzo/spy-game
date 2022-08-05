@@ -10,6 +10,7 @@ public abstract class Enemy : MonoBehaviour
     protected bool canMove = true;
     private bool canResume = true;
     protected float stopTime = 2f;
+    protected bool canStop = true;
     //private Animator _myAnimator;
 
     public void Patrol()
@@ -26,9 +27,12 @@ public abstract class Enemy : MonoBehaviour
 
                 if (dir.magnitude < 0.1f)
                 {
-                    AnimStay();
-                    //_myAnimator.SetBool("IsMoving", false);
-                    AwaitInPlace(stopTime);
+                    if(canStop)
+                    {
+                        AnimStay();
+                        //_myAnimator.SetBool("IsMoving", false);
+                        AwaitInPlace(stopTime);
+                    }
                     _currentWaypoint++;
                     if (_currentWaypoint > waypoints.Count - 1)
                         _currentWaypoint = 0;

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6213657266198571452}
   - component: {fileID: 6223376239092424868}
   - component: {fileID: 6231095623217009086}
+  - component: {fileID: 1718710667929834506}
   m_Layer: 0
   m_Name: Tire
   m_TagString: Untagged
@@ -78,3 +79,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1718710667929834506
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6210094556963998828}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.495435, y: 0.9531306, z: 1.495435}
+  m_Center: {x: 0, y: 0.2481451, z: 7.155057e-17}

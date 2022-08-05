@@ -9,9 +9,10 @@ public class TankEnemy : Enemy, IObservable
     private CanvasManager canvasManager;
 
     IObserver _myObserver;
-
+    [SerializeField] private bool _isStopabble = true;
     private void Start()
     {
+        canStop = _isStopabble;
         _myAnimator = GetComponent<Animator>();
         Subscribe(canvasManager);
     }
