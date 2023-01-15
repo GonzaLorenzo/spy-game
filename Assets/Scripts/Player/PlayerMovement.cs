@@ -1,25 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     //#if UNITY_ANDROID
-    [SerializeField]
-    private DataManager dataManager;
+    [SerializeField] private DataManager dataManager;
     [SerializeField] private VirtualAnalogStick virtualStick;
     private Vector3 auxInputVector;
     private Rigidbody _myRigidbody;
     private Animator _myAnimator;
-    [SerializeField]
-    private float _speed = 3;
+    [SerializeField] private float _speed = 3;
     //#endif
 
     private void Awake()
     {
         _myRigidbody = GetComponent<Rigidbody>();
         _myAnimator = GetComponent<Animator>();
-
     }
 
     private void Update()
@@ -43,15 +41,16 @@ public class PlayerMovement : MonoBehaviour
 
     public void ChangeSpeed(float speedMultiplier)
     {
-        if(_speed * speedMultiplier > 4.5f)
+        /* if(_speed * speedMultiplier > 4.5f)
         {
             _speed = 4.5f;
         }
         else
         {
             _speed *= speedMultiplier;
-        }
-        
+        } */
+        _speed = Math.Max(_speed * speedMultiplier, 4.5f);
+
         dataManager.Save();
     }
 
@@ -70,16 +69,4 @@ public class PlayerMovement : MonoBehaviour
         _speed = 3f;
         dataManager.Save();
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }

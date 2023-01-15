@@ -16,9 +16,14 @@ public class TextTranslate : MonoBehaviour
         manager.onUpdate += ChangeLang;
     }
 
+    void Start()
+    {
+        ChangeLang();
+    }
+
     private void OnEnable() 
     {
-      //ChangeLang(); Después crear IScene de menú o darle un tiempo para ponerse en enable con anim
+        ChangeLang(); //Después crear IScene de menú o darle un tiempo para ponerse en enable con anim
     }
 
     void ChangeLang()

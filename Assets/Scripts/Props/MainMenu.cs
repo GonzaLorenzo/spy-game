@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public LanguageManager manager;
+    [SerializeField] private LanguageManager manager;
+
+    void Start()
+    {
+        
+    }
 
     public void ChangeLanguage()
     {

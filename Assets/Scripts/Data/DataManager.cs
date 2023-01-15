@@ -78,10 +78,10 @@ public class DataManager : MonoBehaviour
             {   
                 playerSpeed.SetSpeed(levelData.playerSpeed);
             }
-            if(manager != null)
+            /* if(manager != null)
             {
-            manager.selectedLanguage = (Language)levelData.language;
-            }
+                manager.selectedLanguage = (Language)levelData.language;
+            } */
 
             if(streamReader != null)
             {
