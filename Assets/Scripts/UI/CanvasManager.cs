@@ -11,13 +11,15 @@ public class CanvasManager : MonoBehaviour, IObserver
     //private GameObject LoseUI;
     [SerializeField] private Ads ads;
     public int _generatedCode { get; private set; }
+    [SerializeField] private ElectricDoor _electricDoor;
+    public ElectricDoor ElectricDoor { get { return _electricDoor; } }
     [SerializeField] private PlayerMovement playerSpeed;
-
     List<IObserver> _allObservers = new List<IObserver>();
 
     private void Start()
     {
         AudioManager.instance.Play("GoodLuck");
+        GenerateKeypadCode();
     }
 
     void PlayerLost()

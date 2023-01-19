@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class InteractAgro : MonoBehaviour
 {
-    private List<IInteractable> _interactableObjectsList = new List<IInteractable>();
+    [SerializeField] private List<IInteractable> _interactableObjectsList = new List<IInteractable>();
     private IInteractable _interactableObject;
     [SerializeField] private Button _interactButton;
 
@@ -34,6 +34,14 @@ public class InteractAgro : MonoBehaviour
             {
                 _interactableObjectsList.Add(other.GetComponent<IInteractable>());
             }
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<IInteractable>() != null) //&& instantiatedUI == null)
+        {
+            _interactableObjectsList.Remove(other.GetComponent<IInteractable>());    
         }
     }
 

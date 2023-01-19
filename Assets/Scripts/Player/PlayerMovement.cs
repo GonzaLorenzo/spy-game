@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        virtualStick = GameObject.Find("VirtualStick").GetComponent<VirtualAnalogStick>();
         _myRigidbody = GetComponent<Rigidbody>();
         _myAnimator = GetComponent<Animator>();
     }

@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class CodePaper : MonoBehaviour, IInteractable
 {
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     public void Interact()
     {
-        
+        var screenPaper = Instantiate(Resources.Load<ScreenPaper>("PaperCanvas"));
+        ScreenManager.Instance.Push(screenPaper);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        //Outline activado
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        //Outline desactivado
     }
 }

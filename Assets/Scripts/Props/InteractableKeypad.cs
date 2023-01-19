@@ -9,4 +9,14 @@ public class InteractableKeypad : MonoBehaviour, IInteractable
         var screenKeypad = Instantiate(Resources.Load<ScreenKeypad>("KeypadCanvas"));
         ScreenManager.Instance.Push(screenKeypad);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        //Outline activado
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        //Outline desactivado
+    }
 }
