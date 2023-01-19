@@ -18,12 +18,12 @@ public class SniperAgro : MonoBehaviour
     public Vector3 actualPos;
     private GameObject instantiatedUI;
     public List<GameObject> Enemies;
-    [SerializeField] private Image _switchButton;
+    [SerializeField] private Button _switchButton;
     private int currentEnemy = 0;
 
     void Start()
     {
-        _switchButton = GameObject.Find("SwitchButton").GetComponent<Image>();
+        _switchButton = GameObject.Find("SwitchButton").GetComponent<Button>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -56,11 +56,11 @@ public class SniperAgro : MonoBehaviour
         
         if(Enemies.Count >= 2)
         {
-            _switchButton.color = Color.white;
+            _switchButton.interactable = true;
         }
         else
         {
-            _switchButton.color = Color.gray;
+            _switchButton.interactable = false;
         }
 
     }

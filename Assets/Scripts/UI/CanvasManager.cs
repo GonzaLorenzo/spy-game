@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.CodeDom.Compiler;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,11 +9,9 @@ public class CanvasManager : MonoBehaviour, IObserver
     //private GameObject WinUI;
     //[SerializeField]
     //private GameObject LoseUI;
-    [SerializeField]
-    private Ads ads;
-
-    [SerializeField]
-    private PlayerMovement playerSpeed;
+    [SerializeField] private Ads ads;
+    public int _generatedCode { get; private set; }
+    [SerializeField] private PlayerMovement playerSpeed;
 
     List<IObserver> _allObservers = new List<IObserver>();
 
@@ -47,6 +46,11 @@ public class CanvasManager : MonoBehaviour, IObserver
         //WinUI.SetActive(true);
         //audioManager.GetComponent<AudioManager>().Play("GoodJob");       
         //Anim UI
+    }
+
+    private void GenerateKeypadCode()
+    {
+        _generatedCode = Random.Range(100,1000);
     }
 
     public void Notify(string action)
