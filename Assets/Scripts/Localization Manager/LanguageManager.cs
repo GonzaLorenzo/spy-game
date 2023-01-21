@@ -11,8 +11,7 @@ public enum Language
 }
 public class LanguageManager : MonoBehaviour
 {
-    [SerializeField]
-    private DataManager dataManager;
+    [SerializeField] private DataManager dataManager;
     public Language selectedLanguage;
     public Dictionary<Language, Dictionary<string,string>> languageManager;
     public string externalURL ="https://docs.google.com/spreadsheets/d/e/2PACX-1vTFaQCJSbAfB0Rlmnrqz_QTLnT0zaJXx5At5Lst01DqN9wb6dCWxsrasmRi8ED1zYdDelGJ4nrovMi8/pub?output=csv";

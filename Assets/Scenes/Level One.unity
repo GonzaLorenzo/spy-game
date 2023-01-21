@@ -4338,7 +4338,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30318
+  m_Name: pb_Mesh36334
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6384,6 +6384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ads: {fileID: 1017657893}
+  _electricDoor: {fileID: 0}
   playerSpeed: {fileID: 481253570}
 --- !u!1001 &1615238951
 PrefabInstance:

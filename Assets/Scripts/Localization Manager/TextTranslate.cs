@@ -6,6 +6,7 @@ using TMPro;
 
 public class TextTranslate : MonoBehaviour
 {
+    [SerializeField] private bool _isFirstTime;
     public string ID;
     public LanguageManager manager;
 
@@ -18,12 +19,19 @@ public class TextTranslate : MonoBehaviour
 
     void Start()
     {
-        ChangeLang();
+        //ChangeLang();
     }
 
     private void OnEnable() 
     {
-        ChangeLang(); //Después crear IScene de menú o darle un tiempo para ponerse en enable con anim
+        if(_isFirstTime)
+        {
+            _isFirstTime = false;
+        }
+        else
+        {
+            ChangeLang(); //Después crear IScene de menú o darle un tiempo para ponerse en enable con anim
+        }   
     }
 
     void ChangeLang()
