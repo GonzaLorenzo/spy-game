@@ -1030,11 +1030,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2141467009, guid: a45f6ea86db21ea45918916a640149f3, type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2141467009, guid: a45f6ea86db21ea45918916a640149f3, type: 3}
       propertyPath: m_Shadows.m_Type
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141467009, guid: a45f6ea86db21ea45918916a640149f3, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8707189443373609935, guid: a45f6ea86db21ea45918916a640149f3,
         type: 3}
@@ -2287,7 +2291,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21768
+  m_Name: pb_Mesh35364
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4007,11 +4011,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2141467009, guid: a45f6ea86db21ea45918916a640149f3, type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2141467009, guid: a45f6ea86db21ea45918916a640149f3, type: 3}
       propertyPath: m_Shadows.m_Type
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141467009, guid: a45f6ea86db21ea45918916a640149f3, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8707189443373609935, guid: a45f6ea86db21ea45918916a640149f3,
         type: 3}
@@ -4556,6 +4564,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Lightmapping
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048016604418448060, guid: f5a02bcaf9c986447b431cf0d7c0c906,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a02bcaf9c986447b431cf0d7c0c906, type: 3}
@@ -7646,11 +7659,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2141467009, guid: a45f6ea86db21ea45918916a640149f3, type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2141467009, guid: a45f6ea86db21ea45918916a640149f3, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141467009, guid: a45f6ea86db21ea45918916a640149f3, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8707189443373609935, guid: a45f6ea86db21ea45918916a640149f3,
         type: 3}
@@ -8143,6 +8160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ads: {fileID: 1249974873}
+  _electricDoor: {fileID: 0}
   playerSpeed: {fileID: 1843097587}
 --- !u!4 &1678155606
 Transform:
@@ -8850,7 +8868,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -8881,9 +8899,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 1
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
