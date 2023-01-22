@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 6766407137560223421}
   - component: {fileID: 6766407137559092349}
   m_Layer: 0
-  m_Name: Crate_10 (2)
+  m_Name: WeaponsCrate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6766407137557323421
 Transform:
