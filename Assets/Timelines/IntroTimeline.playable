@@ -187,7 +187,7 @@ MonoBehaviour:
     m_Start: 6.7333333333333325
     m_ClipIn: 0
     m_Asset: {fileID: 2861181572853574059}
-    m_Duration: 2
+    m_Duration: 2.833333333333334
     m_TimeScale: 1
     m_ParentTrack: {fileID: -7927979461345818079}
     m_EaseInDuration: 0
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
   m_Clip: {fileID: 7400000, guid: 0c0aff68ff0a0ef4ca44a0de21673b6f, type: 2}
-  m_Position: {x: -0.14692593, y: 1.8264159, z: -5.50874}
+  m_Position: {x: -0.14868546, y: 1.8264159, z: -0.8678217}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
   m_MatchTargetFields: 63
@@ -512,7 +512,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: m_weapon_idle_B
   - m_Version: 1
-    m_Start: 8.316666666666666
+    m_Start: 9.233333333333333
     m_ClipIn: 0
     m_Asset: {fileID: -6703122454274683577}
     m_Duration: 0.2333333333333325
@@ -520,29 +520,11 @@ MonoBehaviour:
     m_ParentTrack: {fileID: 2199817529803867038}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 0.05000000000000071
+    m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -584,13 +566,13 @@ MonoBehaviour:
     m_Start: 7.166666666666667
     m_ClipIn: 0
     m_Asset: {fileID: 7898599655590455212}
-    m_Duration: 1.2000000000000002
+    m_Duration: 2.0666666666666655
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2199817529803867038}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: 0.11666666666666625
-    m_BlendOutDuration: 0.05000000000000071
+    m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
