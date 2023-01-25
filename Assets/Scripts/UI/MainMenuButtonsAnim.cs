@@ -6,6 +6,7 @@ using System.Linq;
 
 public class MainMenuButtonsAnim : MonoBehaviour
 {
+    [SerializeField] MainMenuTimelineManager _timelineManager;
     private Button[] _buttons;
     void Start()
     {
@@ -18,5 +19,10 @@ public class MainMenuButtonsAnim : MonoBehaviour
         {
             button.interactable = true;
         }
+    }
+
+    public void AnimationEnded()
+    {
+        _timelineManager.KillIntroSoldiers();
     }
 }

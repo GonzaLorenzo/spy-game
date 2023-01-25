@@ -11,19 +11,19 @@ public class InteractAgro : MonoBehaviour
 
     void Start()
     {
-        _interactButton = GameObject.Find("InteractButton").GetComponent<Button>();
+        //_interactButton = GameObject.Find("InteractButton").GetComponent<Button>(); Setear manualmente.
     }
 
     void Update()
     {
-        if(_interactableObjectsList.Count > 0)
+        /* if(_interactableObjectsList.Count > 0)
         {
             _interactButton.interactable = true;
         }
         else
         {
             _interactButton.interactable = false;
-        }
+        } */
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,6 +35,15 @@ public class InteractAgro : MonoBehaviour
                 _interactableObjectsList.Add(other.GetComponent<IInteractable>());
             }
         }
+
+        if(_interactableObjectsList.Count > 0)
+        {
+            _interactButton.interactable = true;
+        }
+        else
+        {
+            _interactButton.interactable = false;
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -42,6 +51,15 @@ public class InteractAgro : MonoBehaviour
         if (other.GetComponent<IInteractable>() != null) //&& instantiatedUI == null)
         {
             _interactableObjectsList.Remove(other.GetComponent<IInteractable>());    
+        }
+
+        if(_interactableObjectsList.Count > 0)
+        {
+            _interactButton.interactable = true;
+        }
+        else
+        {
+            _interactButton.interactable = false;
         }
     }
 

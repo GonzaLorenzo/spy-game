@@ -23,7 +23,7 @@ public class SniperAgro : MonoBehaviour
 
     void Start()
     {
-        _switchButton = GameObject.Find("SwitchButton").GetComponent<Button>();
+        //_switchButton = GameObject.Find("SwitchButton").GetComponent<Button>(); Setear Manualmente
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,13 +43,22 @@ public class SniperAgro : MonoBehaviour
             {
                 instantiatedUI = Instantiate(sniperUI);
             }
+        
+            if(Enemies.Count >= 2)
+            {
+                _switchButton.interactable = true;
+            }
+            else
+            {
+                _switchButton.interactable = false;
+            }
             //Instantiate(sniperUI);
         }
     }
 
     private void Update()
     {
-        if(Enemies.Count == 0)
+        /* if(Enemies.Count == 0)
         {
             UpdateTarget();
         }
@@ -61,7 +70,7 @@ public class SniperAgro : MonoBehaviour
         else
         {
             _switchButton.interactable = false;
-        }
+        } */
 
     }
 
@@ -77,6 +86,20 @@ public class SniperAgro : MonoBehaviour
                 UpdateTarget();
                 //Debug.Log("Lo hizo el Agro");
             }
+        }
+
+        if(Enemies.Count == 0)
+        {
+            UpdateTarget();
+        }
+        
+        if(Enemies.Count >= 2)
+        {
+            _switchButton.interactable = true;
+        }
+        else
+        {
+            _switchButton.interactable = false;
         }
     }
 
