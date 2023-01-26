@@ -70,4 +70,9 @@ public class PlayerMovement : MonoBehaviour
         _speed = 3f;
         dataManager.Save();
     }
+
+    public void ApplyRootMotion() //Deshabilite root motion en el animator para poder usar el timeline pero ahora hay que habilitarlo de nuevo para poder jugar.
+    {
+        _myAnimator.applyRootMotion = true;
+    }
 }

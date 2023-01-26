@@ -1457,7 +1457,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 986494865}
         m_MethodName: InteractWithTarget
         m_Mode: 1
         m_Arguments:
@@ -3120,6 +3120,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193102067}
   m_CullTransparentMesh: 0
+--- !u!1 &198096766 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8912384379778829407, guid: f0df36a3b29ab96429b3a9b655c2e21f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2090395329}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &198096769 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1555494292605846584, guid: f0df36a3b29ab96429b3a9b655c2e21f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2090395329}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198096766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29134f3ad8fbcdc4b9c69e7c88aeccb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &198096770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198096766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: d5f3f8c1e98595845aeee9bbee342b8f, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 198096769}
+          m_MethodName: ApplyRootMotion
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &203223783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11969,6 +12016,18 @@ MonoBehaviour:
   ID: ID_CreditsBy
   manager: {fileID: 897295436}
   myView: {fileID: 982563438}
+--- !u!114 &986494865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3597969999986255084, guid: f0df36a3b29ab96429b3a9b655c2e21f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2090395329}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ee25acfb1889c428434d91fa7b3de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1019420985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12636,6 +12695,7 @@ GameObject:
   - component: {fileID: 1138102666}
   - component: {fileID: 1138102667}
   - component: {fileID: 1138102668}
+  - component: {fileID: 1138102669}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -12693,6 +12753,10 @@ PlayableDirector:
     value: {fileID: 576557654}
   - key: {fileID: -7927979461345818079, guid: f5d54ee9e8e4d2e4a934bf79191cf126, type: 2}
     value: {fileID: 124715308}
+  - key: {fileID: 4961578920185534647, guid: f5d54ee9e8e4d2e4a934bf79191cf126, type: 2}
+    value: {fileID: 1138102669}
+  - key: {fileID: -2318664529409243992, guid: f5d54ee9e8e4d2e4a934bf79191cf126, type: 2}
+    value: {fileID: 198096770}
   m_ExposedReferences:
     m_References:
     - 0e9a5df8d3822244ab8de5ab2ae74ea8: {fileID: 2126022169}
@@ -12710,11 +12774,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c46a11bfafd7964abfb680de848a0db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _introCamera1: {fileID: 78940054}
+  _introCamera2: {fileID: 2126022169}
+  _gameplayCamera: {fileID: 424752890}
   _mainMenuButtonsAnimator: {fileID: 1545545044}
   _soldier1: {fileID: 1793485243}
   _soldier2: {fileID: 243698754}
   _sniperUI: {fileID: -3342530371036018112, guid: d2b706487f0ad0641bf22a22c9a60d9b,
     type: 3}
+  _panelUI: {fileID: 257303192}
+  _menuUI: {fileID: 1138102664}
+  _gameplayUI: {fileID: 170651720}
+--- !u!114 &1138102669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138102664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: db8bf2908d7cff242a68a6f60c96d0c8, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1138102668}
+          m_MethodName: StartGameplayUI
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1144404222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14861,6 +14960,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294458727}
   m_CullTransparentMesh: 0
+--- !u!114 &1325742560 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1845924551, guid: f0df36a3b29ab96429b3a9b655c2e21f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2090395329}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac6f14497add81418973ee102e090ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1331426783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17698,7 +17809,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628018092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.99, y: 3.38, z: 41.44}
+  m_LocalPosition: {x: 15.99, y: 3.38, z: 52.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -18132,7 +18243,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1325742560}
         m_MethodName: SwitchTarget
         m_Mode: 1
         m_Arguments:
@@ -20121,7 +20232,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1325742560}
         m_MethodName: ShootTarget
         m_Mode: 1
         m_Arguments:
