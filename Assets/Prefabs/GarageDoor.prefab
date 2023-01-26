@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2454499264486175518}
   - component: {fileID: 6866622380423825704}
   - component: {fileID: 898377724167665105}
+  - component: {fileID: 7645573770648577519}
   m_Layer: 0
   m_Name: GarageDoor
   m_TagString: Untagged
@@ -78,3 +79,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!41 &7645573770648577519
+OcclusionPortal:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462398617811747085}
+  m_Open: 1
+  m_Center: {x: -1.0108323, y: 1.9993627, z: 7.7292395}
+  m_Size: {x: 2.209828, y: 4.184524, z: 0.45847893}
