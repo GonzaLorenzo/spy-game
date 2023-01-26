@@ -48,7 +48,10 @@ public class MainMenuTimelineManager : MonoBehaviour
         _panelUI.SetActive(false);
         _menuUI.SetActive(false);
         _gameplayUI.SetActive(true);
+    }
 
+    public void SwitchCameraPriority()
+    {
         _introCamera1.enabled = false;
         _introCamera2.enabled = false;
         _gameplayCamera.Priority = 12; // 1 mas que la intro camera mas alta que usa 11

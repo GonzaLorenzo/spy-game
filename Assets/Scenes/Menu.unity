@@ -12757,6 +12757,8 @@ PlayableDirector:
     value: {fileID: 1138102669}
   - key: {fileID: -2318664529409243992, guid: f5d54ee9e8e4d2e4a934bf79191cf126, type: 2}
     value: {fileID: 198096770}
+  - key: {fileID: -2912359311615737737, guid: f5d54ee9e8e4d2e4a934bf79191cf126, type: 2}
+    value: {fileID: 1138102669}
   m_ExposedReferences:
     m_References:
     - 0e9a5df8d3822244ab8de5ab2ae74ea8: {fileID: 2126022169}
@@ -12800,11 +12802,25 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: db8bf2908d7cff242a68a6f60c96d0c8, type: 2}
+    - {fileID: 11400000, guid: 8fff3e766b906044b8a30e62161e60d8, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1138102668}
           m_MethodName: StartGameplayUI
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1138102668}
+          m_MethodName: SwitchCameraPriority
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -22358,7 +22374,7 @@ PrefabInstance:
     - target: {fileID: 1112563134658441707, guid: cfceffc229d6a5a45b57dfd39b2ba768,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.6392689
+      value: -8.953493
       objectReference: {fileID: 0}
     - target: {fileID: 1112563134658441707, guid: cfceffc229d6a5a45b57dfd39b2ba768,
         type: 3}
@@ -22465,7 +22481,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126022168}
   m_LocalRotation: {x: 0.12794803, y: 0.0044055292, z: -0.0005683559, w: 0.9917709}
-  m_LocalPosition: {x: 8.376536, y: 5.0829997, z: 3.7992687}
+  m_LocalPosition: {x: 8.376536, y: 5.0829997, z: -6.7934933}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1209696813}
