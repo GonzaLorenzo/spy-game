@@ -8,6 +8,6 @@ public class TutorialCollider : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        //_manager.
+        _manager.StartShootingTutorial();
     }
 }
