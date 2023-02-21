@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,6 +39,11 @@ public class TankEnemy : Enemy, IObservable
         Debug.Log("Llegué a Tank");
 
         NotifyToObservers("PlayerLost");
+    }
+
+    public void SwitchCanMove()
+    {
+        canMove = !canMove;
     }
 
     public void NotifyToObservers(string action)

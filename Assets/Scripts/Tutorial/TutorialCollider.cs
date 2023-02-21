@@ -5,9 +5,9 @@ using UnityEngine;
 public class TutorialCollider : MonoBehaviour
 {
     [SerializeField] private TutorialManager _manager;
-
+    [SerializeField] private int _tutorial;
     void OnTriggerEnter(Collider other)
     {
-        _manager.StartShootingTutorial();
+        _manager.StartTutorial(_tutorial);
     }
 }

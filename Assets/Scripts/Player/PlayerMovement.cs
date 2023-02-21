@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody _myRigidbody;
     private Animator _myAnimator;
     [SerializeField] private float _speed = 3;
+
+    private bool _canMove = true;
     //#endif
 
     private void Awake()
@@ -23,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-            if (virtualStick.getInputVector.sqrMagnitude > 0f)
+            if (virtualStick.getInputVector.sqrMagnitude > 0f && _canMove)
             {
                 _myAnimator.SetBool("IsMoving", true);
 
@@ -69,6 +71,11 @@ public class PlayerMovement : MonoBehaviour
     {
         _speed = 3f;
         dataManager.Save();
+    }
+
+    public void CanMove(bool value)
+    {
+        _canMove = value;
     }
 
     public void ApplyRootMotion() //Deshabilite root motion en el animator para poder usar el timeline pero ahora hay que habilitarlo de nuevo para poder jugar.

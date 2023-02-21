@@ -15,6 +15,7 @@ public class MainMenuTimelineManager : MonoBehaviour
     [Header("Soldier")] 
     [SerializeField] private AssaultEnemy _soldier1;
     [SerializeField] private AssaultEnemy _soldier2;
+    [SerializeField] private TankEnemy _tankEnemy;
 
     [Header("UI")] 
     [SerializeField] private TimelineSniperUI _sniperUI;
@@ -24,7 +25,8 @@ public class MainMenuTimelineManager : MonoBehaviour
 
     void Start()
     {
-        _director = GetComponent<PlayableDirector>();    
+        _tankEnemy.SwitchCanMove();
+        _director = GetComponent<PlayableDirector>();
     }
 
     public void HideMainMenuButtons()
