@@ -14,11 +14,15 @@ public class TutorialManager : MonoBehaviour
 
     [Header("Tutorial Colliders")]
     [SerializeField] private GameObject _distractionTutorialCollider;
+    [SerializeField] private GameObject _tankEnemyTutorialCollider;
+    [SerializeField] private GameObject _playerTutorialCollider;
     [SerializeField] private GameObject _playerWallCollider;
+    [SerializeField] private GameObject _playerBehindWallCollider;
 
     [Header("TutorialBoxes")]
     [SerializeField] private GameObject _movementTutorialBox;
     [SerializeField] private GameObject _shootingTutorialBox;
+    [SerializeField] private GameObject _tankEnemyTutorialBox;
     [SerializeField] private GameObject _distractionTutorialBox;
 
     [Header("Buttons")]
@@ -39,14 +43,6 @@ public class TutorialManager : MonoBehaviour
         StartMovementTutorial();
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Tab))
-        {
-            _tankEnemy.SwitchCanMove();
-        }
-    }
-
     public void StartMovementTutorial()
     {
         _playerPosition = _player.transform.position;
@@ -58,7 +54,8 @@ public class TutorialManager : MonoBehaviour
     public void EndMovementTutorial()
     {
         //_myAnimator.StopPlayback();
-        _myAnimator.enabled = false;
+        _myAnimator.Play("VirtualStickIdle");
+        //_myAnimator.enabled = false;
         _movementTutorialBox.SetActive(false);
     }
 
@@ -66,7 +63,7 @@ public class TutorialManager : MonoBehaviour
     {
         _shootingTutorialBox.SetActive(true);
         _actionGameObject.SetActive(true);
-        _myAnimator.enabled = true;
+        //_myAnimator.enabled = true;
         _myAnimator.Play("ActionButtonFocus");
         _player.CanMove(false);
         _activatedTutorial = 1;
@@ -75,28 +72,62 @@ public class TutorialManager : MonoBehaviour
     private void EndShootingTutorial()
     {
         //_myAnimator.StopPlayback();
-        _myAnimator.enabled = false;
+        _myAnimator.Play("VirtualStickIdle");
+        //_myAnimator.enabled = false;
         _shootingTutorialBox.SetActive(false);
         _player.CanMove(true);
-        _distractionTutorialCollider.SetActive(true);
+        //_distractionTutorialCollider.SetActive(true);
         //_tankEnemy.SwitchCanMove();
     }
 
-    private void StartDistractionTutorial()
+    private void StartTankEnemyTutorial()
     {
-        _distractionTutorialBox.SetActive(true);
+        _actionButton.interactable = false;
+        _tankEnemyTutorialBox.SetActive(true);
+        _tankEnemyTutorialCollider.SetActive(false);
         _player.CanMove(false);
         Time.timeScale = 0;
         _activatedTutorial = 2;
     }
 
+    private void EndTankEnemyTutorial()
+    {
+        _actionButton.interactable = true;
+        _tankEnemyTutorialBox.SetActive(false);
+        _player.CanMove(true);
+        Time.timeScale = 1;
+    }
+
+    private void StartDistractionTutorial()
+    {
+        _myAnimator.Play("ActionButtonFocus");
+        _distractionTutorialBox.SetActive(true);
+        _distractionTutorialCollider.SetActive(false);
+        _player.CanMove(false);
+        Time.timeScale = 0;
+        _activatedTutorial = 3;
+    }
+
     private void EndDistractionTutorial()
     {
+        _myAnimator.Play("VirtualStickIdle");
         _distractionTutorialBox.SetActive(false);
         _distractionTutorialCollider.SetActive(false);
         _playerWallCollider.SetActive(false);
         _player.CanMove(true);
         Time.timeScale = 1;
+    }
+
+    public void SetSoldierMoving()
+    {
+        _tankEnemy.SwitchCanMove();
+        _playerTutorialCollider.SetActive(false);
+        _playerBehindWallCollider.SetActive(true);
+    }
+
+    private void DisableActionButton()
+    {
+        _actionButton.interactable = false;
     }
 
     public void StartTutorial(int value)
@@ -107,7 +138,14 @@ public class TutorialManager : MonoBehaviour
                 StartShootingTutorial();
                 break;
             case 2:
+                StartTankEnemyTutorial();
+                DisableActionButton();
+                break;
+            case 3:
                 StartDistractionTutorial();
+                break;
+            case 4:
+                SetSoldierMoving();
                 break;
         }
     }
@@ -120,6 +158,9 @@ public class TutorialManager : MonoBehaviour
                 EndShootingTutorial();
                 break;
             case 2:
+                EndTankEnemyTutorial();
+                break;
+            case 3:
                 EndDistractionTutorial();
                 break;
         }
