@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class FireTrap : MonoBehaviour
 {
-    [SerializeField] private ParticleDetector _fireParticles;
+    //[SerializeField] private ParticleDetector _fireParticles;
+    [SerializeField] private GameObject _electricArc;
+    private bool _isOn = false;
     [SerializeField] private Transform _shotPoint;
     [SerializeField] private float _timePassed;
     [SerializeField] private float _shootTime;
@@ -19,11 +21,17 @@ public class FireTrap : MonoBehaviour
         }
         else
         {
-            Instantiate(_fireParticles, _shotPoint.position, Quaternion.identity)
-            .SetDuration(_particleDuration)
-            .SetLifeTime(_particleLifeTime)
-            .SetRotation(transform.forward);
-
+            if(!_isOn)
+            {
+                _electricArc.SetActive(true);
+                _isOn = true;
+            }
+            else
+            {
+                _isOn = false;
+                _electricArc.SetActive(false);
+            }
+            
             
             _timePassed = _shootTime;
         }
