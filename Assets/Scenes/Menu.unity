@@ -73,7 +73,7 @@ LightmapSettings:
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 0
-    m_BakeBackend: 2
+    m_BakeBackend: 1
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 12
     m_PVRSampleCount: 12
@@ -4851,7 +4851,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh271488
+  m_Name: pb_Mesh21704
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21097,16 +21097,16 @@ Light:
   serializedVersion: 9
   m_Type: 1
   m_Color: {r: 0.6313726, g: 0.62352943, b: 0.7647059, a: 1}
-  m_Intensity: 1.24
+  m_Intensity: 1.54
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
+    m_Type: 1
+    m_Resolution: 0
     m_CustomResolution: -1
-    m_Strength: 0
+    m_Strength: 0.678
     m_Bias: 0
     m_NormalBias: 0
     m_NearPlane: 0.1
@@ -23884,6 +23884,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912384379782004905, guid: f0df36a3b29ab96429b3a9b655c2e21f,
+        type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8912384379786133113, guid: f0df36a3b29ab96429b3a9b655c2e21f,
         type: 3}
