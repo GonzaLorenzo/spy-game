@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParticleDetector : MonoBehaviour, IObservable
 {
-    private CanvasManager canvasManager;
+    [SerializeField] private CanvasManager canvasManager;
     IObserver _myObserver;
     private bool _playerLost;
     private float _myParticleDuration;
@@ -13,35 +13,12 @@ public class ParticleDetector : MonoBehaviour, IObservable
 
     void Start()
     {
-        canvasManager = GameObject.Find("CanvasManager").GetComponent<CanvasManager>();
         Subscribe(canvasManager);
-        
-        _myParticleSystem = GetComponent<ParticleSystem>();
-        _myParticleSystem.Stop();
-
-        var main = _myParticleSystem.main;
-        main.duration = _myParticleDuration;
-        main.startLifetime = _myParticleLifeTime;
-
-        _myParticleSystem.Play();
-
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            transform.GetChild(i).GetComponent<ParticleSystem>().Stop();
-            var psmain = transform.GetChild(i).GetComponent<ParticleSystem>().main;
-            psmain.duration = _myParticleDuration;
-            psmain.startLifetime = _myParticleLifeTime;
-            transform.GetChild(i).GetComponent<ParticleSystem>().Play();
-        }
     }
 
-    void OnParticleCollision(GameObject other)
+    void OnTriggerEnter(Collider other)
     {
-        if(!_playerLost)
-        {
-            NotifyToObservers("PlayerLost");
-            _playerLost = true;
-        }
+        _myObserver.Notify("PlayerLost");
     }
 
     public void NotifyToObservers(string action)
@@ -63,23 +40,5 @@ public class ParticleDetector : MonoBehaviour, IObservable
         {
             _myObserver = null;
         }
-    }
-
-    public ParticleDetector SetDuration(float seconds)
-    {
-        _myParticleDuration = seconds;
-        return this;
-    }
-
-    public ParticleDetector SetLifeTime(float seconds)
-    {
-        _myParticleLifeTime = seconds;
-        return this;
-    }
-
-    public ParticleDetector SetRotation(Vector3 dir)
-    {
-        transform.forward = dir;
-        return this;
     }
 }
