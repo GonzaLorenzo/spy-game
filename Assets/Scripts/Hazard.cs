@@ -2,28 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticleCollision : MonoBehaviour, IObservable
+public class Hazard : MonoBehaviour, IObservable
 {
-    private CanvasManager canvasManager;
+    [SerializeField] private CanvasManager canvasManager;
     IObserver _myObserver;
-    private bool _playerLost;
-    private float _myParticleDuration;
-    private float _myParticleLifeTime;
-    private ParticleSystem _myParticleSystem;
 
     void Start()
     {
-        canvasManager = GameObject.Find("CanvasManager").GetComponent<CanvasManager>();
         Subscribe(canvasManager);
     }
 
-    void OnParticleCollision(GameObject other)
+    void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<PlayerMovement>() && !_playerLost)
-        {
-            NotifyToObservers("PlayerLost");
-            _playerLost = true;
-        }
+        NotifyToObservers("PlayerLost");
     }
 
     public void NotifyToObservers(string action)

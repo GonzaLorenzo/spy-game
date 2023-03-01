@@ -16,17 +16,14 @@ public class LightningBoltScript : MonoBehaviour
     public int Rows = 1;
     [Range(1, 64)]
     public int Columns = 1;
-
-    [HideInInspector]
-    [System.NonSerialized]
-    public System.Random RandomGenerator = new System.Random();
+    
+    private System.Random RandomGenerator = new System.Random();
 
     private LineRenderer lineRenderer;
     private List<KeyValuePair<Vector3, Vector3>> segments = new List<KeyValuePair<Vector3, Vector3>>();
     private int startIndex;
     private Vector2 size;
     private Vector2[] offsets;
-    private bool orthographic;
 
     private void GetPerpendicularVector(ref Vector3 directionNormalized, out Vector3 side)
     {
@@ -72,16 +69,8 @@ public class LightningBoltScript : MonoBehaviour
         {
             return;
         }
-        else if (orthographic)
-        {
-            start.z = end.z = Mathf.Min(start.z, end.z);
-        }
 
         segments.Add(new KeyValuePair<Vector3, Vector3>(start, end));
-        if (generation == 0)
-        {
-            return;
-        }
 
         Vector3 randomVector;
         if (offsetAmount <= 0.0f)
@@ -117,28 +106,20 @@ public class LightningBoltScript : MonoBehaviour
 
     public void RandomVector(ref Vector3 start, ref Vector3 end, float offsetAmount, out Vector3 result)
     {
-        if (orthographic)
-        {
-            Vector3 directionNormalized = (end - start).normalized;
-            Vector3 side = new Vector3(-directionNormalized.y, directionNormalized.x, directionNormalized.z);
-            float distance = ((float)RandomGenerator.NextDouble() * offsetAmount * 2.0f) - offsetAmount;
-            result = side * distance;
-        }
-        else
-        {
-            Vector3 directionNormalized = (end - start).normalized;
-            Vector3 side;
-            GetPerpendicularVector(ref directionNormalized, out side);
 
-            // generate random distance
-            float distance = (((float)RandomGenerator.NextDouble() + 0.1f) * offsetAmount);
+        Vector3 directionNormalized = (end - start).normalized;
+        Vector3 side;
+        GetPerpendicularVector(ref directionNormalized, out side);
 
-            // get random rotation angle to rotate around the current direction
-            float rotationAngle = ((float)RandomGenerator.NextDouble() * 360.0f);
+        // generate random distance
+        float distance = (((float)RandomGenerator.NextDouble() + 0.1f) * offsetAmount);
 
-            // rotate around the direction and then offset by the perpendicular vector
-            result = Quaternion.AngleAxis(rotationAngle, directionNormalized) * side * distance;
-        }
+        // get random rotation angle to rotate around the current direction
+        float rotationAngle = ((float)RandomGenerator.NextDouble() * 360.0f);
+
+        // rotate around the direction and then offset by the perpendicular vector
+        result = Quaternion.AngleAxis(rotationAngle, directionNormalized) * side * distance;
+        
     }
 
     private void SelectOffsetFromAnimationMode()
@@ -183,7 +164,6 @@ public class LightningBoltScript : MonoBehaviour
 
     private void Start()
     {
-        orthographic = (Camera.main != null && Camera.main.orthographic);
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = 0;
         UpdateFromMaterialChange();
@@ -191,7 +171,6 @@ public class LightningBoltScript : MonoBehaviour
 
     private void Update()
     {
-        orthographic = (Camera.main != null && Camera.main.orthographic);
         if (timer <= 0.0f)
         {
             Trigger();
