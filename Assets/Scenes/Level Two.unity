@@ -4140,6 +4140,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: InteractWithTarget
       objectReference: {fileID: 0}
+    - target: {fileID: 251029121928435210, guid: cd21464b70876e84aa2cede95822e263,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7408912170840015027, guid: cd21464b70876e84aa2cede95822e263,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4304,6 +4309,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c48afdea19ad7184abac3b938739c0b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &583293542 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 251029121928435210, guid: cd21464b70876e84aa2cede95822e263,
+    type: 3}
+  m_PrefabInstance: {fileID: 583293539}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &583293543 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7408912170840015027, guid: cd21464b70876e84aa2cede95822e263,
+    type: 3}
+  m_PrefabInstance: {fileID: 583293539}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &590182413
@@ -10046,6 +10075,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1845924551, guid: f0df36a3b29ab96429b3a9b655c2e21f, type: 3}
+      propertyPath: _switchButton
+      value: 
+      objectReference: {fileID: 583293543}
     - target: {fileID: 710355634397275675, guid: f0df36a3b29ab96429b3a9b655c2e21f,
         type: 3}
       propertyPath: canvasManager
@@ -10071,6 +10104,11 @@ PrefabInstance:
       propertyPath: dataManager
       value: 
       objectReference: {fileID: 387972625}
+    - target: {fileID: 3597969999986255084, guid: f0df36a3b29ab96429b3a9b655c2e21f,
+        type: 3}
+      propertyPath: _interactButton
+      value: 
+      objectReference: {fileID: 583293542}
     - target: {fileID: 8912384379778666559, guid: f0df36a3b29ab96429b3a9b655c2e21f,
         type: 3}
       propertyPath: m_LocalPosition.x

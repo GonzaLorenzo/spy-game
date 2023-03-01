@@ -3239,6 +3239,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: InteractWithTarget
       objectReference: {fileID: 0}
+    - target: {fileID: 251029121928435210, guid: cd21464b70876e84aa2cede95822e263,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7408912170840015027, guid: cd21464b70876e84aa2cede95822e263,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7498,6 +7503,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 648909102}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &652958569 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7408912170840015027, guid: cd21464b70876e84aa2cede95822e263,
+    type: 3}
+  m_PrefabInstance: {fileID: 326574006}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &654014773 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6210094556963998828, guid: 1d3c0440064b38c47a070963f6e1edca,
@@ -9397,6 +9414,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a675a0d7649fb184ebc4a1050954682c, type: 3}
+--- !u!114 &840623913 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 251029121928435210, guid: cd21464b70876e84aa2cede95822e263,
+    type: 3}
+  m_PrefabInstance: {fileID: 326574006}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &842102727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9982,6 +10011,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 42247567}
     m_Modifications:
+    - target: {fileID: 1845924551, guid: f0df36a3b29ab96429b3a9b655c2e21f, type: 3}
+      propertyPath: _switchButton
+      value: 
+      objectReference: {fileID: 652958569}
     - target: {fileID: 1555494292605846584, guid: f0df36a3b29ab96429b3a9b655c2e21f,
         type: 3}
       propertyPath: virtualStick
@@ -9992,6 +10025,11 @@ PrefabInstance:
       propertyPath: _speed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3597969999986255084, guid: f0df36a3b29ab96429b3a9b655c2e21f,
+        type: 3}
+      propertyPath: _interactButton
+      value: 
+      objectReference: {fileID: 840623913}
     - target: {fileID: 8912384379778666559, guid: f0df36a3b29ab96429b3a9b655c2e21f,
         type: 3}
       propertyPath: m_LocalPosition.x

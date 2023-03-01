@@ -28,14 +28,11 @@ public class InteractAgro : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<IInteractable>() != null) //&& instantiatedUI == null)
+        if(!_interactableObjectsList.Contains(other.GetComponent<IInteractable>()))
         {
-            if(!_interactableObjectsList.Contains(other.GetComponent<IInteractable>()))
-            {
-                _interactableObjectsList.Add(other.GetComponent<IInteractable>());
-            }
+            _interactableObjectsList.Add(other.GetComponent<IInteractable>());
         }
-
+        
         if(_interactableObjectsList.Count > 0)
         {
             _interactButton.interactable = true;
