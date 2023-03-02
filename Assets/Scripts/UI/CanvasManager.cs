@@ -18,7 +18,7 @@ public class CanvasManager : MonoBehaviour, IObserver
 
     private void Start()
     {
-        AudioManager.instance.Play("GoodLuck");
+        //AudioManager.instance.Play("GoodLuck");
         GenerateKeypadCode();
     }
 
