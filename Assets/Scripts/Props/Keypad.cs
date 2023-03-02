@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Keypad : MonoBehaviour
 {
+    [SerializeField] private Animator _animator;
     private ScreenKeypad _myScreen;
     private Image _screen;
     [SerializeField] private List<Text> _screenNumberList = new List<Text>();
@@ -59,7 +60,10 @@ public class Keypad : MonoBehaviour
             /* _screenNumberList[_currentScreenNumber].GetComponent<Animator>().SetBool("IsSelected", false);
             _electricDoor.OpenDoor();
             _myScreen.BTN_Back(); */
+
             StartCoroutine("RightCombination");
+
+            //CorrectCombination();
         }
         else
         {
@@ -68,22 +72,35 @@ public class Keypad : MonoBehaviour
           
     }
 
+    public void CloseKeypadButton()
+    {
+        _animator.SetBool("IsClosed", true);
+    }
+
+    private void CorrectCombination()
+    {
+        _screenNumberList[_currentScreenNumber].GetComponent<Animator>().SetBool("IsSelected", false);
+        _animator.SetBool("IsClosed", true);
+    }
+
+    private void CloseKeypad()
+    {
+        _electricDoor.OpenDoor();
+        _myScreen.BTN_Back();
+    }
+
     IEnumerator RightCombination()
     {
         _screenNumberList[_currentScreenNumber].GetComponent<Animator>().SetBool("IsSelected", false);
         yield return new WaitForSeconds(0.5f);
         
-        _electricDoor.OpenDoor();
-        _myScreen.BTN_Back();
+        //_electricDoor.OpenDoor();
+        //_myScreen.BTN_Back();
+        CloseKeypadButton();
     }
 
     IEnumerator WrongCombination()
     {
-        Color greenColor;
-        Color redColor;
-        ColorUtility.TryParseHtmlString("079A0A", out greenColor);
-        ColorUtility.TryParseHtmlString("8A1A00", out redColor);
-
         foreach (Button buttons in _buttonList)
         {
             buttons.interactable = false;

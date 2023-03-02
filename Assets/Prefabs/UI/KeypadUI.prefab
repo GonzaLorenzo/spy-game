@@ -2157,10 +2157,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7246068830752425595}
   - component: {fileID: 7246068830752425593}
+  - component: {fileID: 1220960094761106391}
   - component: {fileID: 7246068830752425592}
   - component: {fileID: 3333223071962910187}
   m_Layer: 5
-  m_Name: Keypad
+  m_Name: KeypadUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2206,6 +2207,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7246068830752425594}
   m_CullTransparentMesh: 0
+--- !u!95 &1220960094761106391
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7246068830752425594}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4bee3558c30f5eb4e8f7c5f940c6e8ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &7246068830752425592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2246,6 +2266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83bcb1e46b34db458d50974110b8330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 1220960094761106391}
   _screenNumberList:
   - {fileID: 114512758435499674}
   - {fileID: 5861703386422763457}
@@ -2263,7 +2284,6 @@ MonoBehaviour:
   - {fileID: 7246068829835326179}
   - {fileID: 7246068829662209561}
   - {fileID: 7246068830163190399}
-  _currentScreenNumber: 0
 --- !u!1 &7246068830834425309
 GameObject:
   m_ObjectHideFlags: 0
