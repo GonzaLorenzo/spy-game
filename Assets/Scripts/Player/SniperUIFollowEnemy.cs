@@ -50,7 +50,7 @@ public class SniperUIFollowEnemy : MonoBehaviour
     {   
         _myAnimator.SetBool("HasShoot", false);
         sniperAgro.GetComponent<SniperAgro>().UpdateTarget();
-        Debug.Log("Parte1");
+        //Debug.Log("Parte1");
     }
 
     private void ReferenceSwitchTarget()

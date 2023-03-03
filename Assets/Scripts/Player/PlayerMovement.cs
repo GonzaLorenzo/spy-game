@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void ChangeSpeed(float speedMultiplier)
     {
-        _speed = Math.Max(_speed * speedMultiplier, 4.5f);
+        _speed = Math.Max(_speed * speedMultiplier, 1.5f);
 
         dataManager.Save();
     }

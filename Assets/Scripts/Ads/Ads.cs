@@ -12,7 +12,7 @@ public class Ads : MonoBehaviour
     private PlayerMovement playerMovement;
 
     private string adTypeName;
-    /* void Start()
+    void Start()
     {
         #if UNITY_EDITOR
         Advertisement.Initialize("4470972", true);
@@ -46,13 +46,12 @@ public class Ads : MonoBehaviour
         if (result == ShowResult.Finished)
         {
             Debug.Log("Income: $5000");
-            playerMovement.ChangeSpeed(1.5f);
+            playerMovement.ChangeSpeed(1.1f);
         }
         if (result == ShowResult.Skipped)
         {
             Debug.Log("Income: $0.05");
-            playerMovement.ChangeSpeed(1.15f);
-
+            playerMovement.ChangeSpeed(1f);
         }
-    } */
+    }
 }

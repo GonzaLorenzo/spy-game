@@ -59,7 +59,7 @@ public class MainMenu : MonoBehaviour
             float progress = Mathf.Clamp01(operation.progress / .9f);
             _loadSlider.value = progress;
 
-            Debug.Log(_loadSlider.value);
+            //Debug.Log(_loadSlider.value);
 
             yield return null;
         }

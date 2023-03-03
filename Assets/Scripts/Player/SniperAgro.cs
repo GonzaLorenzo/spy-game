@@ -135,9 +135,9 @@ public class SniperAgro : MonoBehaviour
         {
             currentEnemy = 0;
             selectedEnemy = Enemies[currentEnemy];
-            Debug.Log("Parte2");
+            //Debug.Log("Parte2");
             instantiatedUI = Instantiate(sniperUI);
-            Debug.Log("Parte3");
+            //Debug.Log("Parte3");
         }
         else{
             Destroy(instantiatedUI);

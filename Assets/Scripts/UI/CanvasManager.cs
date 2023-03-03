@@ -25,7 +25,7 @@ public class CanvasManager : MonoBehaviour, IObserver
     void PlayerLost()
     {
         Debug.Log("Perdiste :(");
-        //playerSpeed.ResetSpeed(); No more Ads. Hasta dar el otro final.
+        playerSpeed.ResetSpeed();
         var screenLose = Instantiate(Resources.Load<ScreenLose>("LoseCanvas"));
         ScreenManager.Instance.Push(screenLose);
 
@@ -43,7 +43,7 @@ public class CanvasManager : MonoBehaviour, IObserver
         var screenWin = Instantiate(Resources.Load<ScreenWin>("WinCanvas"));
         ScreenManager.Instance.Push(screenWin);
         
-        //ads.ShowAd(); No more ads. Hasta que presente el final de MotoresII
+        ads.ShowAd();
 
         //WinUI.SetActive(true);
         //audioManager.GetComponent<AudioManager>().Play("GoodJob");       
