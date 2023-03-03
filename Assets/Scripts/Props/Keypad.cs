@@ -62,8 +62,6 @@ public class Keypad : MonoBehaviour
             _myScreen.BTN_Back(); */
 
             StartCoroutine("RightCombination");
-
-            //CorrectCombination();
         }
         else
         {
@@ -77,13 +75,12 @@ public class Keypad : MonoBehaviour
         _animator.SetBool("IsClosed", true);
     }
 
-    private void CorrectCombination()
+    private void CloseKeypad()
     {
-        _screenNumberList[_currentScreenNumber].GetComponent<Animator>().SetBool("IsSelected", false);
-        _animator.SetBool("IsClosed", true);
+        _myScreen.BTN_Back();
     }
 
-    private void CloseKeypad()
+    private void CloseKeypadCorrect()
     {
         _electricDoor.OpenDoor();
         _myScreen.BTN_Back();
@@ -96,7 +93,7 @@ public class Keypad : MonoBehaviour
         
         //_electricDoor.OpenDoor();
         //_myScreen.BTN_Back();
-        CloseKeypadButton();
+        _animator.SetBool("IsClosedCorrect", true);
     }
 
     IEnumerator WrongCombination()
