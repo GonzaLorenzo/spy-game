@@ -2082,9 +2082,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _myLight: {fileID: 1406624730}
   _myBullets: {fileID: 1594630919}
-  _timePassed: 0
+  _timePassed: 3
   _waitShootingTime: 3
-  _waitStopTime: 0
+  _waitStopTime: 1
 --- !u!4 &186097985
 Transform:
   m_ObjectHideFlags: 0
@@ -12983,8 +12983,8 @@ Light:
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 1, g: 0.17842808, b: 0, a: 1}
-  m_Intensity: 2
-  m_Range: 67.81
+  m_Intensity: 8.5
+  m_Range: 25.51093
   m_SpotAngle: 71.1
   m_InnerSpotAngle: 8.7
   m_CookieSize: 10
@@ -13022,10 +13022,10 @@ Light:
     serializedVersion: 2
     m_Bits: 1
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 1.3
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
