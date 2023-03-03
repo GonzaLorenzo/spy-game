@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //#if UNITY_ANDROID
+    private MovementController _movementStats;
     [SerializeField] private DataManager dataManager;
     [SerializeField] private VirtualAnalogStick virtualStick;
     private Vector3 auxInputVector;
@@ -14,44 +15,38 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _speed = 3;
 
     private bool _canMove = true;
+    private bool _switchedMovement = false;
     //#endif
 
     private void Awake()
     {
-        //virtualStick = GameObject.Find("VirtualStick").GetComponent<VirtualAnalogStick>(); Setear Manualmente
         _myRigidbody = GetComponent<Rigidbody>();
         _myAnimator = GetComponent<Animator>();
+        _movementStats = new MovementStats();
     }
 
     private void Update()
     {
-            if (virtualStick.getInputVector.sqrMagnitude > 0f && _canMove)
-            {
-                _myAnimator.SetBool("IsMoving", true);
+        if (virtualStick.getInputVector.sqrMagnitude > 0f && _canMove)
+        {
+            _myAnimator.SetBool("IsMoving", true);
 
-                auxInputVector.x = virtualStick.getInputVector.x;
-                auxInputVector.z = virtualStick.getInputVector.y;
+            //auxInputVector.x = virtualStick.getInputVector.x;
+            //auxInputVector.z = virtualStick.getInputVector.y;
 
-                transform.LookAt(transform.position + auxInputVector);
-                _myRigidbody.MovePosition(_myRigidbody.position + auxInputVector * _speed * Time.deltaTime);
-
-            }
-            else
-            {
-                _myAnimator.SetBool("IsMoving", false);
-            }
+            auxInputVector = _movementStats.Move(virtualStick.getInputVector.x, virtualStick.getInputVector.y);
+            
+            transform.LookAt(transform.position + auxInputVector);
+            _myRigidbody.MovePosition(_myRigidbody.position + auxInputVector * _speed * Time.deltaTime);
+        }
+        else
+        {
+            _myAnimator.SetBool("IsMoving", false);
+        }
     }
 
     public void ChangeSpeed(float speedMultiplier)
     {
-        /* if(_speed * speedMultiplier > 4.5f)
-        {
-            _speed = 4.5f;
-        }
-        else
-        {
-            _speed *= speedMultiplier;
-        } */
         _speed = Math.Max(_speed * speedMultiplier, 4.5f);
 
         dataManager.Save();
@@ -65,6 +60,11 @@ public class PlayerMovement : MonoBehaviour
     public float GetSpeed()
     {
         return _speed;
+    }
+
+    public void SetMovementController(MovementController newStats)
+    {
+        _movementStats = newStats;
     }
 
     public void ResetSpeed()
