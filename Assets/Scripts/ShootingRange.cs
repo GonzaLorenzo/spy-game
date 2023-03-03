@@ -18,15 +18,33 @@ public class ShootingRange : MonoBehaviour
         }
         else if(!_myBullets.isStopped)
         {
-            _myBullets.Stop();
+            StartCoroutine("StopShooting");
+            /* _myBullets.Stop();
             _myLight.color = Color.green;
-            _timePassed = _waitStopTime;
+            _timePassed = _waitStopTime; */
         }
         else //if(_myBullets.isStopped)
         {
-            _myBullets.Play();
+            StartCoroutine("StartShooting");
+            /* _myBullets.Play();
             _myLight.color = Color.red;
-            _timePassed = _waitShootingTime;
+            _timePassed = _waitShootingTime; */
         }
+    }
+
+    IEnumerator StartShooting()
+    {
+        _myLight.color = Color.red;
+        yield return new WaitForSeconds(0.5f);
+        _myBullets.Play();
+        _timePassed = _waitShootingTime;
+    }
+
+    IEnumerator StopShooting()
+    {
+        _myBullets.Stop();
+        yield return new WaitForSeconds(0.3f);
+        _myLight.color = Color.green;
+        _timePassed = _waitStopTime;
     }
 }
