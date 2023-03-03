@@ -7908,56 +7908,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor:
-    r: 0.12785566
-    g: 1
-    b: 0
-    a: 1
-  outlineWidth: 10
-  precomputeOutline: 1
-  bakeKeys:
-  - {fileID: -7969978266939365281, guid: d783661e0972a884fbaeb29fecb97a96, type: 3}
-  bakeValues:
-  - data:
-    - {x: 0.041907366, y: -0.075875744, z: 0.9962362}
-    - {x: 0.06278462, y: -0.11367523, z: 0.99153215}
-    - {x: 0.073722616, y: -0.17529963, z: 0.981751}
-    - {x: 0.03703064, y: -0.08805246, z: 0.9954273}
-    - {x: 0, y: 0, z: 1}
-    - {x: 0, y: 0, z: 1}
-    - {x: 0, y: 0, z: 1}
-    - {x: 0, y: 0, z: 1}
-    - {x: 0, y: 0, z: 1}
-    - {x: 0, y: 0, z: 1}
-    - {x: 0, y: 0, z: 1}
-    - {x: -0.036127042, y: 0.036127042, z: 0.99869394}
-    - {x: -0.036127042, y: 0.036127042, z: 0.99869394}
-    - {x: 0, y: 0, z: 1}
-    - {x: 0.03703064, y: -0.08805246, z: 0.9954273}
-    - {x: 0.041907366, y: -0.075875744, z: 0.9962362}
-    - {x: 0, y: 0, z: 1}
-    - {x: 0.025814546, y: -0.025814546, z: 0.99933344}
-    - {x: 0, y: 0, z: 1}
-    - {x: -0.036127042, y: 0.036127042, z: 0.99869394}
-    - {x: 0, y: 0, z: 1}
-    - {x: 0, y: 0, z: 1}
-    - {x: 0.025814546, y: -0.025814546, z: 0.99933344}
-    - {x: 0, y: 0, z: 1}
-    - {x: 0, y: 0, z: 1}
-    - {x: 0, y: 0, z: 1}
-    - {x: -0.07215972, y: 0.07215972, z: 0.99477935}
-    - {x: -0.036127042, y: 0.036127042, z: 0.99869394}
-    - {x: -0.036127042, y: 0.036127042, z: 0.99869394}
-    - {x: -0.036127042, y: 0.036127042, z: 0.99869394}
-    - {x: 0.025814546, y: -0.025814546, z: 0.99933344}
-    - {x: 0.025814546, y: -0.025814546, z: 0.99933344}
-    - {x: 0.06278462, y: -0.11367523, z: 0.99153215}
-    - {x: 0.041907366, y: -0.075875744, z: 0.9962362}
-  renderers: []
-  outlineMaskMaterial: {fileID: 0}
-  outlineFillMaterial: {fileID: 0}
-  needsUpdate: 1
 --- !u!1001 &759077189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15823,11 +15773,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1504421421}
+      objectReference: {fileID: 0}
     - target: {fileID: 7408912171730454060, guid: cd21464b70876e84aa2cede95822e263,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PauseGame
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7408912171730454060, guid: cd21464b70876e84aa2cede95822e263,
         type: 3}
@@ -15961,18 +15911,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e156fe63b92da14ca15639f484896d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1504421421 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7408912171794521435, guid: cd21464b70876e84aa2cede95822e263,
-    type: 3}
-  m_PrefabInstance: {fileID: 1504421419}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c48afdea19ad7184abac3b938739c0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1506998159
