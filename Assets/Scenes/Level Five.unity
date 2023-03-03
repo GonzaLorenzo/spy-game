@@ -4146,6 +4146,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Agarre1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1231581273919428548, guid: def0ccf3169b4b8448ca3b52436fad86,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1231581273919428552, guid: def0ccf3169b4b8448ca3b52436fad86,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4301,6 +4306,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SecurityCameraLight (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848106626912296547, guid: d15d8a7177ea17643bfd57c25f0376db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3848106626912296550, guid: d15d8a7177ea17643bfd57c25f0376db,
         type: 3}
@@ -12098,7 +12108,7 @@ PrefabInstance:
     - target: {fileID: 1800737882726822557, guid: 17c40b1df6b145c4f87c2225f40a0249,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1800737882738881162, guid: 17c40b1df6b145c4f87c2225f40a0249,
         type: 3}
@@ -12159,6 +12169,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Camera (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800737882738881165, guid: 17c40b1df6b145c4f87c2225f40a0249,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1800737882738881166, guid: 17c40b1df6b145c4f87c2225f40a0249,
         type: 3}
@@ -15082,6 +15097,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Agarre1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1231581273919428548, guid: def0ccf3169b4b8448ca3b52436fad86,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1231581273919428552, guid: def0ccf3169b4b8448ca3b52436fad86,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17534,7 +17554,7 @@ PrefabInstance:
     - target: {fileID: 3848106626912296550, guid: d15d8a7177ea17643bfd57c25f0376db,
         type: 3}
       propertyPath: waypoints.Array.size
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3848106626912296550, guid: d15d8a7177ea17643bfd57c25f0376db,
         type: 3}
@@ -17589,7 +17609,7 @@ PrefabInstance:
     - target: {fileID: 3848106626912296551, guid: d15d8a7177ea17643bfd57c25f0376db,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.38
+      value: 20.31
       objectReference: {fileID: 0}
     - target: {fileID: 3848106626912296551, guid: d15d8a7177ea17643bfd57c25f0376db,
         type: 3}
@@ -17634,17 +17654,17 @@ PrefabInstance:
     - target: {fileID: 3848106626912296551, guid: d15d8a7177ea17643bfd57c25f0376db,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.5450592
+      value: 4.531649
       objectReference: {fileID: 0}
     - target: {fileID: 3848106626912296551, guid: d15d8a7177ea17643bfd57c25f0376db,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: -0.14822966
+      value: -0.18948197
       objectReference: {fileID: 0}
     - target: {fileID: 3848106626912296551, guid: d15d8a7177ea17643bfd57c25f0376db,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.5450604
+      value: 4.531651
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d15d8a7177ea17643bfd57c25f0376db, type: 3}
