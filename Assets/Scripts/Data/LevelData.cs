@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LevelData
 {
-    public int language;
-    public float playerSpeed;
+    public int selectedLanguage;
+    public int completedLevels;
     public string ToJson()
     {
         return JsonUtility.ToJson(this);

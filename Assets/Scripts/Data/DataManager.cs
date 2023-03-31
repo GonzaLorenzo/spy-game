@@ -7,10 +7,8 @@ public class DataManager : MonoBehaviour
 {
     private LevelData levelData;
     public LanguageManager manager;
-    private string saveFileName = "LevelData.sav";
+    private string saveFileName = "GameData.sav";
     private string fullSavePath;
-    [SerializeField]
-    private PlayerMovement playerSpeed;
 
     private void Awake() 
     {
@@ -19,12 +17,10 @@ public class DataManager : MonoBehaviour
 
         Load();
     }
+
     public void Save()
     {
-        if(manager != null)
-        levelData.language = (int)manager.selectedLanguage;
-        if(playerSpeed != null)
-        levelData.playerSpeed = playerSpeed.GetSpeed();
+        levelData.selectedLanguage = (int)manager.selectedLanguage;
         
         StreamWriter streamWriter = null;
         try
@@ -36,8 +32,7 @@ public class DataManager : MonoBehaviour
             streamWriter = new StreamWriter(fullSavePath, false);
             
             streamWriter.Write(levelData.ToJson());
-
-            
+            Debug.Log("saved to " + fullSavePath);
         }
         catch(Exception e)
         {
@@ -69,19 +64,16 @@ public class DataManager : MonoBehaviour
         }
         finally
         {
-            if(levelData == null)
+            /* if(levelData == null)
             {
                 levelData = new LevelData();
-            }
-            
-            if(playerSpeed != null && levelData.playerSpeed > 0)
-            {   
-                playerSpeed.SetSpeed(levelData.playerSpeed);
-            }
-            /* if(manager != null)
-            {
-                manager.selectedLanguage = (Language)levelData.language;
             } */
+
+            if(manager != null)
+            {
+                manager.selectedLanguage = (Language)levelData.selectedLanguage;
+                Debug.Log((Language)levelData.selectedLanguage);
+            }
 
             if(streamReader != null)
             {

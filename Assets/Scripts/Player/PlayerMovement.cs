@@ -45,23 +45,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void ChangeSpeed(float speedMultiplier)
-    {
-        _speed = Math.Max(_speed * speedMultiplier, 4.5f);
-
-        dataManager.Save();
-    }
-
-    public void SetSpeed(float speed)
-    {
-        _speed = speed;
-    }
-
-    public float GetSpeed()
-    {
-        return _speed;
-    }
-
     public void SetMovementController(MovementController newStats)
     {
         _movementStats = newStats;
