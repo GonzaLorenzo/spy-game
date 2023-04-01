@@ -28,13 +28,13 @@ public class LanguageManager : MonoBehaviour
         {
         selectedLanguage = Language.spa;
         //levelData.language = 1;
-        dataManager.Save();
+        dataManager.Save(false);
         }
         else
         {           
         selectedLanguage = Language.eng;
         //levelData.language = 0;
-        dataManager.Save();
+        dataManager.Save(false);
         }
 
         onUpdate();
@@ -60,6 +60,8 @@ public class LanguageManager : MonoBehaviour
         yield return www.SendWebRequest();
 
         languageManager = LanguageU.LoadCodexFromString("www",www.downloadHandler.text);
+
+        Debug.Log(www.downloadHandler.text);
 
         onUpdate();
     }

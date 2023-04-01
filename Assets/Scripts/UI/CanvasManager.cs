@@ -5,15 +5,11 @@ using UnityEngine;
 
 public class CanvasManager : MonoBehaviour, IObserver
 {
-    //[SerializeField]
-    //private GameObject WinUI;
-    //[SerializeField]
-    //private GameObject LoseUI;
-    [SerializeField] private Ads ads;
+    //[SerializeField] private Ads ads;
+    [SerializeField] private DataManager _dataManager;
     public int _generatedCode { get; private set; }
     [SerializeField] private ElectricDoor _electricDoor;
     public ElectricDoor ElectricDoor { get { return _electricDoor; } }
-    [SerializeField] private PlayerMovement playerSpeed;
     List<IObserver> _allObservers = new List<IObserver>();
 
     private void Start()
@@ -24,7 +20,6 @@ public class CanvasManager : MonoBehaviour, IObserver
 
     void PlayerLost()
     {
-        Debug.Log("Perdiste :(");
         //playerSpeed.ResetSpeed(); No more Ads. Hasta dar el otro final.
         var screenLose = Instantiate(Resources.Load<ScreenLose>("LoseCanvas"));
         ScreenManager.Instance.Push(screenLose);
@@ -37,8 +32,8 @@ public class CanvasManager : MonoBehaviour, IObserver
 
     void PlayerWon()
     {
+        _dataManager.Save(true);
         AudioManager.instance.Play("GoodJob");
-        Debug.Log("Ganaste :D");
 
         var screenWin = Instantiate(Resources.Load<ScreenWin>("WinCanvas"));
         ScreenManager.Instance.Push(screenWin);

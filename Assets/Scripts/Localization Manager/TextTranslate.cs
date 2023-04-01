@@ -34,7 +34,7 @@ public class TextTranslate : MonoBehaviour
         }   
     }
 
-    void ChangeLang()
+    public void ChangeLang()
     {        
         myView.text = manager.GetTranslate(ID);
     }

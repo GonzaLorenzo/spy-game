@@ -50,12 +50,6 @@ public class PlayerMovement : MonoBehaviour
         _movementStats = newStats;
     }
 
-    public void ResetSpeed()
-    {
-        _speed = 3f;
-        dataManager.Save();
-    }
-
     public void CanMove(bool value)
     {
         _canMove = value;

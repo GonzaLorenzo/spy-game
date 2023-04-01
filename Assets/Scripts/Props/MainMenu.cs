@@ -1,14 +1,47 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public static int completedLevels;
     [SerializeField] private LanguageManager manager;
     [SerializeField] private Slider _loadSlider;
+
+    [Header("UI")] 
+    [SerializeField] private TextMeshProUGUI _playButtonText;
+    [SerializeField] private TextTranslate _playButtonTextTranslator;
+    [SerializeField] private Button _playButton;
+
+    
+
+    void Awake()
+    {
+        if (completedLevels >= 1)
+        {
+            if(manager.selectedLanguage == 0)
+            {
+                _playButtonText.text = "CONTINUE";
+            }
+            else
+            {
+                _playButtonText.text = "CONTINUAR";
+            }
+            
+            _playButtonTextTranslator.ID = "ID_Continue";
+            _playButton.onClick.AddListener(ContinueGame);
+
+        }
+    }
+
+    public void ContinueGame()
+    {
+        StartCoroutine(AsynchronousLoad(completedLevels));
+    }
 
     public void ChangeLanguage()
     {

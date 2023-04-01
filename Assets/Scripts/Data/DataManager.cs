@@ -2,13 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.IO;
 public class DataManager : MonoBehaviour
 {
     private LevelData levelData;
-    public LanguageManager manager;
+    [SerializeField] private LanguageManager manager;
+    [SerializeField] private MainMenu mainMenu;
     private string saveFileName = "GameData.sav";
     private string fullSavePath;
+    
 
     private void Awake() 
     {
@@ -18,10 +21,15 @@ public class DataManager : MonoBehaviour
         Load();
     }
 
-    public void Save()
+    public void Save(bool completedALevel)
     {
         levelData.selectedLanguage = (int)manager.selectedLanguage;
-        
+
+        if (completedALevel && levelData.completedLevels == 0 || levelData.completedLevels == SceneManager.GetActiveScene().buildIndex )
+        {
+            levelData.completedLevels = SceneManager.GetActiveScene().buildIndex + 1;
+        }
+
         StreamWriter streamWriter = null;
         try
         {
@@ -72,8 +80,19 @@ public class DataManager : MonoBehaviour
             if(manager != null)
             {
                 manager.selectedLanguage = (Language)levelData.selectedLanguage;
-                Debug.Log((Language)levelData.selectedLanguage);
             }
+
+            MainMenu.completedLevels = levelData.completedLevels;
+
+            /* if(levelData.completedLevels != 0)
+            {
+                MainMenu.completedLevels = levelData.completedLevels;
+            }
+            else
+            {
+                levelData.completedLevels = 0;
+            } */
+            
 
             if(streamReader != null)
             {
