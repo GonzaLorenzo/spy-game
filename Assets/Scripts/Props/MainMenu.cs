@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private bool _isOnMenu = false;
     public static int completedLevels;
     [SerializeField] private LanguageManager manager;
+    [SerializeField] private GameObject _loadObject;
     [SerializeField] private Slider _loadSlider;
 
     [Header("UI")] 
@@ -34,14 +35,20 @@ public class MainMenu : MonoBehaviour
             }
             
             _playButtonTextTranslator.ID = "ID_Continue";
+            _playButton.onClick = new Button.ButtonClickedEvent();
             _playButton.onClick.AddListener(ContinueGame);
-
         }
+    }
+
+    public void SelectMission(int missionNumber)
+    {
+        StartCoroutine(AsynchronousLoad(missionNumber));
     }
 
     public void ContinueGame()
     {
         StartCoroutine(AsynchronousLoad(completedLevels));
+        _loadObject.SetActive(true);
     }
 
     public void ChangeLanguage()
@@ -93,7 +100,7 @@ public class MainMenu : MonoBehaviour
             float progress = Mathf.Clamp01(operation.progress / .9f);
             _loadSlider.value = progress;
 
-            Debug.Log(_loadSlider.value);
+            //Debug.Log(_loadSlider.value);
 
             yield return null;
         }
