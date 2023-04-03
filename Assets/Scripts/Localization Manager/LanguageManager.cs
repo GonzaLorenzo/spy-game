@@ -61,8 +61,6 @@ public class LanguageManager : MonoBehaviour
 
         languageManager = LanguageU.LoadCodexFromString("www",www.downloadHandler.text);
 
-        Debug.Log(www.downloadHandler.text);
-
         onUpdate();
     }
 }

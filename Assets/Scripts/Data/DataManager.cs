@@ -42,7 +42,7 @@ public class DataManager : MonoBehaviour
             streamWriter = new StreamWriter(fullSavePath, false);
             
             streamWriter.Write(levelData.ToJson());
-            Debug.Log("saved to " + fullSavePath);
+            //Debug.Log("saved to " + fullSavePath);
         }
         catch(Exception e)
         {
