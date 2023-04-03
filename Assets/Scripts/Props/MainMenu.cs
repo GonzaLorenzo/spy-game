@@ -48,7 +48,7 @@ public class MainMenu : MonoBehaviour
     public void ContinueGame()
     {
         StartCoroutine(AsynchronousLoad(completedLevels));
-        _loadObject.SetActive(true);
+        //_loadObject.SetActive(true);
     }
 
     public void ChangeLanguage()
