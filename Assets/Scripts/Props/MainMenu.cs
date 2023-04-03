@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private bool _isOnMenu = false;
     public static int completedLevels;
     [SerializeField] private LanguageManager manager;
     [SerializeField] private Slider _loadSlider;
@@ -21,7 +22,7 @@ public class MainMenu : MonoBehaviour
 
     void Awake()
     {
-        if (completedLevels >= 1)
+        if (_isOnMenu && completedLevels >= 1)
         {
             if(manager.selectedLanguage == 0)
             {

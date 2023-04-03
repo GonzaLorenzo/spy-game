@@ -23,11 +23,13 @@ public class DataManager : MonoBehaviour
 
     public void Save(bool completedALevel)
     {
-        levelData.selectedLanguage = (int)manager.selectedLanguage;
-
         if (completedALevel && levelData.completedLevels == 0 || levelData.completedLevels == SceneManager.GetActiveScene().buildIndex )
         {
             levelData.completedLevels = SceneManager.GetActiveScene().buildIndex + 1;
+        }
+        else
+        {
+            levelData.selectedLanguage = (int)manager.selectedLanguage;
         }
 
         StreamWriter streamWriter = null;
