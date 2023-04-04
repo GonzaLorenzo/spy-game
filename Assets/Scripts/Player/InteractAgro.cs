@@ -47,6 +47,11 @@ public class InteractAgro : MonoBehaviour
         }
     }
 
+    public void StopAnimation()
+    {
+        _interactAnimator.SetBool("IsInteracting", false);
+    }
+
     public void InteractWithTarget()
     {
         _interactableObjectsList[0].Interact();

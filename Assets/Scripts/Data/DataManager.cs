@@ -27,7 +27,7 @@ public class DataManager : MonoBehaviour
         {
             levelData.completedLevels = SceneManager.GetActiveScene().buildIndex + 1;
         }
-        else
+        else if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             levelData.selectedLanguage = (int)manager.selectedLanguage;
         }
