@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class ScreenPaper : MonoBehaviour, IScreen
 {
+    private int _codeIndex;
+    public delegate void ShowCode(int codeToShow);
+    public static event ShowCode ShowCodeEvent;
     Button[] _buttons;
 
     private void Awake()
@@ -20,6 +23,7 @@ public class ScreenPaper : MonoBehaviour, IScreen
     public void BTN_Back()
     {
         ScreenManager.Instance.Pop();
+        ShowCodeEvent(_codeIndex);
     }
 
     public void Activate()
@@ -42,5 +46,11 @@ public class ScreenPaper : MonoBehaviour, IScreen
     {
         Destroy(gameObject);
         return "WinScreen ded :c";
+    }
+
+    public ScreenPaper SetCodeIndex(int codeIndex)
+    {
+        _codeIndex = codeIndex;
+        return this;
     }
 }

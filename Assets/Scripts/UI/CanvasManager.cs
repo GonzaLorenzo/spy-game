@@ -6,6 +6,7 @@ using UnityEngine;
 public class CanvasManager : MonoBehaviour, IObserver
 {
     //[SerializeField] private Ads ads;
+    [SerializeField] private GameObject[] _codeUI;
     [SerializeField] private DataManager _dataManager;
     public int _generatedCode { get; private set; }
     [SerializeField] private ElectricDoor _electricDoor;
@@ -16,6 +17,7 @@ public class CanvasManager : MonoBehaviour, IObserver
     {
         //AudioManager.instance.Play("GoodLuck");
         GenerateKeypadCode();
+        ScreenPaper.ShowCodeEvent += ShowCodeUI;
     }
 
     void PlayerLost()
@@ -62,4 +64,10 @@ public class CanvasManager : MonoBehaviour, IObserver
         }
 
     }
+
+    private void ShowCodeUI(int UItoShow)
+    {
+        _codeUI[UItoShow].SetActive(true);
+    }
+
 }
