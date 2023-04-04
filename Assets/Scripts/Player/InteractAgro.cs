@@ -8,23 +8,8 @@ public class InteractAgro : MonoBehaviour
     [SerializeField] private List<IInteractable> _interactableObjectsList = new List<IInteractable>();
     private IInteractable _interactableObject;
     [SerializeField] private Button _interactButton;
-
-    void Start()
-    {
-        //_interactButton = GameObject.Find("InteractButton").GetComponent<Button>(); Setear manualmente.
-    }
-
-    void Update()
-    {
-        /* if(_interactableObjectsList.Count > 0)
-        {
-            _interactButton.interactable = true;
-        }
-        else
-        {
-            _interactButton.interactable = false;
-        } */
-    }
+    [SerializeField] private GameObject _interactObject;
+    [SerializeField] private Animator _interactAnimator;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -35,12 +20,16 @@ public class InteractAgro : MonoBehaviour
         
         if(_interactableObjectsList.Count > 0)
         {
-            _interactButton.interactable = true;
+            //_interactButton.interactable = true;
+            _interactObject.SetActive(true);
+            _interactAnimator.SetBool("IsInteracting", true);
         }
-        else
+        /* else
         {
-            _interactButton.interactable = false;
-        }
+           //_interactButton.interactable = false;
+            _interactObject.SetActive(false);
+            _interactAnimator.SetBool("isInteracting", false);
+        } */
     }
 
     void OnTriggerExit(Collider other)
@@ -50,13 +39,11 @@ public class InteractAgro : MonoBehaviour
             _interactableObjectsList.Remove(other.GetComponent<IInteractable>());    
         }
 
-        if(_interactableObjectsList.Count > 0)
+        if(_interactableObjectsList.Count == 0)
         {
-            _interactButton.interactable = true;
-        }
-        else
-        {
-            _interactButton.interactable = false;
+            //_interactButton.interactable = false;
+            _interactObject.SetActive(false);
+            _interactAnimator.SetBool("IsInteracting", false);
         }
     }
 

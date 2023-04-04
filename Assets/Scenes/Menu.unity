@@ -1890,7 +1890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &126039070
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24717,6 +24717,11 @@ PrefabInstance:
       propertyPath: _switchButton
       value: 
       objectReference: {fileID: 1691330980}
+    - target: {fileID: 792528531271356123, guid: f0df36a3b29ab96429b3a9b655c2e21f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1555494292605846584, guid: f0df36a3b29ab96429b3a9b655c2e21f,
         type: 3}
       propertyPath: virtualStick
