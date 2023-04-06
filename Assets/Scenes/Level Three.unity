@@ -14678,9 +14678,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1594630917}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dafce2b1d7d0d442b8822886c329b89, type: 3}
+  m_Script: {fileID: 11500000, guid: edcf7d75e35e67640b56ee3996a0f27c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasManager: {fileID: 1873962101}
 --- !u!4 &1605248899 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8126161640241807146, guid: b715f8b72096fd44bbfa52c8685a75d8,
@@ -17361,6 +17362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a30e7fb1ca6dd1742b79c35455b41c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _codeUI: []
   _dataManager: {fileID: 445835387}
   _electricDoor: {fileID: 0}
 --- !u!4 &1873962102
