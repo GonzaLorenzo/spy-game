@@ -5781,10 +5781,10 @@ MonoBehaviour:
   _laserLayers:
     serializedVersion: 2
     m_Bits: 257
-  _distanceToStart: 15
-  _rotationSpeed: 5.5
+  _distanceToStart: 17
+  _rotationSpeed: 9
   _timePassed: 0
-  _waitShootingTime: 1
+  _waitShootingTime: 5
   _waitStopTime: 3
 --- !u!1 &425578046 stripped
 GameObject:
