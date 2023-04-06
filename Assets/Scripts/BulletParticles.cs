@@ -14,8 +14,13 @@ public class BulletParticles : MonoBehaviour, IObservable
 
     void OnParticleCollision(GameObject other)
     {
-        
-        _myObserver.Notify("PlayerLost");
+        var player = other.gameObject.GetComponent<PlayerMovement>();
+
+        if (player != null)
+        {
+            _myObserver.Notify("PlayerLost");
+            Destroy(this.gameObject);
+        }
     }
 
     public void NotifyToObservers(string action)
