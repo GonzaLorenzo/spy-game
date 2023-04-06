@@ -36,45 +36,13 @@ public class Turret : MonoBehaviour, IObservable
     {
         if (Vector3.Distance(transform.position, _player.transform.position) < _distanceToStart)
         {
-            /* Vector3 dir = _player.transform.position - transform.position;
-            Vector3 shootDir = _player.transform.position - _shootPoint.transform.position;
-            Quaternion lookRotation = Quaternion.LookRotation(dir);
-            Vector3 rotation = lookRotation.eulerAngles;
-
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f, rotation.y, 0f), _rotationSpeed * Time.deltaTime);
-
-            RaycastHit hit;
-            _laserRenderer.SetPosition(0, _shootPoint.transform.position);
-            if (Physics.Raycast(_shootPoint.transform.position, transform.forward, out hit, 30, _laserLayers))
-            {
-                _laserRenderer.SetPosition(1, hit.point);
-                float Aux = _shootPoint.transform.position.z - _laserOffset;
-                Vector3 positionDifference = new Vector3(_sparksShape.position.x, _sparksShape.position.y, Aux - hit.point.z);
-                _sparksShape.position = positionDifference;
-                if (hit.collider.GetComponent<PlayerMovement>())
-                {
-                    _myObserver.Notify("PlayerLost");
-                }
-            }
-            else
-            {
-                Debug.Log("error");
-            } */
-
-            /* if(_timePassed > 0)
-            {
-                firstLoop = false;
-                _timePassed -= Time.deltaTime;
-            } */
             if(_isShooting)
             {
-                //StartCoroutine("StopShooting");
                 StopShooting();
             }
             else
             {
                 StartShooting();
-                //StartCoroutine("StartShooting");
             }
         }
         else
@@ -176,9 +144,6 @@ public class Turret : MonoBehaviour, IObservable
 
     void OnDrawGizmos()
     {
-        Vector3 shootDir = _player.transform.position - _shootPoint.transform.position;
-        
-        
         Gizmos.DrawSphere(transform.position, _distanceToStart);
     }
 }
