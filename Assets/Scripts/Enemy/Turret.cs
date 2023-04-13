@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿using System.Net.Sockets;
+using System.Linq.Expressions;
+using System.Dynamic;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -17,12 +20,13 @@ public class Turret : MonoBehaviour, IObservable
     [Header("Variables")]
     [SerializeField] private float _laserOffset;
     [SerializeField] private LayerMask _laserLayers;
+    [SerializeField] private LayerMask _laserWallLayers;
     [SerializeField] private float _distanceToStart;
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private float _timePassed;
     [SerializeField] private float _waitShootingTime;
     [SerializeField] private float _waitStopTime;
-    private bool _isShooting;
+    [SerializeField] private bool _isShooting;
     private bool firstLoop = false;
 
     void Start()
@@ -34,20 +38,21 @@ public class Turret : MonoBehaviour, IObservable
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, _player.transform.position) < _distanceToStart)
+        Vector3 dir = _player.transform.position - _shootPoint.transform.position;
+        if (Vector3.Distance(transform.position, _player.transform.position) < _distanceToStart && !Physics.Raycast(_shootPoint.transform.position, dir, dir.magnitude, _laserWallLayers))
         {
-            if(_isShooting)
+            if(!_isShooting) //&& !Physics.Raycast(_shootPoint.transform.position, transform.forward, dir.magnitude, _laserWallLayers))
             {
-                StopShooting();
+                StartShooting();
             }
             else
             {
-                StartShooting();
+                StopShooting();
             }
         }
         else
         {
-
+           NoPlayerInSight();
         }
     }
 
@@ -120,6 +125,16 @@ public class Turret : MonoBehaviour, IObservable
         }
     }
 
+    private void NoPlayerInSight()
+    {
+        _laser.SetActive(false);
+        _mySparks.Stop();
+        _isShooting = true; 
+        _timePassed = .1f;
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(-30f, 180f, 0f), _rotationSpeed * Time.deltaTime);
+    }
+
     public void NotifyToObservers(string action)
     {
         _myObserver.Notify(action);
@@ -144,6 +159,6 @@ public class Turret : MonoBehaviour, IObservable
 
     void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(transform.position, _distanceToStart);
+        Gizmos.DrawWireSphere(transform.position, _distanceToStart);
     }
 }
