@@ -23,11 +23,13 @@ public class Turret : MonoBehaviour, IObservable
     [SerializeField] private LayerMask _laserWallLayers;
     [SerializeField] private float _distanceToStart;
     [SerializeField] private float _rotationSpeed;
+    [SerializeField] private float _disabledRotationSpeed;
     [SerializeField] private float _timePassed;
     [SerializeField] private float _waitShootingTime;
     [SerializeField] private float _waitStopTime;
     [SerializeField] private bool _isShooting;
     private bool firstLoop = false;
+    private bool _isDisabled = false;
 
     void Start()
     {
@@ -39,20 +41,27 @@ public class Turret : MonoBehaviour, IObservable
     void Update()
     {
         Vector3 dir = _player.transform.position - _shootPoint.transform.position;
-        if (Vector3.Distance(transform.position, _player.transform.position) < _distanceToStart && !Physics.Raycast(_shootPoint.transform.position, dir, dir.magnitude, _laserWallLayers))
+        if (!_isDisabled)
         {
-            if(!_isShooting) //&& !Physics.Raycast(_shootPoint.transform.position, transform.forward, dir.magnitude, _laserWallLayers))
+            if (Vector3.Distance(transform.position, _player.transform.position) < _distanceToStart && !Physics.Raycast(_shootPoint.transform.position, dir, dir.magnitude, _laserWallLayers))
             {
-                StartShooting();
+                if(!_isShooting) //&& !Physics.Raycast(_shootPoint.transform.position, transform.forward, dir.magnitude, _laserWallLayers))
+                {
+                    StartShooting();
+                }
+                else
+                {
+                    StopShooting();
+                }
             }
             else
             {
-                StopShooting();
+                NoPlayerInSight();
             }
         }
         else
         {
-           NoPlayerInSight();
+            DisabledTurret();
         }
     }
 
@@ -133,6 +142,18 @@ public class Turret : MonoBehaviour, IObservable
         _timePassed = .1f;
 
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(-30f, 180f, 0f), _rotationSpeed * Time.deltaTime);
+    }
+
+    public void DisableThisTurret()
+    {
+        _isDisabled = true;
+    }
+
+    private void DisabledTurret()
+    {
+        _laser.SetActive(false);
+        _mySparks.Stop();
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(20f, 180f, 0f), _disabledRotationSpeed * Time.deltaTime);
     }
 
     public void NotifyToObservers(string action)
