@@ -5,40 +5,37 @@ using UnityEngine.UI;
 
 public class SniperAgro : MonoBehaviour
 {
-    //Osea, si el enemigo o distracción que tengo tiene la interfaz IShootable lo marco con la UI
-    //Y con el ActionButton procedo a activarle el Shoot() que mataría el enemigo o activaría la distracción.
-
-    //other.GetComponent<IShootable>().Shoot();
-
-    
     public GameObject selectedEnemy;
-    [SerializeField]
-    private GameObject sniperUI;
+    [SerializeField] private GameObject sniperUI;
     public Vector3 spawnPos;
     public Vector3 actualPos;
     private GameObject instantiatedUI;
     public List<GameObject> Enemies;
     [SerializeField] private Button _switchButton;
+    private bool _laserIsFixed;
+    [SerializeField] private LineRenderer _laser;
+    [SerializeField] private GameObject _laserObject;
+    [SerializeField] private float _laserSpeed;
     private int currentEnemy = 0;
-
-    void Start()
-    {
-        //_switchButton = GameObject.Find("SwitchButton").GetComponent<Button>(); Setear Manualmente
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<IShootable>() != null) //&& instantiatedUI == null)
+        if (other.GetComponent<IShootable>() != null)
         {
             if(!Enemies.Contains(other.gameObject))
             {
                 Enemies.Add(other.gameObject);
             }
             spawnPos = other.transform.position;
-            //selectedEnemy = other.gameObject;
+
             selectedEnemy = Enemies[currentEnemy];
 
-            //GameObject instantiatedUI = Instantiate(sniperUI);
+            _laserObject.SetActive(true);
+            _laser.SetPosition(0, new Vector3(transform.position.x, transform.position.y + 10, transform.position.z));
+            _laser.SetPosition(1, new Vector3(selectedEnemy.transform.position.x, selectedEnemy.transform.position.y + 1, selectedEnemy.transform.position.z));
+
+            _laserIsFixed = true;
+            
             if (instantiatedUI == null)
             {
                 instantiatedUI = Instantiate(sniperUI);
@@ -52,39 +49,26 @@ public class SniperAgro : MonoBehaviour
             {
                 _switchButton.interactable = false;
             }
-            //Instantiate(sniperUI);
         }
     }
 
     private void Update()
     {
-        /* if(Enemies.Count == 0)
+        if(_laserIsFixed)
         {
-            UpdateTarget();
+            _laser.SetPosition(0, new Vector3(transform.position.x + 2, transform.position.y + 10, transform.position.z - 10));
+            _laser.SetPosition(1, new Vector3(selectedEnemy.transform.position.x, selectedEnemy.transform.position.y + 1, selectedEnemy.transform.position.z));
         }
-        
-        if(Enemies.Count >= 2)
-        {
-            _switchButton.interactable = true;
-        }
-        else
-        {
-            _switchButton.interactable = false;
-        } */
-
     }
 
     private void OnTriggerExit(Collider other)
     {
-        //Enemies.Remove(selectedEnemy);
         if (other.GetComponent<IShootable>() != null)
         {
             Enemies.Remove(other.gameObject);
             if(Enemies.Count <= 0)
             {
-                //Destroy(instantiatedUI);
                 UpdateTarget();
-                //Debug.Log("Lo hizo el Agro");
             }
         }
 
@@ -107,11 +91,7 @@ public class SniperAgro : MonoBehaviour
     {
         if(instantiatedUI != null)
         {
-
-        
-        //selectedEnemy.GetComponent<IShootable>().Shoot(); Probar haciendo el shoot desde el UI
-        //Hacer la referencia al SniperUIFE para que haga la anim y se destruya en un shoot();
-        instantiatedUI.GetComponent<SniperUIFollowEnemy>().HasShot();
+            instantiatedUI.GetComponent<SniperUIFollowEnemy>().HasShot();
         }
     }
 
@@ -135,12 +115,13 @@ public class SniperAgro : MonoBehaviour
         {
             currentEnemy = 0;
             selectedEnemy = Enemies[currentEnemy];
-            Debug.Log("Parte2");
             instantiatedUI = Instantiate(sniperUI);
-            Debug.Log("Parte3");
         }
-        else{
+        else
+        {
             Destroy(instantiatedUI);
+            _laserObject.SetActive(false);
+            _laserIsFixed = false;
         }
     }
 }
