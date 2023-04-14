@@ -22933,6 +22933,7 @@ GameObject:
   - component: {fileID: 1089535607}
   - component: {fileID: 1089535609}
   - component: {fileID: 1089535608}
+  - component: {fileID: 1089535610}
   m_Layer: 0
   m_Name: CannonG_Barrel02
   m_TagString: Untagged
@@ -23001,6 +23002,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089535606}
   m_Mesh: {fileID: 4300000, guid: 565b27b999c1f6f43aee1750c78d8150, type: 3}
+--- !u!65 &1089535610
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089535606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.89792013, y: 1.5246941, z: 3.7402496}
+  m_Center: {x: 0.0000014901161, y: 0.115709245, z: 0.5000999}
 --- !u!1 &1121495557
 GameObject:
   m_ObjectHideFlags: 0
@@ -24030,7 +24044,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh43380
+  m_Name: pb_Mesh143476
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24779,6 +24793,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1519422281}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1528896268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1875090778556656, guid: 7191a0df8b6695d449a0f18a361bc311,
+    type: 3}
+  m_PrefabInstance: {fileID: 1886761880}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1528896269
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528896268}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.08, y: 2.5322018, z: 2.6130657}
+  m_Center: {x: -3.880739e-15, y: 1.35, z: -0.10192317}
 --- !u!1 &1531107457
 GameObject:
   m_ObjectHideFlags: 0

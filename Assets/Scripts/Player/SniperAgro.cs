@@ -15,8 +15,20 @@ public class SniperAgro : MonoBehaviour
     private bool _laserIsFixed;
     [SerializeField] private LineRenderer _laser;
     [SerializeField] private GameObject _laserObject;
-    [SerializeField] private float _laserSpeed;
     private int currentEnemy = 0;
+
+    [Header("Laser Movement Values")]
+    [SerializeField] private float _laserSpeed;
+    [SerializeField] private float _maxOffsetY;
+    private float _laserOffsetY;
+    [SerializeField] private float _maxOffsetX;
+    private float _laserOffsetX;
+
+    void Start()
+    {
+        _laserOffsetX = _maxOffsetX;
+        _laserOffsetY = _maxOffsetY;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -57,7 +69,9 @@ public class SniperAgro : MonoBehaviour
         if(_laserIsFixed)
         {
             _laser.SetPosition(0, new Vector3(transform.position.x + 2, transform.position.y + 10, transform.position.z - 10));
-            _laser.SetPosition(1, new Vector3(selectedEnemy.transform.position.x, selectedEnemy.transform.position.y + 1, selectedEnemy.transform.position.z));
+            _laserOffsetY = Mathf.Lerp(_laserOffsetY, 1, _laserSpeed * Time.deltaTime);
+            _laserOffsetX = Mathf.Lerp(_laserOffsetX, 0, _laserSpeed * Time.deltaTime);
+            _laser.SetPosition(1, new Vector3(selectedEnemy.transform.position.x + _laserOffsetX, selectedEnemy.transform.position.y + _laserOffsetY, selectedEnemy.transform.position.z));
         }
     }
 
@@ -121,6 +135,8 @@ public class SniperAgro : MonoBehaviour
         {
             Destroy(instantiatedUI);
             _laserObject.SetActive(false);
+            _laserOffsetX = _maxOffsetX;
+            _laserOffsetY = _maxOffsetY;
             _laserIsFixed = false;
         }
     }
