@@ -62,7 +62,7 @@ public class AssaultEnemy : Enemy, IShootable, IObservable
 
     public void NotifyToObservers(string action)
     {
-            _myObserver.Notify(action);
+        _myObserver.Notify(action);
     }
 
     public void Subscribe(IObserver obs)
