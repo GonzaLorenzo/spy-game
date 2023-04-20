@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AssaultEnemy : Enemy, IShootable, IObservable
 {
+    [SerializeField] private ParticleSystem _bloodParticle;
     private Animator _myAnimator;
     private float timeToDestroy = 3f;
     private CapsuleCollider _myCollider;
@@ -46,6 +47,7 @@ public class AssaultEnemy : Enemy, IShootable, IObservable
         _myCollider.enabled = !_myCollider.enabled;
         Destroy(_enemyLight);
         _playerDetector.GetComponent<EnemyLight>().EnemyIsDead();
+        _bloodParticle.Play();
         //Destroy(this, timeToDestroy); || Mejor que se queden
 
         //Animator de muerte
