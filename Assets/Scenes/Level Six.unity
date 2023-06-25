@@ -16351,7 +16351,7 @@ MonoBehaviour:
   _laserOffset: -1.5
   _laserLayers:
     serializedVersion: 2
-    m_Bits: 33025
+    m_Bits: 98560
   _laserWallLayers:
     serializedVersion: 2
     m_Bits: 32768
@@ -23768,7 +23768,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891399453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.15, y: 1.188, z: -4.32}
+  m_LocalPosition: {x: 0.15, y: 1.188, z: -6.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 657416618}
@@ -28384,7 +28384,7 @@ MonoBehaviour:
   _laserOffset: -9.4
   _laserLayers:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 65792
 --- !u!1001 &1753667193
 PrefabInstance:
   m_ObjectHideFlags: 0

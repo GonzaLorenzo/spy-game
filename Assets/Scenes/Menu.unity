@@ -1014,6 +1014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a30e7fb1ca6dd1742b79c35455b41c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _codeUI: []
   _dataManager: {fileID: 728636977}
   _electricDoor: {fileID: 0}
 --- !u!4 &78347658
@@ -2290,7 +2291,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _enemyLight
       value: 
-      objectReference: {fileID: 153481065}
+      objectReference: {fileID: 0}
     - target: {fileID: 5828538406719372700, guid: b1c8d945e45c62342a66e5ec404b8d18,
         type: 3}
       propertyPath: m_Name
@@ -3036,12 +3037,6 @@ PrefabInstance:
 --- !u!4 &153481064 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5828538406719529468, guid: b1c8d945e45c62342a66e5ec404b8d18,
-    type: 3}
-  m_PrefabInstance: {fileID: 153481063}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &153481065 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2019420257209943634, guid: b1c8d945e45c62342a66e5ec404b8d18,
     type: 3}
   m_PrefabInstance: {fileID: 153481063}
   m_PrefabAsset: {fileID: 0}
@@ -7861,12 +7856,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &690280599 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2019420257209943634, guid: b1c8d945e45c62342a66e5ec404b8d18,
-    type: 3}
-  m_PrefabInstance: {fileID: 981214214}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &709822959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8015,7 +8004,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _enemyLight
       value: 
-      objectReference: {fileID: 710184076}
+      objectReference: {fileID: 0}
     - target: {fileID: 2524434507777263337, guid: b1c8d945e45c62342a66e5ec404b8d18,
         type: 3}
       propertyPath: waypoints.Array.data[2]
@@ -8886,12 +8875,6 @@ PrefabInstance:
 --- !u!4 &710184075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5828538406719529468, guid: b1c8d945e45c62342a66e5ec404b8d18,
-    type: 3}
-  m_PrefabInstance: {fileID: 710184074}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &710184076 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2019420257209943634, guid: b1c8d945e45c62342a66e5ec404b8d18,
     type: 3}
   m_PrefabInstance: {fileID: 710184074}
   m_PrefabAsset: {fileID: 0}
@@ -10317,7 +10300,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _enemyLight
       value: 
-      objectReference: {fileID: 1643451490}
+      objectReference: {fileID: 0}
     - target: {fileID: 5828538406719372700, guid: b1c8d945e45c62342a66e5ec404b8d18,
         type: 3}
       propertyPath: m_Name
@@ -12790,7 +12773,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _enemyLight
       value: 
-      objectReference: {fileID: 690280599}
+      objectReference: {fileID: 0}
     - target: {fileID: 2524434507777263337, guid: b1c8d945e45c62342a66e5ec404b8d18,
         type: 3}
       propertyPath: canvasManager
@@ -15040,7 +15023,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _enemyLight
       value: 
-      objectReference: {fileID: 1179898494}
+      objectReference: {fileID: 0}
     - target: {fileID: 2524434507777263337, guid: b1c8d945e45c62342a66e5ec404b8d18,
         type: 3}
       propertyPath: waypoints.Array.data[2]
@@ -15906,17 +15889,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6898938275802877908, guid: b1c8d945e45c62342a66e5ec404b8d18,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1c8d945e45c62342a66e5ec404b8d18, type: 3}
 --- !u!4 &1179898493 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5828538406719529468, guid: b1c8d945e45c62342a66e5ec404b8d18,
-    type: 3}
-  m_PrefabInstance: {fileID: 1179898492}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1179898494 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2019420257209943634, guid: b1c8d945e45c62342a66e5ec404b8d18,
     type: 3}
   m_PrefabInstance: {fileID: 1179898492}
   m_PrefabAsset: {fileID: 0}
@@ -18931,7 +18913,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _enemyLight
       value: 
-      objectReference: {fileID: 1624947748}
+      objectReference: {fileID: 0}
     - target: {fileID: 5828538406719372700, guid: b1c8d945e45c62342a66e5ec404b8d18,
         type: 3}
       propertyPath: m_Name
@@ -19680,12 +19662,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1624947746}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1624947748 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2019420257209943634, guid: b1c8d945e45c62342a66e5ec404b8d18,
-    type: 3}
-  m_PrefabInstance: {fileID: 1624947746}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1625342049
 GameObject:
   m_ObjectHideFlags: 0
@@ -19818,12 +19794,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1643451490 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2019420257209943634, guid: b1c8d945e45c62342a66e5ec404b8d18,
-    type: 3}
-  m_PrefabInstance: {fileID: 853577247}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1648547957 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7991958158268590074, guid: 0b2a650f43a3d984ba74e3cb3e2ae79c,

@@ -1770,7 +1770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161503966}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.698299, y: 1.2700019, z: -4.7283354}
+  m_LocalPosition: {x: 12.698299, y: 1.27, z: -4.7283354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1313035464}
@@ -20136,7 +20136,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _enemyLight
       value: 
-      objectReference: {fileID: 1915913652}
+      objectReference: {fileID: 0}
     - target: {fileID: 5828538406719372700, guid: b1c8d945e45c62342a66e5ec404b8d18,
         type: 3}
       propertyPath: m_Name
@@ -25127,12 +25127,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8126161640241807146, guid: b715f8b72096fd44bbfa52c8685a75d8,
     type: 3}
   m_PrefabInstance: {fileID: 762505831}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1915913652 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2019420257209943634, guid: b1c8d945e45c62342a66e5ec404b8d18,
-    type: 3}
-  m_PrefabInstance: {fileID: 1553479558}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1916460571 stripped
 MonoBehaviour:

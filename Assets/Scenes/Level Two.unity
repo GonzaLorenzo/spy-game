@@ -378,6 +378,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 3.98
       objectReference: {fileID: 0}
+    - target: {fileID: 4252853122668003225, guid: 2d17583595fbdde44851141c52121975,
+        type: 3}
+      propertyPath: visionRange
+      value: 6.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4504126459280124968, guid: 2d17583595fbdde44851141c52121975,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -1175,12 +1180,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4504126460231381356, guid: 2d17583595fbdde44851141c52121975,
     type: 3}
   m_PrefabInstance: {fileID: 89628183}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &96007222 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2019420257209943634, guid: b1c8d945e45c62342a66e5ec404b8d18,
-    type: 3}
-  m_PrefabInstance: {fileID: 2059238924}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &96471349
 PrefabInstance:
@@ -4264,7 +4263,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _enemyLight
       value: 
-      objectReference: {fileID: 485949946}
+      objectReference: {fileID: 0}
     - target: {fileID: 5828538406719372700, guid: b1c8d945e45c62342a66e5ec404b8d18,
         type: 3}
       propertyPath: m_Name
@@ -5005,12 +5004,6 @@ PrefabInstance:
 --- !u!4 &485949945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5828538406719529468, guid: b1c8d945e45c62342a66e5ec404b8d18,
-    type: 3}
-  m_PrefabInstance: {fileID: 485949944}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &485949946 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2019420257209943634, guid: b1c8d945e45c62342a66e5ec404b8d18,
     type: 3}
   m_PrefabInstance: {fileID: 485949944}
   m_PrefabAsset: {fileID: 0}
@@ -14641,7 +14634,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _enemyLight
       value: 
-      objectReference: {fileID: 96007222}
+      objectReference: {fileID: 0}
     - target: {fileID: 2524434507777263337, guid: b1c8d945e45c62342a66e5ec404b8d18,
         type: 3}
       propertyPath: waypoints.Array.data[2]
@@ -15400,6 +15393,11 @@ PrefabInstance:
     - target: {fileID: 5828538406719529468, guid: b1c8d945e45c62342a66e5ec404b8d18,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898938275802877908, guid: b1c8d945e45c62342a66e5ec404b8d18,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -11,7 +11,6 @@ public class VisionCone : MonoBehaviour
     private float maxDetection = 100;
     private float currentDetection = 0;
     [SerializeField] private float _detectionRate = 2.4f;
-
     public float visionRange;
     public float visionAngle;
     public LayerMask visionObstructingLayer;
@@ -128,5 +127,12 @@ public class VisionCone : MonoBehaviour
     public void SendDetectPlayer()
     {
         thisEnemy.DetectPlayer();
+    }
+
+    public void EnemyIsDead()
+    {
+        currentDetection = 0f;
+        detectionBar.value = currentDetection;
+        Destroy(this.gameObject);
     }
 }

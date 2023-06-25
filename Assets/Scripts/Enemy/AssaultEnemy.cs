@@ -8,14 +8,8 @@ public class AssaultEnemy : Enemy, IShootable, IObservable
     private Animator _myAnimator;
     private float timeToDestroy = 3f;
     private CapsuleCollider _myCollider;
-    [SerializeField]
-    private GameObject _enemyLight;
-    [SerializeField]
-    private GameObject _playerDetector;
-    [SerializeField]
-    private CanvasManager canvasManager;
-
-
+    [SerializeField] private VisionCone _enemyVisionCone;
+    [SerializeField] private CanvasManager canvasManager;
     IObserver _myObserver;
 
     private void Start()
@@ -45,19 +39,16 @@ public class AssaultEnemy : Enemy, IShootable, IObservable
         _myAnimator.SetTrigger("IsDead");
         canMove = false;
         _myCollider.enabled = !_myCollider.enabled;
-        Destroy(_enemyLight);
-        _playerDetector.GetComponent<EnemyLight>().EnemyIsDead();
+        //Destroy(_enemyLight);
+        
+        _enemyVisionCone.EnemyIsDead();
         _bloodParticle.Play();
         //Destroy(this, timeToDestroy); || Mejor que se queden
-
-        //Animator de muerte
-        //Dejar de Patrullar y capaz instanciar particulas de sangre
     }
 
     public override void DetectPlayer()
     {
         canMove = false;
-        Debug.Log("Llegué a Assault");
 
         NotifyToObservers("PlayerLost");
     }
