@@ -7,7 +7,7 @@ public class WaypointMovementScript : MonoBehaviour
     public List<Transform> waypoints;
     private int _currentWaypoint = 0;
     private bool canResume = true;
-    private float stopTime = 2f;
+    [SerializeField]private float stopTime;
     [SerializeField] private float speed;
 
 
