@@ -36,7 +36,6 @@ public class TankEnemy : Enemy, IObservable
     public override void DetectPlayer()
     {
         canMove = false;
-        Debug.Log("Llegué a Tank");
 
         NotifyToObservers("PlayerLost");
     }

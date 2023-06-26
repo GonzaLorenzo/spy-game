@@ -90,9 +90,6 @@ public class VisionCone : MonoBehaviour
 
         bool IsPlayerFound = playerHitCount > 0;
 
-        Debug.Log("player " + playerHitCount);
-        Debug.Log("es " + IsPlayerFound);
-
         if(IsPlayerFound)
         {
             if (currentDetection < maxDetection)
