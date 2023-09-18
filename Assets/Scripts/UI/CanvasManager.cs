@@ -1,4 +1,3 @@
-﻿using System.CodeDom.Compiler;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -62,7 +61,6 @@ public class CanvasManager : MonoBehaviour, IObserver
         {
             PlayerWon();
         }
-
     }
 
     private void ShowCodeUI(int UItoShow)
