@@ -17338,7 +17338,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1233454631548399219, guid: 0136193c4c9511e4c92b55bf6cd70039,
         type: 3}
+      propertyPath: _myLasers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233454631548399219, guid: 0136193c4c9511e4c92b55bf6cd70039,
+        type: 3}
       propertyPath: _myLaser
+      value: 
+      objectReference: {fileID: 1117092479}
+    - target: {fileID: 1233454631548399219, guid: 0136193c4c9511e4c92b55bf6cd70039,
+        type: 3}
+      propertyPath: _myLasers.Array.data[0]
       value: 
       objectReference: {fileID: 1117092479}
     - target: {fileID: 5788352127459583449, guid: 0136193c4c9511e4c92b55bf6cd70039,
@@ -27156,7 +27166,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1233454631548399219, guid: 0136193c4c9511e4c92b55bf6cd70039,
         type: 3}
+      propertyPath: _myLasers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233454631548399219, guid: 0136193c4c9511e4c92b55bf6cd70039,
+        type: 3}
       propertyPath: _myLaser
+      value: 
+      objectReference: {fileID: 3769529887968037543}
+    - target: {fileID: 1233454631548399219, guid: 0136193c4c9511e4c92b55bf6cd70039,
+        type: 3}
+      propertyPath: _myLasers.Array.data[0]
       value: 
       objectReference: {fileID: 3769529887968037543}
     - target: {fileID: 5788352127459583449, guid: 0136193c4c9511e4c92b55bf6cd70039,

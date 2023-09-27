@@ -5,11 +5,14 @@ using UnityEngine;
 public class Switch : MonoBehaviour, IInteractable
 {
     [SerializeField] Animator _myAnimator;
-    [SerializeField] LaserTrap _myLaser;
+    [SerializeField] List<LaserTrap> _myLasers;
 
     public void Interact()
     {
-        _myLaser.Deactivate();
+        foreach(LaserTrap laser in _myLasers)
+        {
+            laser.Deactivate();
+        }
         _myAnimator.enabled = true;
     }
 
