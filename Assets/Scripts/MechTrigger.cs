@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MechTrigger : MonoBehaviour
 {
+    [SerializeField] private Transform _parent;
     [SerializeField] private Missile _missile;
     [SerializeField] private MissileTarget _leftTarget;
     [SerializeField] private MissileTarget _centerTarget;

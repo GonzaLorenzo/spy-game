@@ -11,12 +11,21 @@ public class MechBoss : MonoBehaviour
     private float _speed;
     [SerializeField] private float _increasedSpeed;
     [SerializeField] private float _normalSpeed;
+    private int health = 5;
 
     public bool _canMove;
 
     void Start()
     {
         _speed = _normalSpeed;
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage();
+        }
     }
 
     void FixedUpdate()
@@ -60,6 +69,20 @@ public class MechBoss : MonoBehaviour
     public void ShootMissiles() //Esto pasa cuando choca con un trigger, el trigger le dice tambien a donde van los misiles.
     {
         //Particulas
-        //Activar el indicador de donde caen los misiles
+    }
+
+    public void TakeDamage()
+    {
+        _animator.SetTrigger("Damaged");
+        Debug.Log("Hola");
+        health --;
+        if(health <= 0)
+        {
+            //Animacion muerte.
+            //Activar timeline de ganar, llevar la camara a las estrellas y mostrar creditos skipeables.
+        }
+
+        //Animacion de hit, hacer que tenga animationmask o avatarmask eso para que solo afecte al torso.
+        //Capaz hacer que renguee cuando le quede 1 hit.
     }
 }
