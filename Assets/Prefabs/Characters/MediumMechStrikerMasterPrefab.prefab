@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8949221280448500064}
   - component: {fileID: 2477080829320971403}
   - component: {fileID: 2091645791}
+  - component: {fileID: 4431605521582736210}
   m_Layer: 0
   m_Name: MediumMechStrikerMasterPrefab
   m_TagString: Untagged
@@ -88,7 +89,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 4838103760480585499}
   _rb: {fileID: 0}
-  _speed: 0
+  _player: {fileID: 0}
+  _increasedSpeed: 0
+  _normalSpeed: 0
   _canMove: 0
 --- !u!114 &2091645791
 MonoBehaviour:
@@ -133,6 +136,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!65 &4431605521582736210
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4787524167839477855}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.9247036, y: 1.9358897, z: 1}
+  m_Center: {x: 0.05624453, y: 2.3865511, z: -4.5988066e-16}
 --- !u!1 &4787571405958165723
 GameObject:
   m_ObjectHideFlags: 0

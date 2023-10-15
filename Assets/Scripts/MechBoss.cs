@@ -7,6 +7,7 @@ public class MechBoss : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private GameObject _player;
+    [SerializeField] private Missile _missile;
     private float _speed;
     [SerializeField] private float _increasedSpeed;
     [SerializeField] private float _normalSpeed;
@@ -22,15 +23,10 @@ public class MechBoss : MonoBehaviour
     {
         if(_canMove)
         {
-            Debug.Log("Hola");
-
             //_rb.AddForce(transform.forward * _speed * Time.deltaTime, ForceMode.Force);
             _rb.velocity = transform.forward * _speed * Time.deltaTime;
 
-            Debug.Log(Vector3.Distance(transform.position, _player.transform.position));
-
-            //Ver de regular la velocidad dependiendo de la distancia.
-            //Con speed en 145 mantiene la distancia con el jugador.
+            //Debug.Log(Vector3.Distance(transform.position, _player.transform.position));
 
             float distance = Vector3.Distance(transform.position, _player.transform.position);
             
@@ -43,6 +39,11 @@ public class MechBoss : MonoBehaviour
                 _speed = _normalSpeed;
             }
         }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        ShootMissiles();
     }
 
     public void StartMechAnim()
@@ -58,7 +59,6 @@ public class MechBoss : MonoBehaviour
 
     public void ShootMissiles() //Esto pasa cuando choca con un trigger, el trigger le dice tambien a donde van los misiles.
     {
-        //Dispara los misiles
         //Particulas
         //Activar el indicador de donde caen los misiles
     }
