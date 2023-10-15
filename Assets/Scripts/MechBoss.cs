@@ -73,7 +73,7 @@ public class MechBoss : MonoBehaviour
 
     public void TakeDamage()
     {
-        _animator.SetTrigger("Damaged");
+        _animator.SetTrigger("IsHit");
         Debug.Log("Hola");
         health --;
         if(health <= 0)

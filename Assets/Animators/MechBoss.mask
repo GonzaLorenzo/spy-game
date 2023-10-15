@@ -8,4 +8,48 @@ AvatarMask:
   m_PrefabAsset: {fileID: 0}
   m_Name: MechBoss
   m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-  m_Elements: []
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: MediumMechHumanoidSkeleton
+    m_Weight: 1
+  - m_Path: MediumMechHumanoidSkeleton/Root
+    m_Weight: 1
+  - m_Path: MediumMechHumanoidSkeleton/Root/LowerTorso
+    m_Weight: 1
+  - m_Path: MediumMechHumanoidSkeleton/Root/LowerTorso/UpperLeg_L
+    m_Weight: 0
+  - m_Path: MediumMechHumanoidSkeleton/Root/LowerTorso/UpperLeg_L/LowerLeg_L
+    m_Weight: 1
+  - m_Path: MediumMechHumanoidSkeleton/Root/LowerTorso/UpperLeg_L/LowerLeg_L/Foot_L
+    m_Weight: 1
+  - m_Path: MediumMechHumanoidSkeleton/Root/LowerTorso/UpperLeg_L/LowerLeg_L/Foot_L/Toe_L
+    m_Weight: 1
+  - m_Path: MediumMechHumanoidSkeleton/Root/LowerTorso/UpperLeg_R
+    m_Weight: 0
+  - m_Path: MediumMechHumanoidSkeleton/Root/LowerTorso/UpperLeg_R/LowerLeg_R
+    m_Weight: 1
+  - m_Path: MediumMechHumanoidSkeleton/Root/LowerTorso/UpperLeg_R/LowerLeg_R/Foot_R
+    m_Weight: 1
+  - m_Path: MediumMechHumanoidSkeleton/Root/LowerTorso/UpperLeg_R/LowerLeg_R/Foot_R/Toe_R
+    m_Weight: 1
+  - m_Path: MediumMechHumanoidSkeleton/Root/LowerTorso/UpperTorso
+    m_Weight: 1
+  - m_Path: MediumMechHumanoidSkeleton/Root/LowerTorso/UpperTorso/Shoulder_L
+    m_Weight: 1
+  - m_Path: MediumMechHumanoidSkeleton/Root/LowerTorso/UpperTorso/Shoulder_L/UpperArm_L
+    m_Weight: 1
+  - m_Path: MediumMechHumanoidSkeleton/Root/LowerTorso/UpperTorso/Shoulder_L/UpperArm_L/LowerArm_L
+    m_Weight: 1
+  - m_Path: MediumMechHumanoidSkeleton/Root/LowerTorso/UpperTorso/Shoulder_R
+    m_Weight: 1
+  - m_Path: MediumMechHumanoidSkeleton/Root/LowerTorso/UpperTorso/Shoulder_R/UpperArm_R
+    m_Weight: 1
+  - m_Path: MediumMechHumanoidSkeleton/Root/LowerTorso/UpperTorso/Shoulder_R/UpperArm_R/LowerArm_R
+    m_Weight: 1
+  - m_Path: MediumMechStrikerArmLeft
+    m_Weight: 1
+  - m_Path: MediumMechStrikerArmRight
+    m_Weight: 1
+  - m_Path: MediumMechStrikerChassis
+    m_Weight: 1
