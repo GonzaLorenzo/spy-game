@@ -7,10 +7,10 @@ public class MechBoss : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private GameObject _player;
-    [SerializeField] private Missile _missile;
     private float _speed;
     [SerializeField] private float _increasedSpeed;
     [SerializeField] private float _normalSpeed;
+    [SerializeField] private float _decreasedSpeed;
     private int health = 5;
 
     public bool _canMove;
@@ -35,17 +35,30 @@ public class MechBoss : MonoBehaviour
             //_rb.AddForce(transform.forward * _speed * Time.deltaTime, ForceMode.Force);
             _rb.velocity = transform.forward * _speed * Time.deltaTime;
 
-            //Debug.Log(Vector3.Distance(transform.position, _player.transform.position));
+            Debug.Log(Vector3.Distance(transform.position, _player.transform.position));
 
             float distance = Vector3.Distance(transform.position, _player.transform.position);
             
+            /* if(distance > 9.5f)
+            {
+                _speed = _increasedSpeed;
+            }
+            else if(distance > 6)
+            {
+                _speed = _normalSpeed;
+            }
+            else
+            {
+                _speed = _decreasedSpeed;
+            } */
+
             if(distance > 9.5f)
             {
                 _speed = _increasedSpeed;
             }
             else
             {
-                _speed = _normalSpeed;
+                _speed = _decreasedSpeed;
             }
         }
     }
@@ -82,7 +95,7 @@ public class MechBoss : MonoBehaviour
             //Activar timeline de ganar, llevar la camara a las estrellas y mostrar creditos skipeables.
         }
 
-        //Animacion de hit, hacer que tenga animationmask o avatarmask eso para que solo afecte al torso.
+        //Sonido
         //Capaz hacer que renguee cuando le quede 1 hit.
     }
 }

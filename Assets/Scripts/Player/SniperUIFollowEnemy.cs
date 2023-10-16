@@ -4,25 +4,22 @@ using UnityEngine;
 
 public class SniperUIFollowEnemy : MonoBehaviour
 {
-    
-    //public SniperAgro sniperAgro;
-    public GameObject sniperAgro;
-    //public GameObject audioManager;
+    private SniperAgro _sniperAgro;
     Vector3 sniperUIOffset = new Vector3(0.0f, 0.9f, 0.0f);
     private Animator _myAnimator;
-    //private float timeToDestroy = 3f;
 
     private void Awake()
     {
         //sniperAgro.GetComponent<SniperAgro>();
-        sniperAgro = GameObject.Find("SniperZone");
+        _sniperAgro = GameObject.Find("SniperZone").GetComponent<SniperAgro>();
         //audioManager = GameObject.Find("AudioManager");
         _myAnimator = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        transform.position = sniperAgro.GetComponent<SniperAgro>().selectedEnemy.transform.position + sniperUIOffset;
+        //if()
+        transform.position = _sniperAgro.selectedEnemy.transform.position + sniperUIOffset;
     }
 
     public void HasShot()
@@ -34,11 +31,11 @@ public class SniperUIFollowEnemy : MonoBehaviour
     {
         AudioManager.instance.Play("TargetShot");
         
-        sniperAgro.GetComponent<SniperAgro>().selectedEnemy.GetComponent<IShootable>().Shoot();
+        _sniperAgro.selectedEnemy.GetComponent<IShootable>().Shoot();
         
-        if(sniperAgro.GetComponent<SniperAgro>().selectedEnemy.GetComponent<Trashcan>() != true)
+        if(_sniperAgro.selectedEnemy.GetComponent<Trashcan>() != true)
         {
-            sniperAgro.GetComponent<SniperAgro>().Enemies.Remove(sniperAgro.GetComponent<SniperAgro>().selectedEnemy);
+            _sniperAgro.Enemies.Remove(_sniperAgro.selectedEnemy);
         }
 
         Destroy(this.gameObject); //Destruir pero mantener el tacho en la lista.
@@ -49,12 +46,12 @@ public class SniperUIFollowEnemy : MonoBehaviour
     private void ReferenceUpdate()
     {   
         _myAnimator.SetBool("HasShoot", false);
-        sniperAgro.GetComponent<SniperAgro>().UpdateTarget();
+        _sniperAgro.UpdateTarget();
     }
 
     private void ReferenceSwitchTarget()
     {        
-        sniperAgro.GetComponent<SniperAgro>().SwitchTarget();
+        _sniperAgro.SwitchTarget();
     }
 }
 
