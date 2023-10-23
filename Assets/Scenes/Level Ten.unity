@@ -5698,7 +5698,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh59868
+  m_Name: pb_Mesh65718
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7293,7 +7293,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh59674
+  m_Name: pb_Mesh65522
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13297,6 +13297,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &910686512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 840146789977012393, guid: 33d71c2796dbce0419325f9be84c7bbf,
+    type: 3}
+  m_PrefabInstance: {fileID: 538437870}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &910686515
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910686512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 5.124, z: 1.2}
+  m_Center: {x: -0.00000008940697, y: 2.562, z: 0.00000008940697}
 --- !u!114 &943041557 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 251029121928435210, guid: cd21464b70876e84aa2cede95822e263,
@@ -32436,6 +32455,11 @@ PrefabInstance:
       value: GasTank
       objectReference: {fileID: 0}
     - target: {fileID: 4127599262451734788, guid: 9a9ee5d28de1b774d8bc303b611dd9b7,
+        type: 3}
+      propertyPath: _mech
+      value: 
+      objectReference: {fileID: 1870799941}
+    - target: {fileID: 8574625904876825972, guid: 9a9ee5d28de1b774d8bc303b611dd9b7,
         type: 3}
       propertyPath: _mech
       value: 

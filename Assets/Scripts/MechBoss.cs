@@ -35,7 +35,7 @@ public class MechBoss : MonoBehaviour
             //_rb.AddForce(transform.forward * _speed * Time.deltaTime, ForceMode.Force);
             _rb.velocity = transform.forward * _speed * Time.deltaTime;
 
-            Debug.Log(Vector3.Distance(transform.position, _player.transform.position));
+            //Debug.Log(Vector3.Distance(transform.position, _player.transform.position));
 
             float distance = Vector3.Distance(transform.position, _player.transform.position);
             
@@ -87,7 +87,7 @@ public class MechBoss : MonoBehaviour
     public void TakeDamage()
     {
         _animator.SetTrigger("IsHit");
-        Debug.Log("Hola");
+        
         health --;
         if(health <= 0)
         {

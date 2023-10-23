@@ -78,6 +78,64 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &2944409428695274160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3045479745498962952}
+  - component: {fileID: 8160983524030687687}
+  - component: {fileID: 8574625904876825972}
+  m_Layer: 11
+  m_Name: MechTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3045479745498962952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2944409428695274160}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1892417584673575037}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8160983524030687687
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2944409428695274160}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 1, z: 4}
+  m_Center: {x: 0, y: 2, z: 3}
+--- !u!114 &8574625904876825972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2944409428695274160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50d27727ce10ad45a49d922edc786c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mech: {fileID: 0}
 --- !u!1 &3177410606378328686
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,6 +168,7 @@ Transform:
   - {fileID: 6209588037843160958}
   - {fileID: 8368658128934518136}
   - {fileID: 3257436356310335322}
+  - {fileID: 3045479745498962952}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
@@ -124,8 +183,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.1085734, y: 1.6990353, z: 1.0592759}
-  m_Center: {x: 0.03199242, y: 1.4606878, z: 0.029637441}
+  m_Size: {x: 3.1085734, y: 0.64914745, z: 1.4334723}
+  m_Center: {x: 0.031992503, y: 0.41212046, z: 0.21673514}
 --- !u!114 &4127599262451734788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,11 +198,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mech: {fileID: 0}
-  explosionRadius: 3
-  explosionLayer:
-    serializedVersion: 2
-    m_Bits: 512
   _fireParticles: {fileID: 7136790298509785994}
+  _mechTrigger: {fileID: 8160983524030687687}
 --- !u!1 &3988709323963940485
 GameObject:
   m_ObjectHideFlags: 0
