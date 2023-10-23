@@ -14,7 +14,7 @@ public class MechBoss : MonoBehaviour
     [SerializeField] private float _decreasedSpeed;
     private int health = 5;
 
-    [SerializeField] private CinemachineImpulseSource impulseSource;
+    private CinemachineImpulseSource impulseSource;
 
     public bool _canMove;
 

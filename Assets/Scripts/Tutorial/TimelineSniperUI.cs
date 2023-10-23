@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class TimelineSniperUI : MonoBehaviour
 {
@@ -10,9 +11,12 @@ public class TimelineSniperUI : MonoBehaviour
     Vector3 sniperUIOffset = new Vector3(0.0f, 0.9f, 0.0f);
     private Animator _myAnimator;
 
+    private CinemachineImpulseSource impulseSource;
+
     void Awake()
     {
         _myAnimator = GetComponent<Animator>();
+        impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
     void Update()
@@ -28,6 +32,7 @@ public class TimelineSniperUI : MonoBehaviour
     private void ActualShot()
     {
         AudioManager.instance.Play("TargetShot");
+        CameraShakeManager.instance.CameraShake(impulseSource);
         
         _enemyObjective.Shoot();
 
