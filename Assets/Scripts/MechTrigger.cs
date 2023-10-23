@@ -19,19 +19,19 @@ public class MechTrigger : MonoBehaviour
         if(left)
         {
             Vector3 spawnLocation = new Vector3(_leftTarget.transform.position.x, 18.5f, _leftTarget.transform.position.z);
-            Instantiate(_missile, spawnLocation, Quaternion.identity).SetTarget(_leftTarget);
+            Instantiate(_missile, spawnLocation, Quaternion.identity, _parent).SetTarget(_leftTarget);
             _leftTarget.Activate();
         }
         if(center)
         {
             Vector3 spawnLocation = new Vector3(_centerTarget.transform.position.x, 18.5f, _centerTarget.transform.position.z);
-            Instantiate(_missile, spawnLocation, Quaternion.identity).SetTarget(_centerTarget);
+            Instantiate(_missile, spawnLocation, Quaternion.identity, _parent).SetTarget(_centerTarget);
             _centerTarget.Activate();
         }
         if(right)
         {
             Vector3 spawnLocation = new Vector3(_rightTarget.transform.position.x, 18.5f, _rightTarget.transform.position.z);
-            Instantiate(_missile, spawnLocation, Quaternion.identity).SetTarget(_rightTarget);
+            Instantiate(_missile, spawnLocation, Quaternion.identity, _parent).SetTarget(_rightTarget);
             _rightTarget.Activate();
         }
     }

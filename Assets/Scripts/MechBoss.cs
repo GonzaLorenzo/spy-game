@@ -105,7 +105,6 @@ public class MechBoss : MonoBehaviour
 
     public void FootstepShake()
     {
-        Debug.Log("Blum");
         CameraShakeManager.instance.CameraShake(impulseSource);
     }
 }
