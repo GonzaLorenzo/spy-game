@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class MechBoss : MonoBehaviour
 {
@@ -13,11 +14,14 @@ public class MechBoss : MonoBehaviour
     [SerializeField] private float _decreasedSpeed;
     private int health = 5;
 
+    [SerializeField] private CinemachineImpulseSource impulseSource;
+
     public bool _canMove;
 
     void Start()
     {
         _speed = _normalSpeed;
+        impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
     void Update()
@@ -97,5 +101,11 @@ public class MechBoss : MonoBehaviour
 
         //Sonido
         //Capaz hacer que renguee cuando le quede 1 hit.
+    }
+
+    public void FootstepShake()
+    {
+        Debug.Log("Blum");
+        CameraShakeManager.instance.CameraShake(impulseSource);
     }
 }
