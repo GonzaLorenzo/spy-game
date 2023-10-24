@@ -14,7 +14,6 @@ public class GasTankTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Choque con " + other.name);
         _mech.TakeDamage();
         _bc.enabled = false;
     }

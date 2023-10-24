@@ -36,25 +36,11 @@ public class MechBoss : MonoBehaviour
     {
         if(_canMove)
         {
-            //_rb.AddForce(transform.forward * _speed * Time.deltaTime, ForceMode.Force);
             _rb.velocity = transform.forward * _speed * Time.deltaTime;
 
             //Debug.Log(Vector3.Distance(transform.position, _player.transform.position));
 
             float distance = Vector3.Distance(transform.position, _player.transform.position);
-            
-            /* if(distance > 9.5f)
-            {
-                _speed = _increasedSpeed;
-            }
-            else if(distance > 6)
-            {
-                _speed = _normalSpeed;
-            }
-            else
-            {
-                _speed = _decreasedSpeed;
-            } */
 
             if(distance > 9.5f)
             {
@@ -93,14 +79,31 @@ public class MechBoss : MonoBehaviour
         _animator.SetTrigger("IsHit");
         
         health --;
+        
+        if(health < 2)
+        {
+            _animator.SetBool("IsDamaged", true);
+        }
         if(health <= 0)
         {
-            //Animacion muerte.
-            //Activar timeline de ganar, llevar la camara a las estrellas y mostrar creditos skipeables.
+            Invoke("Overheat", 2f);
         }
 
         //Sonido
-        //Capaz hacer que renguee cuando le quede 1 hit.
+    }
+
+    private void Overheat()
+    {
+        _animator.SetBool("IsOverheat", true);
+        _canMove = false;
+
+        //Se vuelve shooteable, el shooteo final te da el finaltimeline
+    }
+
+    private void Shoot()
+    {
+        //Animacion muerte.
+        //Activar timeline de ganar, llevar la camara a las estrellas y mostrar creditos skipeables.
     }
 
     public void FootstepShake()
