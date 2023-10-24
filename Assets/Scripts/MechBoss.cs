@@ -8,10 +8,12 @@ public class MechBoss : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private GameObject _player;
+    [SerializeField] private GameObject _mechCore;
     private float _speed;
     [SerializeField] private float _increasedSpeed;
     [SerializeField] private float _normalSpeed;
     [SerializeField] private float _decreasedSpeed;
+    
     private int health = 5;
 
     private CinemachineImpulseSource impulseSource;
@@ -96,14 +98,16 @@ public class MechBoss : MonoBehaviour
     {
         _animator.SetBool("IsOverheat", true);
         _canMove = false;
-
+        _mechCore.SetActive(true);
         //Se vuelve shooteable, el shooteo final te da el finaltimeline
     }
 
-    private void Shoot()
+    public void Die()
     {
-        //Animacion muerte.
+        _animator.SetBool("IsDead", true);
+        //Sonido muerte.
         //Activar timeline de ganar, llevar la camara a las estrellas y mostrar creditos skipeables.
+        //Capaz activar timeline en animationEvent
     }
 
     public void FootstepShake()
