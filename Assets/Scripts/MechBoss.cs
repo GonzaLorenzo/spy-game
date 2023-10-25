@@ -5,8 +5,6 @@ using Cinemachine;
 
 public class MechBoss : MonoBehaviour
 {
-    [SerializeField] private IntroManager _introManager;
-
     [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private GameObject _player;

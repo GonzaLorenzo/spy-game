@@ -56,8 +56,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5, y: 5, z: 17.517014}
+  m_Center: {x: 6.552748e-14, y: 0, z: 3.7585068}
 --- !u!1 &4787524167839477855
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1b831ae033b0f45830db5e204b7bc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _introManager: {fileID: 0}
   _animator: {fileID: 4838103760480585499}
   _rb: {fileID: 0}
   _player: {fileID: 0}
@@ -153,7 +154,6 @@ MonoBehaviour:
   _increasedSpeed: 0
   _normalSpeed: 0
   _decreasedSpeed: 0
-  _canMove: 0
 --- !u!114 &2091645791
 MonoBehaviour:
   m_ObjectHideFlags: 0
