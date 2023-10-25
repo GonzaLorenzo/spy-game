@@ -5,6 +5,8 @@ using Cinemachine;
 
 public class MechBoss : MonoBehaviour
 {
+    [SerializeField] private IntroManager _introManager;
+
     [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private GameObject _player;
@@ -15,10 +17,11 @@ public class MechBoss : MonoBehaviour
     [SerializeField] private float _decreasedSpeed;
     
     private int health = 5;
-
     private CinemachineImpulseSource impulseSource;
+    private bool _canMove;
 
-    public bool _canMove;
+    public delegate void OnOverheat();
+    public static event OnOverheat onOverheat;
 
     void Start()
     {
@@ -88,7 +91,7 @@ public class MechBoss : MonoBehaviour
         }
         if(health <= 0)
         {
-            Invoke("Overheat", 2f);
+            Invoke("Overheat", 1.3f);
         }
 
         //Sonido
@@ -99,6 +102,7 @@ public class MechBoss : MonoBehaviour
         _animator.SetBool("IsOverheat", true);
         _canMove = false;
         _mechCore.SetActive(true);
+        onOverheat();
         //Se vuelve shooteable, el shooteo final te da el finaltimeline
     }
 

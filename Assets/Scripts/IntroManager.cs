@@ -12,10 +12,13 @@ public class IntroManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera _introCamera1;
     [SerializeField] private CinemachineVirtualCamera _introCamera2;
     [SerializeField] private CinemachineVirtualCamera _gameplayCamera;
+    [SerializeField] private CinemachineVirtualCamera _finalCamera;
 
     void Start()
     {
         _director.Play();
+
+        MechBoss.onOverheat += SwitchToFinalCamera;
     }
 
     public void StartGameplayUI()
@@ -28,5 +31,11 @@ public class IntroManager : MonoBehaviour
         _introCamera1.enabled = false;
         _introCamera2.enabled = false;
         _gameplayCamera.Priority = 12; // 1 mas que la intro camera mas alta que usa 11
+    }
+
+    private void SwitchToFinalCamera()
+    {
+        _finalCamera.Priority = 15; 
+        _gameplayCamera.enabled = false;
     }
 }
