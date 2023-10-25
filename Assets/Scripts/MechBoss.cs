@@ -21,6 +21,9 @@ public class MechBoss : MonoBehaviour
     public delegate void OnOverheat();
     public static event OnOverheat onOverheat;
 
+    public delegate void OnDeath();
+    public static event OnDeath onDeath;
+
     void Start()
     {
         _speed = _normalSpeed;
@@ -40,8 +43,6 @@ public class MechBoss : MonoBehaviour
         if(_canMove)
         {
             _rb.velocity = transform.forward * _speed * Time.deltaTime;
-
-            //Debug.Log(Vector3.Distance(transform.position, _player.transform.position));
 
             float distance = Vector3.Distance(transform.position, _player.transform.position);
 
@@ -72,7 +73,7 @@ public class MechBoss : MonoBehaviour
         _canMove = true;
     }
 
-    public void ShootMissiles() //Esto pasa cuando choca con un trigger, el trigger le dice tambien a donde van los misiles.
+    public void ShootMissiles()
     {
         //Particulas
     }
@@ -101,12 +102,13 @@ public class MechBoss : MonoBehaviour
         _canMove = false;
         _mechCore.SetActive(true);
         onOverheat();
-        //Se vuelve shooteable, el shooteo final te da el finaltimeline
     }
 
     public void Die()
     {
         _animator.SetBool("IsDead", true);
+        //Invoke("onDeath", 1.5f);
+        onDeath();
         //Sonido muerte.
         //Activar timeline de ganar, llevar la camara a las estrellas y mostrar creditos skipeables.
         //Capaz activar timeline en animationEvent
