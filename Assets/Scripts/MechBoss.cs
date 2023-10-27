@@ -9,7 +9,16 @@ public class MechBoss : MonoBehaviour
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _mechCore;
+
+    [Header("Particles")]
+    [SerializeField] private ParticleSystem _missileParticles1;
+    [SerializeField] private ParticleSystem _missileParticles2;
+    [SerializeField] private ParticleSystem _leftFootPartciles;
+    [SerializeField] private ParticleSystem _rightFootParticles;
+
     private float _speed;
+
+    [Header("Speed")]
     [SerializeField] private float _increasedSpeed;
     [SerializeField] private float _normalSpeed;
     [SerializeField] private float _decreasedSpeed;
@@ -28,6 +37,8 @@ public class MechBoss : MonoBehaviour
     {
         _speed = _normalSpeed;
         impulseSource = GetComponent<CinemachineImpulseSource>();
+
+        MechTrigger.onTrigger += ShootMissiles;
     }
 
     void Update()
@@ -57,11 +68,6 @@ public class MechBoss : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        ShootMissiles();
-    }
-
     public void StartMechAnim()
     {
         _animator.SetBool("IsAlive", true);
@@ -75,7 +81,10 @@ public class MechBoss : MonoBehaviour
 
     public void ShootMissiles()
     {
-        //Particulas
+        _missileParticles1.Play();
+        _missileParticles2.Play();
+
+        //Sonido.
     }
 
     public void TakeDamage()
@@ -114,8 +123,18 @@ public class MechBoss : MonoBehaviour
         //Capaz activar timeline en animationEvent
     }
 
-    public void FootstepShake()
+    public void FootstepShake(int foot) // 0 = left || 1 = right
     {
         CameraShakeManager.instance.CameraShake(impulseSource);
+
+        if(foot == 0)
+        {
+            _leftFootPartciles.Play();
+        }
+        else
+        {
+            _rightFootParticles.Play();
+        }
+        //Sonido.
     }
 }

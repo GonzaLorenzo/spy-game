@@ -10,6 +10,9 @@ public class MechTrigger : MonoBehaviour
     [SerializeField] private MissileTarget _centerTarget;
     [SerializeField] private MissileTarget _rightTarget;
 
+    public delegate void OnTrigger();
+    public static event OnTrigger onTrigger;
+
     public bool left;
     public bool center;
     public bool right;
@@ -34,5 +37,7 @@ public class MechTrigger : MonoBehaviour
             Instantiate(_missile, spawnLocation, Quaternion.identity, _parent).SetTarget(_rightTarget);
             _rightTarget.Activate();
         }
+
+        onTrigger();
     }
 }
