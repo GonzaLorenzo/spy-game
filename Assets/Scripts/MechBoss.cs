@@ -5,8 +5,9 @@ using Cinemachine;
 
 public class MechBoss : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
-    [SerializeField] private Rigidbody _rb;
+    private Animator _animator;
+    private Rigidbody _rb;
+    private AudioSource _as;
     [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _mechCore;
 
@@ -22,6 +23,11 @@ public class MechBoss : MonoBehaviour
     [SerializeField] private float _increasedSpeed;
     [SerializeField] private float _normalSpeed;
     [SerializeField] private float _decreasedSpeed;
+
+    [Header("AudioClips")]
+    [SerializeField] private AudioClip _damage;
+    [SerializeField] private AudioClip _footsteps;
+    [SerializeField] private AudioClip _rocketLaunch;
     
     private int health = 5;
     private CinemachineImpulseSource impulseSource;
@@ -36,7 +42,11 @@ public class MechBoss : MonoBehaviour
     void Start()
     {
         _speed = _normalSpeed;
+
         impulseSource = GetComponent<CinemachineImpulseSource>();
+        _animator = GetComponent<Animator>();
+        _rb = GetComponent<Rigidbody>();
+        _as = GetComponent<AudioSource>();
 
         MechTrigger.onTrigger += ShootMissiles;
     }
@@ -84,6 +94,8 @@ public class MechBoss : MonoBehaviour
         _missileParticles1.Play();
         _missileParticles2.Play();
 
+        _as.clip = _rocketLaunch;
+        _as.Play();
         //Sonido.
     }
 
@@ -135,6 +147,8 @@ public class MechBoss : MonoBehaviour
         {
             _rightFootParticles.Play();
         }
-        //Sonido.
+        
+        _as.clip = _footsteps;
+        _as.Play();
     }
 }
