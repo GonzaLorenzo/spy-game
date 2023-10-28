@@ -151,4 +151,9 @@ public class MechBoss : MonoBehaviour
         _as.clip = _footsteps;
         _as.Play();
     }
+
+    void OnDisable()
+    {
+        MechTrigger.onTrigger -= ShootMissiles;
+    }
 }

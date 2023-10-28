@@ -68,4 +68,10 @@ public class IntroManager : MonoBehaviour
         _director.playableAsset = _creditsTimeline;
         _director.Play();
     }
+
+    void OnDisable()
+    {
+        MechBoss.onOverheat -= SwitchToFinalCamera;
+        MechBoss.onDeath -= InitCreditsTimeline;
+    }
 }
