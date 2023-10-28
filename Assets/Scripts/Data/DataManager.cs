@@ -6,8 +6,12 @@ using UnityEngine.SceneManagement;
 using System.IO;
 public class DataManager : MonoBehaviour
 {
+    //PROBAR HACIENDO UN SAVELANGUAGE Y LOADLANGUAGE PARA NO ROMPER TODO
+    //PROBAR HACIENDO UN SAVELANGUAGE Y LOADLANGUAGE PARA NO ROMPER TODO
+    //PROBAR HACIENDO UN SAVELANGUAGE Y LOADLANGUAGE PARA NO ROMPER TODO
+    //PROBAR HACIENDO UN SAVELANGUAGE Y LOADLANGUAGE PARA NO ROMPER TODO
     private LevelData levelData;
-    [SerializeField] private LanguageManager manager;
+    //[SerializeField] private LanguageManager manager;
     [SerializeField] private MainMenu mainMenu;
     private string saveFileName = "GameData.sav";
     private string fullSavePath;
@@ -23,21 +27,27 @@ public class DataManager : MonoBehaviour
 
     public void Save(bool completedALevel)
     {
+
+        if(levelData.completedLevels == 1)
+        {
+
+        }
+
         if (completedALevel && levelData.completedLevels == 0 || levelData.completedLevels == SceneManager.GetActiveScene().buildIndex )
         {
             levelData.completedLevels = SceneManager.GetActiveScene().buildIndex + 1;
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 0)
+        /* else if (SceneManager.GetActiveScene().buildIndex == 0 && manager != null)
         {
             levelData.selectedLanguage = (int)manager.selectedLanguage;
-        }
+        } */
 
         StreamWriter streamWriter = null;
         try
         {
             if(!File.Exists(fullSavePath))
             {
-                File.Create(fullSavePath);     
+                File.Create(fullSavePath).Dispose();     
             }
             streamWriter = new StreamWriter(fullSavePath, false);
             
@@ -79,13 +89,16 @@ public class DataManager : MonoBehaviour
                 levelData = new LevelData();
             } */
 
-            if(manager != null)
+            /* if(manager != null)
             {
                 manager.selectedLanguage = (Language)levelData.selectedLanguage;
+            } */
+
+            if(SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                MainMenu.completedLevels = levelData.completedLevels;
             }
-
-            MainMenu.completedLevels = levelData.completedLevels;
-
+            
             /* if(levelData.completedLevels != 0)
             {
                 MainMenu.completedLevels = levelData.completedLevels;
