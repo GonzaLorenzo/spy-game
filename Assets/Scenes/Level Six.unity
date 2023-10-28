@@ -11274,7 +11274,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-13786
+  m_Name: pb_Mesh-18764
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16882,7 +16882,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-14998
+  m_Name: pb_Mesh-19972
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22566,7 +22566,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-13860
+  m_Name: pb_Mesh-18838
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23122,7 +23122,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-14428
+  m_Name: pb_Mesh-19398
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24729,6 +24729,7 @@ GameObject:
   - component: {fileID: 1089535609}
   - component: {fileID: 1089535608}
   - component: {fileID: 1089535610}
+  - component: {fileID: 1089535611}
   m_Layer: 0
   m_Name: CannonG_Barrel02
   m_TagString: Untagged
@@ -24810,6 +24811,102 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.89792013, y: 1.5246941, z: 3.7402496}
   m_Center: {x: 0.0000014901161, y: 0.115709245, z: 0.5000999}
+--- !u!82 &1089535611
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089535606}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ae16c6e99719f2740bd4696ebc06db4b, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1101987933
 GameObject:
   m_ObjectHideFlags: 3
@@ -26329,7 +26426,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28396
+  m_Name: pb_Mesh30790
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -28493,6 +28590,7 @@ MonoBehaviour:
   _laserLayers:
     serializedVersion: 2
     m_Bits: 65792
+  _as: {fileID: 1089535611}
 --- !u!1001 &1753667193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29182,6 +29280,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8097767956689886901, guid: 7191a0df8b6695d449a0f18a361bc311,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ae16c6e99719f2740bd4696ebc06db4b, type: 3}
+    - target: {fileID: 8097767956689886901, guid: 7191a0df8b6695d449a0f18a361bc311,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097767956689886901, guid: 7191a0df8b6695d449a0f18a361bc311,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097767956689886901, guid: 7191a0df8b6695d449a0f18a361bc311,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7191a0df8b6695d449a0f18a361bc311, type: 3}
 --- !u!4 &1886761881 stripped
@@ -29618,8 +29736,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2015155852}
   - component: {fileID: 2015155851}
-  - component: {fileID: 2015155850}
   - component: {fileID: 2015155849}
+  - component: {fileID: 2015155850}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera

@@ -31,11 +31,15 @@ public class Turret : MonoBehaviour, IObservable
     private bool firstLoop = false;
     private bool _isDisabled = false;
 
+    private AudioSource _as;
+
     void Start()
     {
         Subscribe(canvasManager);
         _sparksShape = _mySparks.shape;
         _timePassed = _waitShootingTime;
+
+        _as = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -71,6 +75,7 @@ public class Turret : MonoBehaviour, IObservable
         {
             _laser.SetActive(true);
             _mySparks.Play();
+            _as.Play();
             firstLoop = true;
         }
 
@@ -117,6 +122,7 @@ public class Turret : MonoBehaviour, IObservable
         {
             _laser.SetActive(false);
             _mySparks.Stop();
+            _as.Stop();
             firstLoop = true;
         }
 
@@ -138,6 +144,7 @@ public class Turret : MonoBehaviour, IObservable
     {
         _laser.SetActive(false);
         _mySparks.Stop();
+        _as.Stop();
         _isShooting = true; 
         _timePassed = .1f;
 
@@ -147,12 +154,14 @@ public class Turret : MonoBehaviour, IObservable
     public void DisableThisTurret()
     {
         _isDisabled = true;
+        _as.Stop();
     }
 
     private void DisabledTurret()
     {
         _laser.SetActive(false);
         _mySparks.Stop();
+        _as.Stop();
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(20f, 180f, 0f), _disabledRotationSpeed * Time.deltaTime);
     }
 

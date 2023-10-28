@@ -17,12 +17,15 @@ public class WallTurret : MonoBehaviour, IObservable
     [SerializeField] private float speed;
     [SerializeField] private float _laserOffset;
     [SerializeField] private LayerMask _laserLayers;
+    [SerializeField] private AudioSource _as;
     
 
     void Start()
     {
         Subscribe(canvasManager);
         _sparksShape = _mySparks.shape;
+        
+        _as.Play();
     }
 
     void Update()
