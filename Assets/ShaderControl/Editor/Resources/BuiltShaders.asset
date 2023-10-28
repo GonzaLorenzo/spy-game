@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75691fe4a49db4a21986bd2b7ebe85e1, type: 3}
   m_Name: BuiltShaders
   m_EditorClassIdentifier: 
-  creationDateTicks: 638340973257146413
+  creationDateTicks: 638340998147653917
   shaders:
   - name: Standard
     simpleName: Standard
@@ -89,7 +89,7 @@ MonoBehaviour:
   - name: ProBuilder/Standard Vertex Color
     simpleName: Standard Vertex Color
     isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
     keywords:
     - keyword: DIRECTIONAL
       includeInBuild: 1
@@ -641,24 +641,6 @@ MonoBehaviour:
     isReadOnly: 0
     variants: []
     path: Assets/External Assets/UI/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile.shader
-  - name: Legacy Shaders/Transparent/VertexLit
-    simpleName: VertexLit
-    isExpanded: 0
-    includeInBuild: 1
-    keywords:
-    - keyword: FOG_EXP2
-      includeInBuild: 1
-      includeInVariant: 0
-    - keyword: POINT
-      includeInBuild: 1
-      includeInVariant: 0
-    - keyword: SPOT
-      includeInBuild: 1
-      includeInVariant: 0
-    isInternal: 1
-    isReadOnly: 1
-    variants: []
-    path: Resources/unity_builtin_extra
   - name: ShaderControl/ChromaScreen
     simpleName: ChromaScreen
     isExpanded: 0
@@ -677,6 +659,24 @@ MonoBehaviour:
     isReadOnly: 0
     variants: []
     path: Assets/ShaderControl/Demo/Resources/ChromaScreen.shader
+  - name: Legacy Shaders/Transparent/VertexLit
+    simpleName: VertexLit
+    isExpanded: 0
+    includeInBuild: 1
+    keywords:
+    - keyword: FOG_EXP2
+      includeInBuild: 1
+      includeInVariant: 0
+    - keyword: POINT
+      includeInBuild: 1
+      includeInVariant: 0
+    - keyword: SPOT
+      includeInBuild: 1
+      includeInVariant: 0
+    isInternal: 1
+    isReadOnly: 1
+    variants: []
+    path: Resources/unity_builtin_extra
   - name: TextMeshPro/Distance Field Overlay
     simpleName: Distance Field Overlay
     isExpanded: 0
@@ -844,60 +844,12 @@ MonoBehaviour:
     variants: []
     path: Assets/External Assets/UI/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile
       Masking.shader
-  - name: Hidden/Internal-DeferredReflections
-    simpleName: Internal-DeferredReflections
+  - name: Legacy Shaders/Particles/Alpha Blended Premultiply
+    simpleName: Alpha Blended Premultiply
     isExpanded: 0
     includeInBuild: 1
     keywords:
-    - keyword: UNITY_HDR_ON
-      includeInBuild: 1
-      includeInVariant: 0
-    isInternal: 1
-    isReadOnly: 1
-    variants: []
-    path: Resources/unity_builtin_extra
-  - name: Mobile/Particles/Additive
-    simpleName: Additive
-    isExpanded: 0
-    includeInBuild: 1
-    keywords:
-    - keyword: FOG_EXP2
-      includeInBuild: 1
-      includeInVariant: 0
-    isInternal: 1
-    isReadOnly: 1
-    variants: []
-    path: Resources/unity_builtin_extra
-  - name: Hidden/Internal-Halo
-    simpleName: Internal-Halo
-    isExpanded: 0
-    includeInBuild: 1
-    keywords:
-    - keyword: FOG_EXP2
-      includeInBuild: 1
-      includeInVariant: 0
-    isInternal: 1
-    isReadOnly: 1
-    variants: []
-    path: Resources/unity_builtin_extra
-  - name: Unlit/Color
-    simpleName: Color
-    isExpanded: 0
-    includeInBuild: 1
-    keywords:
-    - keyword: FOG_EXP2
-      includeInBuild: 1
-      includeInVariant: 0
-    isInternal: 1
-    isReadOnly: 1
-    variants: []
-    path: Resources/unity_builtin_extra
-  - name: Unlit/Texture
-    simpleName: Texture
-    isExpanded: 0
-    includeInBuild: 1
-    keywords:
-    - keyword: FOG_EXP2
+    - keyword: SOFTPARTICLES_ON
       includeInBuild: 1
       includeInVariant: 0
     isInternal: 1
@@ -916,12 +868,12 @@ MonoBehaviour:
     isReadOnly: 1
     variants: []
     path: Resources/unity_builtin_extra
-  - name: Legacy Shaders/Particles/Alpha Blended Premultiply
-    simpleName: Alpha Blended Premultiply
+  - name: Unlit/Texture
+    simpleName: Texture
     isExpanded: 0
     includeInBuild: 1
     keywords:
-    - keyword: SOFTPARTICLES_ON
+    - keyword: FOG_EXP2
       includeInBuild: 1
       includeInVariant: 0
     isInternal: 1
@@ -940,145 +892,58 @@ MonoBehaviour:
     isReadOnly: 1
     variants: []
     path: Resources/unity_builtin_extra
-  - name: Hidden/VideoDecode
-    simpleName: VideoDecode
+  - name: Hidden/Internal-Halo
+    simpleName: Internal-Halo
     isExpanded: 0
-    includeInBuild: 0
-    keywords: []
+    includeInBuild: 1
+    keywords:
+    - keyword: FOG_EXP2
+      includeInBuild: 1
+      includeInVariant: 0
     isInternal: 1
     isReadOnly: 1
     variants: []
     path: Resources/unity_builtin_extra
-  - name: Hidden/BlitToDepth_MSAA
-    simpleName: BlitToDepth_MSAA
+  - name: Mobile/Particles/Additive
+    simpleName: Additive
     isExpanded: 0
-    includeInBuild: 0
-    keywords: []
+    includeInBuild: 1
+    keywords:
+    - keyword: FOG_EXP2
+      includeInBuild: 1
+      includeInVariant: 0
     isInternal: 1
     isReadOnly: 1
     variants: []
     path: Resources/unity_builtin_extra
-  - name: UI/Default
-    simpleName: Default
+  - name: Hidden/Internal-DeferredReflections
+    simpleName: Internal-DeferredReflections
     isExpanded: 0
-    includeInBuild: 0
-    keywords: []
+    includeInBuild: 1
+    keywords:
+    - keyword: UNITY_HDR_ON
+      includeInBuild: 1
+      includeInVariant: 0
     isInternal: 1
     isReadOnly: 1
     variants: []
     path: Resources/unity_builtin_extra
-  - name: Hidden/Internal-CombineDepthNormals
-    simpleName: Internal-CombineDepthNormals
+  - name: Unlit/Color
+    simpleName: Color
     isExpanded: 0
-    includeInBuild: 0
-    keywords: []
+    includeInBuild: 1
+    keywords:
+    - keyword: FOG_EXP2
+      includeInBuild: 1
+      includeInVariant: 0
     isInternal: 1
     isReadOnly: 1
     variants: []
     path: Resources/unity_builtin_extra
-  - name: Hidden/Internal-GUIRoundedRect
-    simpleName: Internal-GUIRoundedRect
+  - name: Hidden/Internal-Flare
+    simpleName: Internal-Flare
     isExpanded: 0
-    includeInBuild: 0
-    keywords: []
-    isInternal: 1
-    isReadOnly: 1
-    variants: []
-    path: Resources/unity_builtin_extra
-  - name: Hidden/Internal-UIRAtlasBlitCopy
-    simpleName: Internal-UIRAtlasBlitCopy
-    isExpanded: 0
-    includeInBuild: 0
-    keywords: []
-    isInternal: 1
-    isReadOnly: 1
-    variants: []
-    path: Resources/unity_builtin_extra
-  - name: Hidden/Internal-GUITextureBlit
-    simpleName: Internal-GUITextureBlit
-    isExpanded: 0
-    includeInBuild: 0
-    keywords: []
-    isInternal: 1
-    isReadOnly: 1
-    variants: []
-    path: Resources/unity_builtin_extra
-  - name: Hidden/VR/BlitTexArraySlice
-    simpleName: BlitTexArraySlice
-    isExpanded: 0
-    includeInBuild: 0
-    keywords: []
-    isInternal: 1
-    isReadOnly: 1
-    variants: []
-    path: Resources/unity_builtin_extra
-  - name: Hidden/CubeCopy
-    simpleName: CubeCopy
-    isExpanded: 0
-    includeInBuild: 0
-    keywords: []
-    isInternal: 1
-    isReadOnly: 1
-    variants: []
-    path: Resources/unity_builtin_extra
-  - name: Hidden/CubeBlend
-    simpleName: CubeBlend
-    isExpanded: 0
-    includeInBuild: 0
-    keywords: []
-    isInternal: 1
-    isReadOnly: 1
-    variants: []
-    path: Resources/unity_builtin_extra
-  - name: Hidden/Internal-GUITexture
-    simpleName: Internal-GUITexture
-    isExpanded: 0
-    includeInBuild: 0
-    keywords: []
-    isInternal: 1
-    isReadOnly: 1
-    variants: []
-    path: Resources/unity_builtin_extra
-  - name: Hidden/Internal-ODSWorldTexture
-    simpleName: Internal-ODSWorldTexture
-    isExpanded: 0
-    includeInBuild: 0
-    keywords: []
-    isInternal: 1
-    isReadOnly: 1
-    variants: []
-    path: Resources/unity_builtin_extra
-  - name: Hidden/Internal-CubemapToEquirect
-    simpleName: Internal-CubemapToEquirect
-    isExpanded: 0
-    includeInBuild: 0
-    keywords: []
-    isInternal: 1
-    isReadOnly: 1
-    variants: []
-    path: Resources/unity_builtin_extra
-  - name: Hidden/VR/BlitFromTex2DToTexArraySlice
-    simpleName: BlitFromTex2DToTexArraySlice
-    isExpanded: 0
-    includeInBuild: 0
-    keywords: []
-    isInternal: 1
-    isReadOnly: 1
-    variants: []
-    path: Resources/unity_builtin_extra
-  - name: Hidden/VideoComposite
-    simpleName: VideoComposite
-    isExpanded: 0
-    includeInBuild: 0
-    keywords: []
-    isInternal: 1
-    isReadOnly: 1
-    variants: []
-    path: Resources/unity_builtin_extra
-  - name: Hidden/Internal-UIRDefault
-    simpleName: Internal-UIRDefault
-    isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 1
     isReadOnly: 1
@@ -1087,16 +952,7 @@ MonoBehaviour:
   - name: Hidden/CubeBlur
     simpleName: CubeBlur
     isExpanded: 0
-    includeInBuild: 0
-    keywords: []
-    isInternal: 1
-    isReadOnly: 1
-    variants: []
-    path: Resources/unity_builtin_extra
-  - name: Skybox/6 Sided
-    simpleName: 6 Sided
-    isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 1
     isReadOnly: 1
@@ -1105,7 +961,7 @@ MonoBehaviour:
   - name: Hidden/BlitCopyWithDepth
     simpleName: BlitCopyWithDepth
     isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 1
     isReadOnly: 1
@@ -1114,7 +970,7 @@ MonoBehaviour:
   - name: Hidden/Internal-GUITextureClipText
     simpleName: Internal-GUITextureClipText
     isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 1
     isReadOnly: 1
@@ -1123,7 +979,7 @@ MonoBehaviour:
   - name: Hidden/BlitToDepth
     simpleName: BlitToDepth
     isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 1
     isReadOnly: 1
@@ -1132,7 +988,7 @@ MonoBehaviour:
   - name: Hidden/Internal-StencilWrite
     simpleName: Internal-StencilWrite
     isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 1
     isReadOnly: 1
@@ -1141,43 +997,25 @@ MonoBehaviour:
   - name: ProBuilder/UnlitVertexColor
     simpleName: UnlitVertexColor
     isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 0
     isReadOnly: 1
     variants: []
     path: Packages/com.unity.probuilder/Content/Shader/UnlitVertexColor.shader
-  - name: Hidden/ProBuilder/EdgePicker
-    simpleName: EdgePicker
-    isExpanded: 0
-    includeInBuild: 0
-    keywords: []
-    isInternal: 0
-    isReadOnly: 1
-    variants: []
-    path: Packages/com.unity.probuilder/Content/Shader/EdgePicker.shader
   - name: Hidden/ProBuilder/VertexPicker
     simpleName: VertexPicker
     isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 0
     isReadOnly: 1
     variants: []
     path: Packages/com.unity.probuilder/Content/Shader/VertexPicker.shader
-  - name: Hidden/ProBuilder/FacePicker
-    simpleName: FacePicker
-    isExpanded: 0
-    includeInBuild: 0
-    keywords: []
-    isInternal: 0
-    isReadOnly: 1
-    variants: []
-    path: Packages/com.unity.probuilder/Content/Shader/FacePicker.shader
   - name: Hidden/ProBuilder/HideVertices
     simpleName: HideVertices
     isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 0
     isReadOnly: 1
@@ -1186,7 +1024,7 @@ MonoBehaviour:
   - name: Hidden/VideoDecodeAndroid
     simpleName: VideoDecodeAndroid
     isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 1
     isReadOnly: 1
@@ -1195,7 +1033,7 @@ MonoBehaviour:
   - name: Hidden/Internal-DepthNormalsTexture
     simpleName: Internal-DepthNormalsTexture
     isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 1
     isReadOnly: 1
@@ -1204,7 +1042,7 @@ MonoBehaviour:
   - name: Hidden/BlitCopy
     simpleName: BlitCopy
     isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 1
     isReadOnly: 1
@@ -1213,7 +1051,7 @@ MonoBehaviour:
   - name: Hidden/BlitCopyDepth
     simpleName: BlitCopyDepth
     isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 1
     isReadOnly: 1
@@ -1222,7 +1060,7 @@ MonoBehaviour:
   - name: Hidden/ConvertTexture
     simpleName: ConvertTexture
     isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 1
     isReadOnly: 1
@@ -1231,16 +1069,61 @@ MonoBehaviour:
   - name: Hidden/Internal-MotionVectors
     simpleName: Internal-MotionVectors
     isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 1
     isReadOnly: 1
     variants: []
     path: Resources/unity_builtin_extra
-  - name: Hidden/Internal-Flare
-    simpleName: Internal-Flare
+  - name: Hidden/ProBuilder/EdgePicker
+    simpleName: EdgePicker
     isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 0
+    isReadOnly: 1
+    variants: []
+    path: Packages/com.unity.probuilder/Content/Shader/EdgePicker.shader
+  - name: Hidden/ProBuilder/FacePicker
+    simpleName: FacePicker
+    isExpanded: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 0
+    isReadOnly: 1
+    variants: []
+    path: Packages/com.unity.probuilder/Content/Shader/FacePicker.shader
+  - name: Hidden/Internal-UIRAtlasBlitCopy
+    simpleName: Internal-UIRAtlasBlitCopy
+    isExpanded: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 1
+    isReadOnly: 1
+    variants: []
+    path: Resources/unity_builtin_extra
+  - name: Hidden/VR/BlitFromTex2DToTexArraySlice
+    simpleName: BlitFromTex2DToTexArraySlice
+    isExpanded: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 1
+    isReadOnly: 1
+    variants: []
+    path: Resources/unity_builtin_extra
+  - name: Skybox/6 Sided
+    simpleName: 6 Sided
+    isExpanded: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 1
+    isReadOnly: 1
+    variants: []
+    path: Resources/unity_builtin_extra
+  - name: Hidden/VideoComposite
+    simpleName: VideoComposite
+    isExpanded: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 1
     isReadOnly: 1
@@ -1249,7 +1132,124 @@ MonoBehaviour:
   - name: Hidden/Internal-GUITextureClip
     simpleName: Internal-GUITextureClip
     isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 1
+    isReadOnly: 1
+    variants: []
+    path: Resources/unity_builtin_extra
+  - name: Hidden/VideoDecode
+    simpleName: VideoDecode
+    isExpanded: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 1
+    isReadOnly: 1
+    variants: []
+    path: Resources/unity_builtin_extra
+  - name: Hidden/BlitToDepth_MSAA
+    simpleName: BlitToDepth_MSAA
+    isExpanded: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 1
+    isReadOnly: 1
+    variants: []
+    path: Resources/unity_builtin_extra
+  - name: UI/Default
+    simpleName: Default
+    isExpanded: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 1
+    isReadOnly: 1
+    variants: []
+    path: Resources/unity_builtin_extra
+  - name: Hidden/Internal-CombineDepthNormals
+    simpleName: Internal-CombineDepthNormals
+    isExpanded: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 1
+    isReadOnly: 1
+    variants: []
+    path: Resources/unity_builtin_extra
+  - name: Hidden/Internal-GUIRoundedRect
+    simpleName: Internal-GUIRoundedRect
+    isExpanded: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 1
+    isReadOnly: 1
+    variants: []
+    path: Resources/unity_builtin_extra
+  - name: Hidden/Internal-GUITextureBlit
+    simpleName: Internal-GUITextureBlit
+    isExpanded: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 1
+    isReadOnly: 1
+    variants: []
+    path: Resources/unity_builtin_extra
+  - name: Hidden/VR/BlitTexArraySlice
+    simpleName: BlitTexArraySlice
+    isExpanded: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 1
+    isReadOnly: 1
+    variants: []
+    path: Resources/unity_builtin_extra
+  - name: Hidden/CubeCopy
+    simpleName: CubeCopy
+    isExpanded: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 1
+    isReadOnly: 1
+    variants: []
+    path: Resources/unity_builtin_extra
+  - name: Hidden/CubeBlend
+    simpleName: CubeBlend
+    isExpanded: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 1
+    isReadOnly: 1
+    variants: []
+    path: Resources/unity_builtin_extra
+  - name: Hidden/Internal-GUITexture
+    simpleName: Internal-GUITexture
+    isExpanded: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 1
+    isReadOnly: 1
+    variants: []
+    path: Resources/unity_builtin_extra
+  - name: Hidden/Internal-ODSWorldTexture
+    simpleName: Internal-ODSWorldTexture
+    isExpanded: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 1
+    isReadOnly: 1
+    variants: []
+    path: Resources/unity_builtin_extra
+  - name: Hidden/Internal-CubemapToEquirect
+    simpleName: Internal-CubemapToEquirect
+    isExpanded: 0
+    includeInBuild: 1
+    keywords: []
+    isInternal: 1
+    isReadOnly: 1
+    variants: []
+    path: Resources/unity_builtin_extra
+  - name: Hidden/Internal-UIRDefault
+    simpleName: Internal-UIRDefault
+    isExpanded: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 1
     isReadOnly: 1
@@ -1258,7 +1258,7 @@ MonoBehaviour:
   - name: Hidden/Compositing
     simpleName: Compositing
     isExpanded: 0
-    includeInBuild: 0
+    includeInBuild: 1
     keywords: []
     isInternal: 1
     isReadOnly: 1
