@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GasTank : MonoBehaviour, IShootable
 {
-    [SerializeField] private MechBoss _mech;
     [SerializeField] private ParticleSystem _fireParticles;
     [SerializeField] private BoxCollider _mechTrigger;
 

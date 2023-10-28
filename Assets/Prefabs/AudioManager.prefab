@@ -52,7 +52,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: TargetShot
     clip: {fileID: 8300000, guid: 8602b7d5cd15c1943a50aa53f171c8cf, type: 3}
-    volume: 0.65
+    volume: 0.2
     pitch: 1
     loop: 0
     source: {fileID: 0}
