@@ -6020,7 +6020,7 @@ MonoBehaviour:
   _centerTarget: {fileID: 1720223395}
   _rightTarget: {fileID: 694313427}
   left: 0
-  center: 1
+  center: 0
   right: 1
 --- !u!65 &269352753
 BoxCollider:
