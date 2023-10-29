@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class MissileTarget : MonoBehaviour
 {
@@ -10,11 +11,13 @@ public class MissileTarget : MonoBehaviour
 
     private SpriteRenderer _sr;
     private AudioSource _as;
+    private CinemachineImpulseSource impulseSource;
 
     void Start()
     {
         _sr = GetComponent<SpriteRenderer>();
         _as = GetComponent<AudioSource>();
+        impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
     void Update()
@@ -33,5 +36,6 @@ public class MissileTarget : MonoBehaviour
         _explosion1.Play();
         _explosion2.Play();
         _as.Play();
+        CameraShakeManager.instance.CameraShake(impulseSource);
     }
 }

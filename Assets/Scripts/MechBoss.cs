@@ -16,6 +16,7 @@ public class MechBoss : MonoBehaviour
     [SerializeField] private ParticleSystem _missileParticles2;
     [SerializeField] private ParticleSystem _leftFootPartciles;
     [SerializeField] private ParticleSystem _rightFootParticles;
+    [SerializeField] private ParticleSystem _fallParticles;
 
     private float _speed;
 
@@ -148,6 +149,16 @@ public class MechBoss : MonoBehaviour
             _rightFootParticles.Play();
         }
         
+        _as.clip = _footsteps;
+        _as.Play();
+    }
+
+    public void FallShake() // 0 = left || 1 = right
+    {
+        CameraShakeManager.instance.CameraShake(impulseSource);
+        
+        _fallParticles.Play();
+
         _as.clip = _footsteps;
         _as.Play();
     }

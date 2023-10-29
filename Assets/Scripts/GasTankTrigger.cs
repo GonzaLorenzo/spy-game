@@ -15,6 +15,10 @@ public class GasTankTrigger : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         _mech.TakeDamage();
+        _mech.TakeDamage();
+        _mech.TakeDamage();
+        _mech.TakeDamage();
+        _mech.TakeDamage();
         _bc.enabled = false;
     }
 }
