@@ -82,6 +82,8 @@ public class MechBoss : MonoBehaviour
     public void StartMechAnim()
     {
         _animator.SetBool("IsAlive", true);
+        _as.clip = _damage;
+        _as.Play();
     }
 
     public void SetMove()
@@ -102,6 +104,8 @@ public class MechBoss : MonoBehaviour
 
     public void TakeDamage()
     {
+        _as.clip = _damage;
+        _as.Play();
         _animator.SetTrigger("IsHit");
         
         health --;

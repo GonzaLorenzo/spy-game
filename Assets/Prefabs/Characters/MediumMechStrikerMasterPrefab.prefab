@@ -4999,7 +4999,7 @@ MonoBehaviour:
   _increasedSpeed: 0
   _normalSpeed: 0
   _decreasedSpeed: 0
-  _damage: {fileID: 0}
+  _damage: {fileID: 8300000, guid: f65105a67b8b50c47864bb7a349dab3a, type: 3}
   _footsteps: {fileID: 8300000, guid: 24d67bd3ecd2af74fab3af6bdf9e6fe1, type: 3}
   _rocketLaunch: {fileID: 8300000, guid: 18e74aeb654c8e2469248fce5748563d, type: 3}
 --- !u!114 &2091645791
