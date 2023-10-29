@@ -3,17 +3,11 @@
     "m_SelectedPackage": {
         "deviceId": "3dd6dc68",
         "name": "com.GonzaloLorenzo.SpyGame",
-        "processId": 8167,
+        "processId": 12331,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "3dd6dc68",
-            "name": "com.google.android.packageinstaller",
-            "processId": 28459,
-            "exited": true
-        },
         {
             "deviceId": "3dd6dc68",
             "name": "com.GonzaloLorenzo.SpyGame",
@@ -42,6 +36,18 @@
             "deviceId": "3dd6dc68",
             "name": "com.GonzaloLorenzo.SpyGame",
             "processId": 8167,
+            "exited": true
+        },
+        {
+            "deviceId": "3dd6dc68",
+            "name": "com.google.android.packageinstaller",
+            "processId": 11856,
+            "exited": false
+        },
+        {
+            "deviceId": "3dd6dc68",
+            "name": "com.GonzaloLorenzo.SpyGame",
+            "processId": 12331,
             "exited": false
         }
     ],

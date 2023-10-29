@@ -9089,7 +9089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2807ee1c30aec9a4e8a13d88bfff472f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 897295436}
   mainMenu: {fileID: 1138102666}
 --- !u!4 &728636978
 Transform:
@@ -11569,7 +11568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataManager: {fileID: 728636977}
-  selectedLanguage: 1
+  selectedLanguage: 0
   externalURL: https://docs.google.com/spreadsheets/d/e/2PACX-1vTFaQCJSbAfB0Rlmnrqz_QTLnT0zaJXx5At5Lst01DqN9wb6dCWxsrasmRi8ED1zYdDelGJ4nrovMi8/pub?output=csv
 --- !u!1 &900848717
 GameObject:

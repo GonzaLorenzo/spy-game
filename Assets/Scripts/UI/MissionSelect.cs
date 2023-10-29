@@ -11,8 +11,7 @@ public class MissionSelect : MonoBehaviour
     {
         for (int i = 0; i < MainMenu.completedLevels + 1; i++)
         { 
-            myButtons[i].interactable = true;
-            Debug.Log(myButtons[i]);   
+            myButtons[i].interactable = true;  
         }
     }
 }
