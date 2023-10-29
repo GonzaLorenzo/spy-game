@@ -129,8 +129,8 @@ public class MechBoss : MonoBehaviour
     public void Die()
     {
         _animator.SetBool("IsDead", true);
-        //Invoke("onDeath", 1.5f);
-        onDeath();
+        StartCoroutine("WaitForDeath");
+        //onDeath();
         //Sonido muerte.
         //Activar timeline de ganar, llevar la camara a las estrellas y mostrar creditos skipeables.
         //Capaz activar timeline en animationEvent
@@ -161,6 +161,13 @@ public class MechBoss : MonoBehaviour
 
         _as.clip = _footsteps;
         _as.Play();
+    }
+
+    IEnumerator WaitForDeath()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+
+        onDeath();
     }
 
     void OnDisable()

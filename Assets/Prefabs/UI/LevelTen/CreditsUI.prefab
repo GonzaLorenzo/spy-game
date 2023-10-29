@@ -456,6 +456,8 @@ MonoBehaviour:
     Using sound effects by
 
 
+    MGW Sound Design
+
     Salty Dog Sounds
 
     Iwanplays
@@ -574,7 +576,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 242
+  m_firstOverflowCharacterIndex: 246
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -598,12 +600,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -764.0444}
   m_textInfo:
     textComponent: {fileID: 1091916368111024388}
-    characterCount: 474
+    characterCount: 491
     spriteCount: 0
-    spaceCount: 76
-    wordCount: 67
+    spaceCount: 79
+    wordCount: 70
     linkCount: 0
-    lineCount: 50
+    lineCount: 51
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
