@@ -5,6 +5,9 @@ using UnityEngine;
 public class MissileTarget : MonoBehaviour
 {
     [SerializeField] private Transform _player;
+    [SerializeField] private ParticleSystem _explosion1;
+    [SerializeField] private ParticleSystem _explosion2;
+
     private SpriteRenderer _sr;
 
     void Start()
@@ -25,5 +28,7 @@ public class MissileTarget : MonoBehaviour
     public void Deactivate()
     {
         _sr.enabled = false;
+        _explosion1.Play();
+        _explosion2.Play();
     }
 }
