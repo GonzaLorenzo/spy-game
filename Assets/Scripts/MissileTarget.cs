@@ -9,10 +9,12 @@ public class MissileTarget : MonoBehaviour
     [SerializeField] private ParticleSystem _explosion2;
 
     private SpriteRenderer _sr;
+    private AudioSource _as;
 
     void Start()
     {
         _sr = GetComponent<SpriteRenderer>();
+        _as = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -30,5 +32,6 @@ public class MissileTarget : MonoBehaviour
         _sr.enabled = false;
         _explosion1.Play();
         _explosion2.Play();
+        _as.Play();
     }
 }
