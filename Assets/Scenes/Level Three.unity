@@ -9693,7 +9693,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5625, y: 1}
+    m_SensorSize: {x: 0.5520995, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -10374,7 +10374,7 @@ PrefabInstance:
     - target: {fileID: 6560066850367641532, guid: a675a0d7649fb184ebc4a1050954682c,
         type: 3}
       propertyPath: sounds.Array.data[2].volume
-      value: 0.4
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6560066850367641532, guid: a675a0d7649fb184ebc4a1050954682c,
         type: 3}
@@ -10394,7 +10394,7 @@ PrefabInstance:
     - target: {fileID: 6560066850367641532, guid: a675a0d7649fb184ebc4a1050954682c,
         type: 3}
       propertyPath: sounds.Array.data[3].volume
-      value: 0.4
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6560066850367641532, guid: a675a0d7649fb184ebc4a1050954682c,
         type: 3}
@@ -18136,7 +18136,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5625, y: 1}
+    m_SensorSize: {x: 0.5520995, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
