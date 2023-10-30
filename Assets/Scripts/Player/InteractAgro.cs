@@ -54,6 +54,10 @@ public class InteractAgro : MonoBehaviour
 
     public void InteractWithTarget()
     {
-        _interactableObjectsList[0].Interact();
+        if(_interactableObjectsList.Count != 0)
+        {
+            _interactableObjectsList[0].Interact();
+        }
+        
     }
 }
