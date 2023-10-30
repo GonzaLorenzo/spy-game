@@ -36,11 +36,25 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private GameObject _pauseGameObject;
 
     private int _activatedTutorial;
+    private bool _isDistractionTutorialActive;
 
     void Start()
     {   
+        _isDistractionTutorialActive = false;
         _myAnimator = GetComponent<Animator>();
         StartMovementTutorial();
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            EndShootingTutorial();
+            if(_isDistractionTutorialActive)
+            {
+                EndDistractionTutorial();
+            }
+        }
     }
 
     public void StartMovementTutorial()
@@ -106,6 +120,7 @@ public class TutorialManager : MonoBehaviour
         _player.CanMove(false);
         Time.timeScale = 0;
         _activatedTutorial = 3;
+        _isDistractionTutorialActive = true;
     }
 
     private void EndDistractionTutorial()
@@ -116,6 +131,7 @@ public class TutorialManager : MonoBehaviour
         _playerWallCollider.SetActive(false);
         _player.CanMove(true);
         Time.timeScale = 1;
+        _isDistractionTutorialActive = false;
     }
 
     public void SetSoldierMoving()

@@ -619,6 +619,8 @@ MonoBehaviour:
   dataManager: {fileID: 0}
   virtualStick: {fileID: 0}
   _speed: 3
+  _sniper: {fileID: 1845924551}
+  _interact: {fileID: 3597969999986255084}
 --- !u!54 &6518665957767310261
 Rigidbody:
   m_ObjectHideFlags: 0

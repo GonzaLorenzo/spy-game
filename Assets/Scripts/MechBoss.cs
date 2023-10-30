@@ -52,14 +52,6 @@ public class MechBoss : MonoBehaviour
         MechTrigger.onTrigger += ShootMissiles;
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage();
-        }
-    }
-
     void FixedUpdate()
     {
         if(_canMove)

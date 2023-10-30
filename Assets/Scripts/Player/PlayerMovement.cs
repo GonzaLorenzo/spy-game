@@ -16,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
 
     private bool _canMove = true;
     private bool _switchedMovement = false;
+
+    [SerializeField] private SniperAgro _sniper;
+    [SerializeField] private InteractAgro _interact;
+    [SerializeField] private InteractTutorial _levelFiveTutorial;
     //#endif
 
     private void Awake()
@@ -27,6 +31,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            _interact.InteractWithTarget();
+            if(_levelFiveTutorial != null)
+            {
+                _levelFiveTutorial.StopTutorial();
+                _interact.StopAnimation();
+            }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            _sniper.ShootTarget();
+        }
+
         if (virtualStick.getInputVector.sqrMagnitude > 0f && _canMove)
         {
             _myAnimator.SetBool("IsMoving", true);

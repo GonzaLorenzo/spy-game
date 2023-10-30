@@ -9399,6 +9399,11 @@ PrefabInstance:
       propertyPath: _speed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1555494292605846584, guid: f0df36a3b29ab96429b3a9b655c2e21f,
+        type: 3}
+      propertyPath: _levelFiveTutorial
+      value: 
+      objectReference: {fileID: 1490901029}
     - target: {fileID: 3597969999986255084, guid: f0df36a3b29ab96429b3a9b655c2e21f,
         type: 3}
       propertyPath: _interactButton
@@ -16669,7 +16674,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5520995, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -18837,7 +18842,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5520995, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
