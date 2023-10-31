@@ -68,4 +68,8 @@ public class CanvasManager : MonoBehaviour, IObserver
         _codeUI[UItoShow].SetActive(true);
     }
 
+    void OnDisable()
+    {
+        ScreenPaper.ShowCodeEvent -= ShowCodeUI;
+    }
 }
